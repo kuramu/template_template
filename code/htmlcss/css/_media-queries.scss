@@ -1,0 +1,53 @@
+@charset "utf-8";
+@import "sass-common.scss";
+
+
+img,
+iframe,
+object {
+	/* 画面のサイズに合わせて画像もレスポンシブに対応する場合は以下のように記述。 */
+    max-width: 100%;
+    height: auto;
+
+}
+@media screen and (-webkit-min-device-pixel-ratio:2),
+                  (min-resolution: 2dppx){
+/* Retina ディスプレイ用の記述 */
+}
+
+
+@media only screen
+and (min-width : 768px)
+and (max-width : 1024px){
+
+}
+/* スマートTVをはじめとする大きなスクリーン */
+@media  (max-width: 1680px){
+
+}
+
+/* デスクトップPC */
+@media  (max-width: 1024px){
+
+}
+
+/* large smartphones iPad を代表とするタブレット端末----------- */
+@media  (max-width: 767px){
+
+}
+
+/* medium smartphones -----------  iPhoneは5から640px*/
+@media (max-width: 640px){
+
+}
+
+/* medium smartphones ----------- */
+@media (max-width: 480px){
+
+}
+
+/* medium smartphones, portrait ----------- */
+@media (max-width: 320px){
+
+
+}

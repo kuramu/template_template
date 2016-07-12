@@ -1,0 +1,471 @@
+@charset "UTF-8";
+/*
+Theme Name: テーマ名
+Theme URI: サイトのURL http:～
+Description: テーマの説明文
+Author: テーマ作成者
+Author URI: 作成者のサイトURL
+
+
+コメント／利用許諾の記述 (あれば)
+-------------------------------------------------------------- */
+/*.relatedArea {
+    @include boxSet;
+}
+*/
+/* line 14, D:/Users/dropbox/Dropbox/template/seisaku/up/up/css/_reset.scss */
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, figure, footer, header, hgroup, menu, nav, section, menu, time, mark, audio, video, main, time {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+  font-weight: normal; }
+
+/* line 25, D:/Users/dropbox/Dropbox/template/seisaku/up/up/css/_reset.scss */
+time {
+  display: inline; }
+
+/* line 26, D:/Users/dropbox/Dropbox/template/seisaku/up/up/css/_reset.scss */
+article, aside, figure, footer, header, hgroup, nav, section, main {
+  display: block; }
+
+/* line 28, D:/Users/dropbox/Dropbox/template/seisaku/up/up/css/_reset.scss */
+ol, ul {
+  list-style: none; }
+
+/* line 30, D:/Users/dropbox/Dropbox/template/seisaku/up/up/css/_reset.scss */
+blockquote, q {
+  quotes: none; }
+
+/* line 35, D:/Users/dropbox/Dropbox/template/seisaku/up/up/css/_reset.scss */
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none; }
+
+/* line 37, D:/Users/dropbox/Dropbox/template/seisaku/up/up/css/_reset.scss */
+del {
+  text-decoration: line-through; }
+
+/* line 39, D:/Users/dropbox/Dropbox/template/seisaku/up/up/css/_reset.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  font-size: inherit;
+  width: 100%; }
+
+/* line 41, D:/Users/dropbox/Dropbox/template/seisaku/up/up/css/_reset.scss */
+td, th {
+  font-weight: normal;
+  vertical-align: top; }
+
+/* line 43, D:/Users/dropbox/Dropbox/template/seisaku/up/up/css/_reset.scss */
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0; }
+
+/* line 45, D:/Users/dropbox/Dropbox/template/seisaku/up/up/css/_reset.scss */
+input[type="radio"] {
+  vertical-align: text-bottom; }
+
+/* line 47, D:/Users/dropbox/Dropbox/template/seisaku/up/up/css/_reset.scss */
+input[type="checkbox"] {
+  vertical-align: bottom;
+  *vertical-align: baseline; }
+
+/* line 49, D:/Users/dropbox/Dropbox/template/seisaku/up/up/css/_reset.scss */
+pre, code, kbd, samp {
+  font-family: monospace,sans-serif; }
+
+/* line 51, D:/Users/dropbox/Dropbox/template/seisaku/up/up/css/_reset.scss */
+img, video, iframe {
+  height: auto; }
+
+/*
+* HTML5未サポートブラウザーでインライン要素として表示する for IE6/7/8/9 & FF3
+* 制限事項:IE6では'audio[controls]'へのスタイルは適用されません。
+*/
+/* line 60, D:/Users/dropbox/Dropbox/template/seisaku/up/up/css/_reset.scss */
+audio[controls],
+canvas,
+video {
+  display: inline-block;
+  *display: inline;
+  zoom: 1; }
+
+/* =============================================================================
+基本設定
+========================================================================== */
+/*
+* 1. IE6/7において単位をemでbodyにfont-sizeを設定すると正しいサイズにならない問題を修正
+*    参考:http://clagnut.com/blog/348/#c790
+* 2. コンテンツの高さに関わらず全てのブラウザーでページをセンタリング（スクロールバーを常時表示する）
+* 3. AndroidやiOSにおいてtap highlight colorが親要素を含んでしまう問題を修正（tap highlight colorを消す）
+*    参考:www.yuiblog.com/blog/2010/10/01/quick-tip-customizing-the-mobile-safari-tap-highlight-color/
+* 4. iOSにおいて画面の向きが変わった際のテキストサイズ調整を防ぐ
+*    参考:www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/
+*/
+/* line 81, D:/Users/dropbox/Dropbox/template/seisaku/up/up/css/_reset.scss */
+html {
+  -webkit-tap-highlight-color: transparent;
+  /* 3 */
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -o-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  overflow-y: scroll; }
+
+/*
+* 'textarea'やその他のフォーム要素でのfont-familyの矛盾を修正
+*/
+/* line 98, D:/Users/dropbox/Dropbox/template/seisaku/up/up/css/_reset.scss */
+body,
+button,
+input,
+select,
+textarea {
+  font-family: sans-serif; }
+
+/*
+* Chromeにおいてoutlineの表示不具合を修正
+*/
+/* line 107, D:/Users/dropbox/Dropbox/template/seisaku/up/up/css/_reset.scss */
+a:focus {
+  outline: thin dotted; }
+
+/*
+* 全てのブラウザーにおいてフォーカス時、マウスホバー時の読みやすさを改善
+* 参考: people.opera.com/patrickl/experiments/keyboard/test
+*/
+/* line 117, D:/Users/dropbox/Dropbox/template/seisaku/up/up/css/_reset.scss */
+a:hover,
+a:active {
+  outline: 0; }
+
+/*
+* IE7/8/9,S5,Chromeにおいてabbr要素がスタイリングされない問題を修正
+*/
+/* line 125, D:/Users/dropbox/Dropbox/template/seisaku/up/up/css/_reset.scss */
+abbr[title], dfn[title] {
+  border-bottom: 1px dotted;
+  cursor: help; }
+
+/*
+* S5,Chromeにおいてdfn要素がイタリック体にならない問題を修正
+*/
+/* line 134, D:/Users/dropbox/Dropbox/template/seisaku/up/up/css/_reset.scss */
+dfn {
+  font-style: italic; }
+
+/*
+* IE6/7/8/9においてmark要素がスタイリングされない問題を修正
+*/
+/* line 142, D:/Users/dropbox/Dropbox/template/seisaku/up/up/css/_reset.scss */
+mark {
+  background: #ff0;
+  color: #000; }
+
+/*
+* IE6,S5,Chromeにおけるfont-familyの問題を修正
+* en.wikipedia.org/wiki/User:Davidgothberg/Test59
+*/
+/* line 155, D:/Users/dropbox/Dropbox/template/seisaku/up/up/css/_reset.scss */
+pre,
+code,
+kbd,
+samp {
+  font-family: monospace,monospace;
+  font-family: 'courier new',monospace;
+  font-size: 1em; }
+
+/*
+* 全てのブラウザーにおいてpre-formatted textの読みやすさを改善
+*/
+/* line 165, D:/Users/dropbox/Dropbox/template/seisaku/up/up/css/_reset.scss */
+pre {
+  white-space: pre;
+  /* CSS2 */
+  white-space: pre-wrap;
+  /* CSS 2.1 */
+  white-space: pre-line;
+  /* CSS 3 (and 2.1 as well,actually) */
+  word-wrap: break-word;
+  /* IE */ }
+
+/*
+* 1. IE6/7においてquotesプロパティーがサポートされていない問題を修正
+* 2. S4においてquotesプロパティーがサポートされていない問題を修正
+*/
+/* 1 */
+/* line 179, D:/Users/dropbox/Dropbox/template/seisaku/up/up/css/_reset.scss */
+q {
+  quotes: none; }
+
+/* 2 */
+/* line 186, D:/Users/dropbox/Dropbox/template/seisaku/up/up/css/_reset.scss */
+q:before,
+q:after {
+  content: '';
+  content: none; }
+
+/*
+* 全てのブラウザーにおいてsubおよびsup要素がline-heightに影響する問題を防ぐ
+* 参考:gist.github.com/413930
+*/
+/* line 198, D:/Users/dropbox/Dropbox/template/seisaku/up/up/css/_reset.scss */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline; }
+
+/* line 205, D:/Users/dropbox/Dropbox/template/seisaku/up/up/css/_reset.scss */
+sup {
+  top: -0.5em; }
+
+/* line 209, D:/Users/dropbox/Dropbox/template/seisaku/up/up/css/_reset.scss */
+sub {
+  bottom: -0.25em; }
+
+/*
+* 1. IE6/7/8/9において、a要素内側のborderを削除
+* 2. IE7において画像の拡大縮小時の画質を改善
+*    code.flickr.com/blog/2008/11/12/on-ui-quality-the-little-things-client-side-image-resizing/
+*/
+/* line 220, D:/Users/dropbox/Dropbox/template/seisaku/up/up/css/_reset.scss */
+img {
+  border: 0;
+  /* 1 */
+  -ms-interpolation-mode: bicubic;
+  /* 2 */
+  vertical-align: bottom; }
+
+/*
+* IE9においてoverflowの表示問題を修正
+*/
+/* line 230, D:/Users/dropbox/Dropbox/template/seisaku/up/up/css/_reset.scss */
+svg:not(:root) {
+  overflow: hidden; }
+
+/*
+* IE6/7/8/9, S5, O11におけるmarginの問題を修正
+*/
+/* line 239, D:/Users/dropbox/Dropbox/template/seisaku/up/up/css/_reset.scss */
+figure {
+  margin: 0; }
+
+/*
+* 1. IE6/7/8/9において色が継承されない問題を修正
+* 2. IE6/7において揃いがおかしい問題を修正
+*/
+/* line 247, D:/Users/dropbox/Dropbox/template/seisaku/up/up/css/_reset.scss */
+legend {
+  border: 0;
+  /* 1 */
+  *margin-left: -7px;
+  /* 2 */ }
+
+/*
+* 1. 全てのブラウザーにおいてfont-sizeが継承されない問題を修正
+* 2. IE6/7,F3/4,S5,Chromeにおけるmarginの差異を修正
+* 3. 全てのブラウザーにおいて外観と一貫性を改善
+'textarea'やその他のフォーム要素でのfont-familyの矛盾を修正
+*/
+/* line 262, D:/Users/dropbox/Dropbox/template/seisaku/up/up/css/_reset.scss */
+button,
+input,
+select,
+textarea {
+  margin: 0;
+  /* 2 */
+  vertical-align: baseline;
+  /* 3 */
+  *vertical-align: middle;
+  /* 3 */
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit; }
+
+/*
+* 1. image-typeが'input'とその他についてユーザビリティと一貫性を改善
+* 2. iOSにおいてクリック可能な'input'にスタイルが適用できない問題を修正
+*/
+/* line 282, D:/Users/dropbox/Dropbox/template/seisaku/up/up/css/_reset.scss */
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  cursor: pointer;
+  /* 1 */
+  -webkit-appearance: button;
+  /* 2 */ }
+
+/* line 287, D:/Users/dropbox/Dropbox/template/seisaku/up/up/css/_reset.scss */
+label {
+  cursor: pointer; }
+
+/*
+* IE8/9においてbox-sizingプロパティがcontent-boxになっている点を修正
+*/
+/* line 294, D:/Users/dropbox/Dropbox/template/seisaku/up/up/css/_reset.scss */
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box; }
+
+/*
+* 1. S5,Chromeにおいてappearanceプロパティがsearchfieldになっている点を修正
+* 2. S5,Chromeにおいてbox-sizingプロパティがborder-box担っている点を修正 (将来的なことを踏まえて-mozも含める)
+*/
+/* line 303, D:/Users/dropbox/Dropbox/template/seisaku/up/up/css/_reset.scss */
+input[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  /* 2 */
+  box-sizing: content-box;
+  padding-right: 2px;
+  /* Don't cut off the webkit search cancel button */
+  width: 270px; }
+
+/*
+* S5,Chrome on OSXにおけるpaddingの表示問題を修正
+*/
+/* line 316, D:/Users/dropbox/Dropbox/template/seisaku/up/up/css/_reset.scss */
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none; }
+
+/*
+* FF3/4におけるpadding及びborderの表示問題を修正
+* 参考:www.sitepen.com/blog/2008/05/14/the-devils-in-the-details-fixing-dojos-toolbar-buttons/
+*/
+/* line 326, D:/Users/dropbox/Dropbox/template/seisaku/up/up/css/_reset.scss */
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0; }
+
+/*
+* 1. IE6/7/8/9におけるデフォルト表示のスクロールバーを削除
+* 2. 全てのブラウザーにおいて読みやすさと揃えを改善
+*/
+/* line 336, D:/Users/dropbox/Dropbox/template/seisaku/up/up/css/_reset.scss */
+textarea {
+  overflow: auto;
+  /* 1 */
+  vertical-align: top;
+  /* 2 */ }
+
+/*
+画像が伸縮するとブラウザ側で適度に良い感じに描画されて、場合によってはエッジがモワッとした感じにレンダリングされたりしますよね。普通の写真などの場合にはそれほど気にならないかもしれませんが、２値画像だと伸縮時のモワッと感が際立つわけですね。もっとパリっと表示させたいのです。
+その場合は以下のスタイルを使用すれば解決出来ます。
+※最新のSafari、Mobile Safari、 Firefox
+*/
+/* line 347, D:/Users/dropbox/Dropbox/template/seisaku/up/up/css/_reset.scss */
+img.crisp-edges {
+  image-rendering: optimizeSpeed;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: -o-crisp-edges;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  -ms-interpolation-mode: bicubic; }
+
+/* Placeholder text color -- selectors need to be separate to work. */
+/* line 358, D:/Users/dropbox/Dropbox/template/seisaku/up/up/css/_reset.scss */
+::-webkit-input-placeholder {
+  color: #939393; }
+
+/* line 362, D:/Users/dropbox/Dropbox/template/seisaku/up/up/css/_reset.scss */
+:-moz-placeholder {
+  color: #939393; }
+
+/* line 366, D:/Users/dropbox/Dropbox/template/seisaku/up/up/css/_reset.scss */
+::-moz-placeholder {
+  color: #939393;
+  opacity: 1;
+  /* Since FF19 lowers the opacity of the placeholder by default */ }
+
+/* line 371, D:/Users/dropbox/Dropbox/template/seisaku/up/up/css/_reset.scss */
+:-ms-input-placeholder {
+  color: #939393; }
+
+/* line 377, D:/Users/dropbox/Dropbox/template/seisaku/up/up/css/_reset.scss */
+::-moz-selection {
+  background: #fcd700;
+  color: #fff;
+  text-shadow: none; }
+
+/* line 378, D:/Users/dropbox/Dropbox/template/seisaku/up/up/css/_reset.scss */
+::selection {
+  background: #fcd700;
+  color: #fff;
+  text-shadow: none; }
+
+/* line 380, D:/Users/dropbox/Dropbox/template/seisaku/up/up/css/_reset.scss */
+ins {
+  background-color: #fcd700;
+  color: #000;
+  text-decoration: none; }
+
+/* line 381, D:/Users/dropbox/Dropbox/template/seisaku/up/up/css/_reset.scss */
+mark {
+  background-color: #fcd700;
+  color: #000;
+  font-style: italic;
+  font-weight: bold; }
+
+/* line 383, D:/Users/dropbox/Dropbox/template/seisaku/up/up/css/_reset.scss */
+strong {
+  font-weight: normal; }
+
+/* line 387, D:/Users/dropbox/Dropbox/template/seisaku/up/up/css/_reset.scss */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal; }
+
+/* line 391, D:/Users/dropbox/Dropbox/template/seisaku/up/up/css/_reset.scss */
+button, fieldset, form, input, label, legend, select, textarea {
+  font-family: inherit;
+  font-style: inherit;
+  font-weight: inherit; }
+
+/*文字などを選択した時の色を変えることができる */
+/* line 398, D:/Users/dropbox/Dropbox/template/seisaku/up/up/css/_reset.scss */
+::-moz-selection {
+  color: #333;
+  background: #facade; }
+
+/* line 403, D:/Users/dropbox/Dropbox/template/seisaku/up/up/css/_reset.scss */
+::selection {
+  color: #333;
+  background-color: #facade; }
+
+/* line 409, D:/Users/dropbox/Dropbox/template/seisaku/up/up/css/_reset.scss */
+a {
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+  outline: none; }
+
+/*
+* Chromeにおいてoutlineの表示不具合を修正
+*/
+/* line 423, D:/Users/dropbox/Dropbox/template/seisaku/up/up/css/_reset.scss */
+a:focus {
+  outline: thin dotted; }
+
+/*# sourceMappingURL=_reset.css.map */

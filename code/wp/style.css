@@ -1,0 +1,1300 @@
+@charset "UTF-8";
+/*
+Theme Name: テーマ名
+Theme URI: サイトのURL http:～
+Description: テーマの説明文
+Author: テーマ作成者
+Author URI: 作成者のサイトURL
+Template: 親テーマの定義 (オプション)
+Version: バージョン番号 (オプション)
+
+
+コメント／利用許諾の記述 (あれば)
+-------------------------------------------------------------- */
+
+html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,figure,footer,header,hgroup,menu,nav,section,menu,time,mark,audio,video,main{
+margin:0;
+padding:0;
+border:0;
+outline:0;
+font-size:100%;
+vertical-align:baseline;
+background:transparent;
+font-weight:normal;
+}
+
+article,aside,figure,footer,header,hgroup,nav,section,main{display:block;}
+
+ol,ul{list-style:none;}
+
+blockquote,q{quotes:none;}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after{content:'';content:none;}
+
+del{text-decoration:line-through;}
+
+table{border-collapse:collapse;border-spacing:0;font-size:inherit;width: 100%;}
+
+td,th{font-weight:normal;vertical-align:top;}
+
+hr{display:block;height:1px;border:0;border-top:1px solid #ccc;margin:1em 0;padding:0;}
+
+input[type="radio"]{vertical-align:text-bottom;}
+
+input[type="checkbox"]{vertical-align:bottom;*vertical-align:baseline;}
+
+pre,code,kbd,samp{font-family:monospace,sans-serif;}
+
+img,video,iframe{height:auto;}
+
+/*
+* HTML5未サポートブラウザーでインライン要素として表示する for IE6/7/8/9 & FF3
+* 制限事項:IE6では'audio[controls]'へのスタイルは適用されません。
+*/
+
+audio[controls],
+canvas,
+video{
+display:inline-block;
+*display:inline;
+zoom:1;
+}
+
+
+/* =============================================================================
+基本設定
+========================================================================== */
+
+/*
+* 1. IE6/7において単位をemでbodyにfont-sizeを設定すると正しいサイズにならない問題を修正
+*    参考:http://clagnut.com/blog/348/#c790
+* 2. コンテンツの高さに関わらず全てのブラウザーでページをセンタリング（スクロールバーを常時表示する）
+* 3. AndroidやiOSにおいてtap highlight colorが親要素を含んでしまう問題を修正（tap highlight colorを消す）
+*    参考:www.yuiblog.com/blog/2010/10/01/quick-tip-customizing-the-mobile-safari-tap-highlight-color/
+* 4. iOSにおいて画面の向きが変わった際のテキストサイズ調整を防ぐ
+*    参考:www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/
+*/
+
+html{
+-webkit-tap-highlight-color:rgba(0,0,0,0);/* 3 */
+-webkit-text-size-adjust: 100%;
+-moz-text-size-adjust: 100%;
+-ms-text-size-adjust: 100%;
+-o-text-size-adjust: 100%;
+text-size-adjust: 100%;
+overflow-y:scroll;
+}
+/*
+* 'textarea'やその他のフォーム要素でのfont-familyの矛盾を修正
+*/
+
+body,
+button,
+input,
+select,
+textarea {
+font-family: sans-serif;
+}
+
+
+/*
+* Chromeにおいてoutlineの表示不具合を修正
+*/
+
+a:focus {
+outline: thin dotted;
+}
+
+/*
+* 全てのブラウザーにおいてフォーカス時、マウスホバー時の読みやすさを改善
+* 参考: people.opera.com/patrickl/experiments/keyboard/test
+*/
+
+a:hover,
+a:active {
+outline: 0;
+}
+
+/*
+* IE7/8/9,S5,Chromeにおいてabbr要素がスタイリングされない問題を修正
+*/
+
+abbr[title],dfn[title]{
+border-bottom:1px dotted;
+cursor:help;
+}
+
+/*
+* S5,Chromeにおいてdfn要素がイタリック体にならない問題を修正
+*/
+
+dfn{
+font-style:italic;
+}
+
+/*
+* IE6/7/8/9においてmark要素がスタイリングされない問題を修正
+*/
+
+mark{
+background:#ff0;
+color:#000;
+}
+
+/*
+* IE6,S5,Chromeにおけるfont-familyの問題を修正
+* en.wikipedia.org/wiki/User:Davidgothberg/Test59
+*/
+
+pre,
+code,
+kbd,
+samp{
+font-family:monospace,monospace;
+font-family:'courier new',monospace;
+font-size:1em;
+}
+
+/*
+* 全てのブラウザーにおいてpre-formatted textの読みやすさを改善
+*/
+
+pre{
+white-space:pre;/* CSS2 */
+white-space:pre-wrap;/* CSS 2.1 */
+white-space:pre-line;/* CSS 3 (and 2.1 as well,actually) */
+word-wrap:break-word;/* IE */
+}
+
+/*
+* 1. IE6/7においてquotesプロパティーがサポートされていない問題を修正
+* 2. S4においてquotesプロパティーがサポートされていない問題を修正
+*/
+
+/* 1 */
+
+q{
+quotes:none;
+}
+
+/* 2 */
+
+q:before,
+q:after{
+content:'';
+content:none;
+}
+
+
+/*
+* 全てのブラウザーにおいてsubおよびsup要素がline-heightに影響する問題を防ぐ
+* 参考:gist.github.com/413930
+*/
+
+sub,
+sup{
+font-size:75%;
+line-height:0;
+position:relative;
+vertical-align:baseline;
+}
+
+sup{
+top:-0.5em;
+}
+
+sub{
+bottom:-0.25em;
+}
+
+
+/*
+* 1. IE6/7/8/9において、a要素内側のborderを削除
+* 2. IE7において画像の拡大縮小時の画質を改善
+*    code.flickr.com/blog/2008/11/12/on-ui-quality-the-little-things-client-side-image-resizing/
+*/
+
+img{
+border:0;/* 1 */
+-ms-interpolation-mode:bicubic;/* 2 */
+vertical-align:bottom;
+}
+
+/*
+* IE9においてoverflowの表示問題を修正
+*/
+
+svg:not(:root){
+overflow:hidden;
+}
+
+
+/*
+* IE6/7/8/9, S5, O11におけるmarginの問題を修正
+*/
+
+figure {
+margin: 0;
+}
+/*
+* 1. IE6/7/8/9において色が継承されない問題を修正
+* 2. IE6/7において揃いがおかしい問題を修正
+*/
+
+legend{
+border:0;/* 1 */
+*margin-left:-7px;/* 2 */
+}
+
+/*
+* 1. 全てのブラウザーにおいてfont-sizeが継承されない問題を修正
+* 2. IE6/7,F3/4,S5,Chromeにおけるmarginの差異を修正
+* 3. 全てのブラウザーにおいて外観と一貫性を改善
+'textarea'やその他のフォーム要素でのfont-familyの矛盾を修正
+*/
+
+button,
+input,
+select,
+textarea{
+margin:0;/* 2 */
+vertical-align:baseline;/* 3 */
+*vertical-align:middle;/* 3 */
+font-family: inherit;
+font-size: inherit;
+line-height: inherit;
+}
+
+
+
+
+/*
+* 1. image-typeが'input'とその他についてユーザビリティと一貫性を改善
+* 2. iOSにおいてクリック可能な'input'にスタイルが適用できない問題を修正
+*/
+
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"]{
+cursor:pointer;/* 1 */
+-webkit-appearance:button;/* 2 */
+}
+
+label{cursor:pointer;}
+
+/*
+* IE8/9においてbox-sizingプロパティがcontent-boxになっている点を修正
+*/
+
+input[type="checkbox"],
+input[type="radio"]{
+box-sizing:border-box;
+}
+
+/*
+* 1. S5,Chromeにおいてappearanceプロパティがsearchfieldになっている点を修正
+* 2. S5,Chromeにおいてbox-sizingプロパティがborder-box担っている点を修正 (将来的なことを踏まえて-mozも含める)
+*/
+
+input[type="search"]{
+-webkit-appearance:textfield;/* 1 */
+-moz-box-sizing:content-box;
+-webkit-box-sizing:content-box;/* 2 */
+box-sizing:content-box;
+padding-right:2px; /* Don't cut off the webkit search cancel button */
+width:270px;
+}
+
+/*
+* S5,Chrome on OSXにおけるpaddingの表示問題を修正
+*/
+
+input[type="search"]::-webkit-search-decoration{
+-webkit-appearance:none;
+}
+
+/*
+* FF3/4におけるpadding及びborderの表示問題を修正
+* 参考:www.sitepen.com/blog/2008/05/14/the-devils-in-the-details-fixing-dojos-toolbar-buttons/
+*/
+
+button::-moz-focus-inner,
+input::-moz-focus-inner{
+border:0;
+padding:0;
+}
+
+/*
+* 1. IE6/7/8/9におけるデフォルト表示のスクロールバーを削除
+* 2. 全てのブラウザーにおいて読みやすさと揃えを改善
+*/
+
+textarea{
+overflow:auto;/* 1 */
+vertical-align:top;/* 2 */
+}
+
+
+/*
+画像が伸縮するとブラウザ側で適度に良い感じに描画されて、場合によってはエッジがモワッとした感じにレンダリングされたりしますよね。普通の写真などの場合にはそれほど気にならないかもしれませんが、２値画像だと伸縮時のモワッと感が際立つわけですね。もっとパリっと表示させたいのです。
+その場合は以下のスタイルを使用すれば解決出来ます。
+※最新のSafari、Mobile Safari、 Firefox
+*/
+img.crisp-edges {
+  image-rendering:optimizeSpeed; // Legal fallback
+  image-rendering:-moz-crisp-edges; // Firefox
+  image-rendering:-o-crisp-edges; // Opera
+  image-rendering:-webkit-optimize-contrast; // Chrome, Safari
+  image-rendering:crisp-edges; // CSS3 Proposed
+  -ms-interpolation-mode:bicubic; // IE8+
+}
+
+
+/* Placeholder text color -- selectors need to be separate to work. */
+::-webkit-input-placeholder {
+color: #939393;
+}
+
+:-moz-placeholder {
+color: #939393;
+}
+
+::-moz-placeholder {
+color: #939393;
+opacity: 1; /* Since FF19 lowers the opacity of the placeholder by default */
+}
+
+:-ms-input-placeholder {
+color: #939393;
+}
+
+
+
+::-moz-selection{background: #fcd700; color: #fff; text-shadow: none;}
+::selection {background: #fcd700; color: #fff; text-shadow: none;}
+
+ins {background-color: #fcd700; color: #000; text-decoration: none;}
+mark {background-color: #fcd700; color: #000; font-style: italic; font-weight: bold;}
+
+strong{
+font-weight:normal;
+}
+
+h1, h2, h3, h4, h5, h6 {
+font-weight: normal;
+}
+
+button,fieldset,form,input,label,legend,select,textarea{
+font-family:inherit;
+font-style:inherit;
+font-weight:inherit;
+}
+
+/*文字などを選択した時の色を変えることができる */
+::-moz-selection{
+color:#333;
+background:#facade;
+}
+
+::selection{
+color:#333;
+background-color:#facade;
+}
+
+.cf:after{
+content:".";
+display:block;
+height:0;
+clear:both;
+visibility:hidden;
+}
+.cf{
+display:inline-table;
+min-height:1%;
+}
+
+* html .cf{ height:1%;}
+.cf{ display:block;}
+
+.nonespan{
+display:block;
+width:0;
+height:0;
+overflow:hidden;
+}
+
+
+
+a{
+text-decoration:none;
+margin:0;
+padding:0;
+font-size:100%;
+vertical-align:baseline;
+background:transparent;
+-webkit-tap-highlight-color:; /* スマフォでリンクをタッチした際に、背景色 */
+outline:none;
+}
+a:focus{
+outline:none;
+}
+a:hover,
+a:active{
+color:;
+text-decoration:none;
+}
+a,a:hover {
+-webkit-transition: 0.7s;
+-moz-transition: 0.7s;
+-o-transition: 0.7s;
+transition: 0.7s;
+}
+
+/*
+* Chromeにおいてoutlineの表示不具合を修正
+*/
+a:focus{
+outline:thin dotted;
+}
+
+a:hover img{
+filter: alpha(opacity=80);
+-ms-filter: "alpha(opacity=80)";
+-moz-opacity:0.8;
+opacity:0.8;
+}
+
+
+.alignleft {
+float: left;
+}
+
+.alignright {
+float: right;
+}
+
+.aligncenter {
+display: block;
+margin-left: auto;
+margin-right: auto;
+}
+
+blockquote.alignleft,
+img.alignleft {
+margin: 7px 24px 7px 0;
+}
+
+.wp-caption.alignleft {
+margin: 7px 14px 7px 0;
+}
+
+blockquote.alignright,
+img.alignright {
+margin: 7px 0 7px 24px;
+}
+
+.wp-caption.alignright {
+margin: 7px 0 7px 14px;
+}
+
+blockquote.aligncenter,
+img.aligncenter,
+.wp-caption.aligncenter {
+margin-top: 7px;
+margin-bottom: 7px;
+}
+
+.site-content blockquote.alignleft,
+.site-content blockquote.alignright {
+border-top: 1px solid rgba(0, 0, 0, 0.1);
+border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+padding-top: 17px;
+width: 50%;
+}
+
+.site-content blockquote.alignleft p,
+.site-content blockquote.alignright p {
+margin-bottom: 17px;
+}
+
+.wp-caption {
+margin-bottom: 24px;
+}
+
+.wp-caption img[class*="wp-image-"] {
+display: block;
+margin: 0;
+}
+
+.wp-caption {
+color: #767676;
+}
+
+.wp-caption-text {
+-webkit-box-sizing: border-box;
+-moz-box-sizing:    border-box;
+box-sizing:         border-box;
+font-size: 12px;
+font-style: italic;
+line-height: 1.5;
+margin: 9px 0;
+padding-right: 10px;
+}
+
+.wp-smiley {
+border: 0;
+margin-bottom: 0;
+margin-top: 0;
+padding: 0;
+}
+
+/* Assistive text */
+
+.screen-reader-text {
+clip: rect(1px, 1px, 1px, 1px);
+position: absolute;
+}
+
+.screen-reader-text:focus {
+background-color: #f1f1f1;
+border-radius: 3px;
+box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+clip: auto;
+color: #21759b;
+display: block;
+font-size: 14px;
+font-weight: bold;
+height: auto;
+line-height: normal;
+padding: 15px 23px 14px;
+position: absolute;
+left: 5px;
+top: 5px;
+text-decoration: none;
+text-transform: none;
+width: auto;
+z-index: 100000; /* Above WP toolbar */
+}
+
+.hide {
+display: none;
+}
+
+/* Clearing floats */
+
+.footer-sidebar:before,
+.footer-sidebar:after,
+.hentry:before,
+.hentry:after,
+.slider-direction-nav:before,
+.slider-direction-nav:after,
+.contributor-info:before,
+.contributor-info:after,
+.search-box:before,
+.search-box:after,
+[class*="content"]:before,
+[class*="content"]:after,
+[class*="site"]:before,
+[class*="site"]:after {
+content: "";
+display: table;
+}
+
+.footer-sidebar:after,
+.hentry:after,
+.slider-direction-nav:after,
+.contributor-info:after,
+.search-box:after,
+[class*="content"]:after,
+[class*="site"]:after {
+clear: both;
+}
+
+/* Genericons */
+
+.bypostauthor > article .fn:before,
+.comment-edit-link:before,
+.comment-reply-link:before,
+.comment-reply-login:before,
+.comment-reply-title small a:before,
+.contributor-posts-link:before,
+.menu-toggle:before,
+.search-toggle:before,
+.slider-direction-nav a:before,
+.widget_twentyfourteen_ephemera .widget-title:before {
+-webkit-font-smoothing: antialiased;
+display: inline-block;
+font: normal 16px/1 Genericons;
+text-decoration: inherit;
+vertical-align: text-bottom;
+}
+
+/* Separators */
+
+.site-content span + .entry-date:before,
+.full-size-link:before,
+.parent-post-link:before,
+span + .byline:before,
+span + .comments-link:before,
+span + .edit-link:before,
+.widget_twentyfourteen_ephemera .entry-title:after {
+content: "\0020\007c\0020";
+}
+
+
+/*
+* WPエディタ用
+*/
+.contentte .alignnone {
+margin: 5px 20px 20px 0;
+}
+
+.contentte .aligncenter, .contentte .aligncenter {
+display:block;
+margin: 5px auto 5px auto;
+}
+
+.contentte .alignright {
+float:right;
+margin: 5px 0 20px 20px;
+}
+
+.contentte .alignleft {
+float:left;
+margin: 5px 20px 20px 0;
+}
+
+.contentte .aligncenter {
+display: block;
+margin: 5px auto 5px auto;
+}
+
+.contentte a img.alignright {
+float:right;
+margin: 5px 0 20px 20px;
+}
+
+.contentte a img.alignnone {
+margin: 5px 20px 20px 0;
+}
+
+.contentte a img.alignleft {
+float:left;
+margin: 5px 20px 20px 0;
+}
+
+.contentte a img.aligncenter {
+display: block;
+margin-left: auto;
+margin-right: auto
+}
+
+.contentte .wp-caption {
+background: #fff;
+border: 1px solid #f0f0f0;
+max-width: 96%; /* Image does not overflow the content area */
+padding: 5px 3px 10px;
+text-align: center;
+}
+
+.contentte .wp-caption.alignnone {
+margin: 5px 20px 20px 0;
+}
+
+.contentte .wp-caption.alignleft {
+margin: 5px 20px 20px 0;
+}
+
+.contentte .wp-caption.alignright {
+margin: 5px 0 20px 20px;
+}
+
+.contentte .wp-caption img {
+border: 0 none;
+height: auto;
+margin:0;
+max-width: 98.5%;
+padding:0;
+width: auto;
+}
+
+.contentte .wp-caption p.wp-caption-text {
+font-size:11px;
+line-height:17px;
+margin:0;
+padding:0 4px 5px;
+}
+.clear:before, .clear:after, .attachment .entry-header:before, .attachment .entry-header:after, .site-footer .widget-area:before, .site-footer .widget-area:after, .entry-content:before, .entry-content:after, .page-content:before, .page-content:after, .navigation:before, .navigation:after, .nav-links:before, .nav-links:after, .gallery:before, .gallery:after, .comment-form-author:before, .comment-form-author:after, .comment-form-email:before, .comment-form-email:after, .comment-form-url:before, .comment-form-url:after, .comment-body:before, .comment-body:after
+.contentte:after,.contentte:after:before{
+content: "";
+display: table;
+clear: both;
+-moz-hyphens: auto;
+word-wrap: break-word;
+}
+
+body{
+font-size:12px;
+/*font-family:"ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","メイリオ",Meiryo,Osaka,"ＭＳ Ｐゴシック","MS PGothic",sans-serif;*/
+font-family: Verdana, "游ゴシック", YuGothic, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
+overflow:visible;
+color:;
+background:url(../images/back/) top left repeat-x #ffffff;
+line-height:1.6;
+letter-spacing: 0.4px;
+word-wrap:break-word;/*連続した半角英数字を折り返しさせる*/
+/* min-width:1200px ;スマホでＰＣ表示した場合背景が見切れないように→コンテンツの最大幅を入力 */
+text-rendering:optimizeLegibility;/*カーニングと合字 (リガチャ) をうまい具合に調整 Firefox、Chrome、Safariのみフォントがカーニングや合字のデータを持っていなければ指定しても何も起こりません。和文フォントでは、メイリオと MS 系ゴシック・明朝は効果がないですが、ヒラギノ角ゴ・明朝は軽くカーニングが調整されます*/
+}
+
+/* Complete Set for Legacy Browsers（旧ブラウザ対応フルセット） */
+
+.gothic {
+font-family: Verdana, "游ゴシック", YuGothic, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
+} /* ゴシック体 */
+
+.mincho {
+font-family: "Times New Roman", "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "メイリオ", Meiryo, serif;
+} /* 明朝体 */
+
+.mono {
+font-family: "Osaka－等幅", Osaka-mono, "ＭＳ ゴシック", "MS Gothic", monospace;
+} /* 等幅書体 */
+
+.hiraginoMaruGothic {
+font-family: "ヒラギノ丸ゴ ProN W4", "Hiragino Maru Gothic ProN", "メイリオ", Meiryo, fantasy;
+} /* OS X限定 丸ゴシック体 */
+
+
+/* Sans Serif Set for Legacy Browsers and Android（Andoroid対応付きゴシック体セット） */
+
+.gothic {
+font-family: Verdana, Roboto, "Droid Sans", "游ゴシック", YuGothic, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
+}
+.min-old{
+font-family:"ＭＳ Ｐ明朝", "MS PMincho", "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", serif;
+}
+
+
+
+.remove-bottom{margin-bottom:0 !important;}
+.remove-bottom-padding{padding-bottom:0 !important;}
+.remove-padding{padding:0 !important;}
+.remove-margin{margin:0 !important;}
+
+.floatleft{float:left;}
+.floatright{float:right;}
+.clear_both { clear: both; }
+.align-center{text-align:center;}
+.align-right{text-align:right;}
+
+.image-left{float:left;margin:0 1em 1em 0;}
+.image-right{float:right;margin:0 0 1em 1em;}
+
+.last{margin-right:0 !important;}
+.end{margin-bottom:0 !important;}
+
+.bold{font-weight:bold;}
+.normal{font-weight: normal !important;}
+.red,.required-e,.error{color: #F00;}
+.black{color:#000000;}
+.white{color:#ffffff;}
+
+
+
+.verla-m{vertical-align: middle !important;}
+.verla-t{vertical-align: top !important;}
+.verla-b{vertical-align: bottom !important;}
+
+.text-under{text-decoration:underline !important;}
+.m-auto{margin: 0 auto;}
+
+
+.unda-lin{border-bottom: 1px solid #463419;}
+
+
+.w25p{width: 25px;}
+.w50p{width: 50px;}
+.w75p{width: 75px;}
+.w100p{width: 100px;}
+.w125p{width: 125px;}
+.w150p{width: 150px;}
+.w175p{width: 175px;}
+.w200p{width: 200px;}
+.w225p{width: 225px;}
+.w250p{width: 250px;}
+
+.box-sizing-wp{
+box-sizing: border-box;
+-moz-box-sizing: border-box;
+-webkit-box-sizing: border-box;
+-o-box-sizing: border-box;
+-ms-box-sizing: border-box;
+}
+
+
+.font9{font-size:9px !important;}.font10{font-size:10px !important;}.font11{font-size:11px !important;}.font12{font-size:12px !important;}.font13{font-size:13px !important;}.font14{font-size:14px !important;}.font15{font-size:15px !important;}.font16{font-size:16px !important;}.font17{font-size:17px !important;}.font18{font-size:18px !important;}.font19{font-size:19px !important;}.font20{font-size:20px !important;}.font21{font-size:21px !important;}.font22{font-size:22px !important;}.font23{font-size:23px !important;}.font24{font-size:24px !important;}.font25{font-size:25px !important;}.font26{font-size:26px !important;}.font27{font-size:27px !important;}.font28{font-size:28px !important;}.font29{font-size:29px !important;}.font30{font-size:30px !important;}.font31{font-size:31px !important;}.font32{font-size:32px !important;}.font33{font-size:33px !important;}
+
+/* 5px刻み */
+.mt0{margin-top:0px !important;}.mt5{margin-top:5px !important;}.mt10{margin-top:10px !important;}.mt15{margin-top:15px !important;}.mt20{margin-top:20px !important;}.mt25{margin-top:25px !important;}.mt30{margin-top:30px !important;}.mt35{margin-top:35px !important;}.mt40{margin-top:40px !important;}.mt45{margin-top:45px !important;}.mt50{margin-top:50px !important;}.mt55{margin-top:55px !important;}.mt60{margin-top:60px !important;}.mt65{margin-top:65px !important;}.mt70{margin-top:70px !important;}.mt75{margin-top:75px !important;}.mt80{margin-top:80px !important;}.mt85{margin-top:85px !important;}.mt90{margin-top:90px !important;}.mt95{margin-top:95px !important;}
+
+.mb0{margin-bottom:0px !important;}.mb5{margin-bottom:5px !important;}.mb10{margin-bottom:10px !important;}.mb15{margin-bottom:15px !important;}.mb20{margin-bottom:20px !important;}.mb25{margin-bottom:25px !important;}.mb30{margin-bottom:30px !important;}.mb35{margin-bottom:35px !important;}.mb40{margin-bottom:40px !important;}.mb45{margin-bottom:45px !important;}.mb50{margin-bottom:50px !important;}.mb55{margin-bottom:55px !important;}.mb60{margin-bottom:60px !important;}.mb65{margin-bottom:65px !important;}.mb70{margin-bottom:70px !important;}.mb75{margin-bottom:75px !important;}.mb80{margin-bottom:80px !important;}.mb85{margin-bottom:85px !important;}.mb90{margin-bottom:90px !important;}.mb95{margin-bottom:95px !important;}
+
+.ml0{margin-left:0px !important;}.ml5{margin-left:5px !important;}.ml10{margin-left:10px !important;}.ml15{margin-left:15px !important;}.ml20{margin-left:20px !important;}.ml25{margin-left:25px !important;}.ml30{margin-left:30px !important;}.ml35{margin-left:35px !important;}.ml40{margin-left:40px !important;}.ml45{margin-left:45px !important;}.ml50{margin-left:50px !important;}.ml55{margin-left:55px !important;}.ml60{margin-left:60px !important;}.ml65{margin-left:65px !important;}.ml70{margin-left:70px !important;}.ml75{margin-left:75px !important;}.ml80{margin-left:80px !important;}.ml85{margin-left:85px !important;}.ml90{margin-left:90px !important;}.ml95{margin-left:95px !important;}
+
+.mr0{margin-right:0px !important;}.mr5{margin-right:5px !important;}.mr10{margin-right:10px !important;}.mr15{margin-right:15px !important;}.mr20{margin-right:20px !important;}.mr25{margin-right:25px !important;}.mr30{margin-right:30px !important;}.mr35{margin-right:35px !important;}.mr40{margin-right:40px !important;}.mr45{margin-right:45px !important;}.mr50{margin-right:50px !important;}.mr55{margin-right:55px !important;}.mr60{margin-right:60px !important;}.mr65{margin-right:65px !important;}.mr70{margin-right:70px !important;}.mr75{margin-right:75px !important;}.mr80{margin-right:80px !important;}.mr85{margin-right:85px !important;}.mr90{margin-right:90px !important;}.mr95{margin-right:95px !important;}
+
+.pt0{padding-top:0px !important;}.pt5{padding-top:5px !important;}.pt10{padding-top:10px !important;}.pt15{padding-top:15px !important;}.pt20{padding-top:20px !important;}.pt25{padding-top:25px !important;}.pt30{padding-top:30px !important;}.pt35{padding-top:35px !important;}.pt40{padding-top:40px !important;}.pt45{padding-top:45px !important;}.pt50{padding-top:50px !important;}.pt55{padding-top:55px !important;}.pt60{padding-top:60px !important;}.pt65{padding-top:65px !important;}.pt70{padding-top:70px !important;}.pt75{padding-top:75px !important;}.pt80{padding-top:80px !important;}.pt85{padding-top:85px !important;}.pt90{padding-top:90px !important;}.pt95{padding-top:95px !important;}
+
+.pb0{padding-bottom:0px !important;}.pb5{padding-bottom:5px !important;}.pb10{padding-bottom:10px !important;}.pb15{padding-bottom:15px !important;}.pb20{padding-bottom:20px !important;}.pb25{padding-bottom:25px !important;}.pb30{padding-bottom:30px !important;}.pb35{padding-bottom:35px !important;}.pb40{padding-bottom:40px !important;}.pb45{padding-bottom:45px !important;}.pb50{padding-bottom:50px !important;}.pb55{padding-bottom:55px !important;}.pb60{padding-bottom:60px !important;}.pb65{padding-bottom:65px !important;}.pb70{padding-bottom:70px !important;}.pb75{padding-bottom:75px !important;}.pb80{padding-bottom:80px !important;}.pb85{padding-bottom:85px !important;}.pb90{padding-bottom:90px !important;}.pb95{padding-bottom:95px !important;}
+
+.pl0{padding-left:0px !important;}.pl5{padding-left:5px !important;}.pl10{padding-left:10px !important;}.pl15{padding-left:15px !important;}.pl20{padding-left:20px !important;}.pl25{padding-left:25px !important;}.pl30{padding-left:30px !important;}.pl35{padding-left:35px !important;}.pl40{padding-left:40px !important;}.pl45{padding-left:45px !important;}.pl50{padding-left:50px !important;}.pl55{padding-left:55px !important;}.pl60{padding-left:60px !important;}.pl65{padding-left:65px !important;}
+
+
+.pr0{padding-right:0px !important;}.pr5{padding-right:5px !important;}.pr10{padding-right:10px !important;}.pr15{padding-right:15px !important;}.pr20{padding-right:20px !important;}.pr25{padding-right:25px !important;}.pr30{padding-right:30px !important;}.pr35{padding-right:35px !important;}.pr40{padding-right:40px !important;}.pr45{padding-right:45px !important;}.pr50{padding-right:50px !important;}.pr55{padding-right:55px !important;}.pr60{padding-right:60px !important;}.pr65{padding-right:65px !important;}
+
+/* 4px刻み */
+.mt0{margin-top:0px !important;}.mt4{margin-top:4px !important;}.mt8{margin-top:8px !important;}.mt12{margin-top:12px !important;}.mt16{margin-top:16px !important;}.mt20{margin-top:20px !important;}.mt24{margin-top:24px !important;}.mt28{margin-top:28px !important;}.mt32{margin-top:32px !important;}.mt36{margin-top:36px !important;}.mt40{margin-top:40px !important;}.mt44{margin-top:44px !important;}.mt48{margin-top:48px !important;}.mt52{margin-top:52px !important;}.mt56{margin-top:56px !important;}.mt60{margin-top:60px !important;}.mt64{margin-top:64px !important;}.mt68{margin-top:68px !important;}.mt72{margin-top:72px !important;}.mt76{margin-top:76px !important;}
+
+.mb0{margin-bottom:0px !important;}.mb4{margin-bottom:4px !important;}.mb8{margin-bottom:8px !important;}.mb12{margin-bottom:12px !important;}.mb16{margin-bottom:16px !important;}.mb20{margin-bottom:20px !important;}.mb24{margin-bottom:24px !important;}.mb28{margin-bottom:28px !important;}.mb32{margin-bottom:32px !important;}.mb36{margin-bottom:36px !important;}.mb40{margin-bottom:40px !important;}.mb44{margin-bottom:44px !important;}.mb48{margin-bottom:48px !important;}.mb52{margin-bottom:52px !important;}.mb56{margin-bottom:56px !important;}.mb60{margin-bottom:60px !important;}.mb64{margin-bottom:64px !important;}.mb68{margin-bottom:68px !important;}.mb72{margin-bottom:72px !important;}.mb76{margin-bottom:76px !important;}
+
+.ml0{margin-left:0px !important;}.ml4{margin-left:4px !important;}.ml8{margin-left:8px !important;}.ml12{margin-left:12px !important;}.ml16{margin-left:16px !important;}.ml20{margin-left:20px !important;}.ml24{margin-left:24px !important;}.ml28{margin-left:28px !important;}.ml32{margin-left:32px !important;}.ml36{margin-left:36px !important;}.ml40{margin-left:40px !important;}.ml44{margin-left:44px !important;}.ml48{margin-left:48px !important;}.ml52{margin-left:52px !important;}.ml56{margin-left:56px !important;}.ml60{margin-left:60px !important;}.ml64{margin-left:64px !important;}.ml68{margin-left:68px !important;}.ml72{margin-left:72px !important;}.ml76{margin-left:76px !important;}
+
+.mr0{margin-right:0px !important;}.mr4{margin-right:4px !important;}.mr8{margin-right:8px !important;}.mr12{margin-right:12px !important;}.mr16{margin-right:16px !important;}.mr20{margin-right:20px !important;}.mr24{margin-right:24px !important;}.mr28{margin-right:28px !important;}.mr32{margin-right:32px !important;}.mr36{margin-right:36px !important;}.mr40{margin-right:40px !important;}.mr44{margin-right:44px !important;}.mr48{margin-right:48px !important;}.mr52{margin-right:52px !important;}.mr56{margin-right:56px !important;}.mr60{margin-right:60px !important;}.mr64{margin-right:64px !important;}.mr68{margin-right:68px !important;}.mr72{margin-right:72px !important;}.mr76{margin-right:76px !important;}
+
+.pt0{padding-top:0px !important;}.pt4{padding-top:4px !important;}.pt8{padding-top:8px !important;}.pt12{padding-top:12px !important;}.pt16{padding-top:16px !important;}.pt20{padding-top:20px !important;}.pt24{padding-top:24px !important;}.pt28{padding-top:28px !important;}.pt32{padding-top:32px !important;}.pt36{padding-top:36px !important;}.pt40{padding-top:40px !important;}.pt44{padding-top:44px !important;}.pt48{padding-top:48px !important;}.pt52{padding-top:52px !important;}.pt56{padding-top:56px !important;}.pt60{padding-top:60px !important;}.pt64{padding-top:64px !important;}.pt68{padding-top:68px !important;}.pt72{padding-top:72px !important;}.pt76{padding-top:76px !important;}
+
+.pb0{padding-bottom:0px !important;}.pb4{padding-bottom:4px !important;}.pb8{padding-bottom:8px !important;}.pb12{padding-bottom:12px !important;}.pb16{padding-bottom:16px !important;}.pb20{padding-bottom:20px !important;}.pb24{padding-bottom:24px !important;}.pb28{padding-bottom:28px !important;}.pb32{padding-bottom:32px !important;}.pb36{padding-bottom:36px !important;}.pb40{padding-bottom:40px !important;}.pb44{padding-bottom:44px !important;}.pb48{padding-bottom:48px !important;}.pb52{padding-bottom:52px !important;}.pb56{padding-bottom:56px !important;}.pb60{padding-bottom:60px !important;}.pb64{padding-bottom:64px !important;}.pb68{padding-bottom:68px !important;}.pb72{padding-bottom:72px !important;}.pb76{padding-bottom:76px !important;}
+
+
+.pl0{padding-left:0px !important;}.pl4{padding-left:4px !important;}.pl8{padding-left:8px !important;}.pl12{padding-left:12px !important;}.pl16{padding-left:16px !important;}.pl20{padding-left:20px !important;}.pl24{padding-left:24px !important;}.pl28{padding-left:28px !important;}.pl32{padding-left:32px !important;}.pl36{padding-left:36px !important;}.pl40{padding-left:40px !important;}.pl44{padding-left:44px !important;}.pl48{padding-left:48px !important;}.pl52{padding-left:52px !important;}.pl56{padding-left:56px !important;}.pl60{padding-left:60px !important;}.pl64{padding-left:64px !important;}.pl68{padding-left:68px !important;}.pl72{padding-left:72px !important;}.pl76{padding-left:76px !important;}
+
+.pr0{padding-right:0px !important;}.pr04{padding-right:4px !important;}.pr08{padding-right:8px !important;}.pr012{padding-right:12px !important;}.pr016{padding-right:16px !important;}.pr020{padding-right:20px !important;}.pr024{padding-right:24px !important;}.pr028{padding-right:28px !important;}.pr032{padding-right:32px !important;}.pr036{padding-right:36px !important;}.pr040{padding-right:40px !important;}.pr044{padding-right:44px !important;}.pr048{padding-right:48px !important;}.pr052{padding-right:52px !important;}.pr056{padding-right:56px !important;}.pr060{padding-right:60px !important;}.pr064{padding-right:64px !important;}.pr068{padding-right:68px !important;}.pr072{padding-right:72px !important;}.pr076{padding-right:76px !important;}
+
+/* */
+.line0{ line-height:0 !important;}.line10{ line-height:1 !important;}.line11{ line-height:1.1 !important;}.line12{ line-height:1.2 !important;}.line13{ line-height:1.3 !important;}.line14{ line-height:1.4 !important;}.line15{ line-height:1.5 !important;}.line16{ line-height:1.6 !important;}.line17{ line-height:1.7 !important;}.line18{ line-height:1.8 !important;}.line19{ line-height:1.9 !important;}.line20{ line-height:2 !important;}
+/* YouTubeなどのiframeで埋め込む動画をレスポンシブに対応 */
+.rwd_embed {
+position: relative;
+margin: 20px 0;
+padding-bottom: 56.25%;
+padding-top: 30px;
+overflow: hidden;
+max-width: 100%;
+height: auto;
+}
+
+.rwd_embed iframe, .rwd_embed object, .rwd_embed embed {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+}
+/*スマホでhoverを表現する*/
+.sp-touchbtn:hover, .sp-touchbtn {
+}
+
+/*矢印系CSSスタート*/
+
+[class^="module-triangle-"] {
+position: relative;
+}
+[class^="module-triangle-"]:before {
+content: "";
+border: solid transparent;
+display: inline-block;
+position: absolute;
+}
+.module-triangle-top:before {
+border-width: 8px;
+border-bottom-color: #000;
+margin-left: -8px;
+left: 50%;
+top: -16px;
+}
+.module-triangle-right:before {
+border-width: 8px;
+border-left-color: #000;
+margin-top: -8px;
+right: -16px;
+/*right: -16px; としているのは、 border プロパティで指定したサイズが 8px なので、左右の border 分ということで、×2 して 16px に。これで div 要素のボックスに対して右側の Border Edge 上に三角形が配置されます。*/
+top: 50%;
+/*縦方向に関しては、top: 50%;、margin-top: -8px; を同時に指定することで、div 要素のたてサイズに対して上下中央に配置します。この辺は単なる計算の問題*/
+}
+.module-triangle-bottom:before {
+border-width: 8px;
+border-top-color: #000;
+margin-left: -8px;
+left: 50%;
+bottom: -16px;
+}
+.module-triangle-left:before {
+border-width: 8px;
+border-right-color: #000;
+margin-top: -8px;
+left: -16px;
+top: 50%;
+}
+/*矢印系CSSスタート*/
+
+
+/*input系CSSスタート*/
+textarea,
+select,
+input[type="email"],
+input[type="text"],
+input[type="password"]{
+border: 1px solid #999999;
+border-radius:2px;
+-moz-border-radius:2px;
+-webkit-border-radius:2px;
+-ms-border-radius:2px;
+-o-border-radius:2px;
+box-shadow:0px 0px 2px #dbdbdb inset;
+-webkit-box-shadow:0px 0px 2px #dbdbdb inset;
+-moz-box-shadow:0px 0px 2px #dbdbdb inset;
+-ms-box-shadow:0px 0px 2px #dbdbdb inset;
+      background: #fff;
+box-sizing: border-box;
+-moz-box-sizing: border-box;
+-webkit-box-sizing: border-box;
+-o-box-sizing: border-box;
+-ms-box-sizing: border-box;
+	}
+input[type="text"]{
+
+	}
+input[type="checkbox"]{
+   vertical-align: middle;
+   margin:0 3px 0 0;
+border: 1px solid #999999;
+	}
+
+input[type="radio"] {
+    vertical-align: middle;
+   margin:0 3px 0 0;
+}
+select{
+/*ブラウザデフォルトスタイルOFF+装飾*/
+color: #B3B3B3;
+height: 21px;
+font-size: 100%;
+padding:0;
+border: 1px solid #B3B3B3;
+border-radius: 5px;
+-webkit-appearance: none;
+-moz-appearance: none;
+appearance: none;
+text-indent: .01px;
+text-overflow: "";
+background: #FFF url(select_arrow.jpg) no-repeat right;
+/*ENDブラウザデフォルトスタイルOFF+装飾*/
+}
+
+textarea{
+width: 100%;
+min-height: 200px;
+	}
+button{
+-webkit-appearance: none;
+-moz-appearance: none;
+appearance: none;
+}
+
+input, textarea {
+      background: #ffffff;
+    -webkit-transition: background 1s ease;
+    -moz-transition: background 1s ease;
+    -o-transition: background 1s ease;
+    -ms-transition: background 1s ease;
+    transition: background 1s ease;
+}
+
+input:focus, textarea:focus {
+      background: #f1f0f0;
+}
+
+/*typeファイルのリセット化
+<div class="file">
+  ファイルを選択
+  <input type="file"/>
+</div>
+*/
+.file {
+  display: inline-block;
+  overflow: hidden;
+  position: relative;
+  padding: .5em;
+  border: 1px solid #999;
+  background-color: #eee;
+}
+
+.file input[type="file"] {
+  opacity: 0;
+  filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0);
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin: 0;
+  font-size: 100px;
+  cursor: pointer;
+}
+/*input系CSS終わり*/
+
+.text-hi100{
+width:100px;
+overflow: hidden;
+white-space:nowrap;
+text-overflow: ellipsis;
+-webkit-text-overflow: ellipsis;
+-o-text-overflow: ellipsis;
+}/* 文字数制限を行って、 省略符号「…」をつける */
+
+
+.nowrap{
+white-space: nowrap;
+}/* 単語を途中で折り返さない */
+
+.vertical div{
+display:table-cell;
+vertical-align: middle;
+*display: inline;
+*zoom: 1;
+}
+.vertical2{
+height: 100px;
+}/*上下中央揃えにする
+<div class="vertical">
+<div>上下真ん中に表示されます</div>
+<div class="vertical2"></div>
+</div>
+*/
+
+
+.box-hauto{
+overflow: hidden;
+}
+.box-hauto-l{
+float:left;
+padding-bottom: 10000px;
+margin-bottom: -10000px;
+}
+.box-hauto-r{
+float:left;
+padding-bottom: 10000px;
+margin-bottom: -10000px;
+}/*高さの違うボックスをきれいにそろえる
+<div class="box-hauto">
+<div class="box-hauto-l">内容</div>
+<div class="box-hauto-r">内容</div>
+</div>
+*/
+
+
+/*パンくずスタイル*/
+.breadcrumb{
+background: #eee;
+border-width: 1px;
+border-style: solid;
+border-color: #f5f5f5 #e5e5e5 #ccc;
+border-radius: 5px;
+box-shadow: 0 0 2px rgba(0,0,0,.2);
+overflow: hidden;
+width: 100%;
+}
+
+.breadcrumb li{
+float: left;
+}
+
+.breadcrumb a{
+padding: .7em 1em .7em 2em;
+float: left;
+text-decoration: none;
+color: #444;
+position: relative;
+text-shadow: 0 1px 0 rgba(255,255,255,.5);
+background-color: #ddd;
+background-image: linear-gradient(to right, #f5f5f5, #ddd);
+}
+
+.breadcrumb li:first-child a{
+padding-left: 1em;
+border-radius: 5px 0 0 5px;
+}
+
+.breadcrumb a:hover{
+background: #fff;
+}
+
+.breadcrumb a:after,
+.breadcrumb a::before{
+content: "";
+position: absolute;
+top: 50%;
+margin-top: -1.5em;
+border-top: 1.5em solid transparent;
+border-bottom: 1.5em solid transparent;
+border-left: 1em solid;
+right: -1em;
+}
+
+.breadcrumb a:after{
+z-index: 2;
+border-left-color: #ddd;
+}
+
+.breadcrumb a:before{
+border-left-color: #ccc;
+right: -1.1em;
+z-index: 1;
+}
+
+.breadcrumb a:hover:after{
+border-left-color: #fff;
+}
+
+.breadcrumb .current,
+.breadcrumb .current:hover{
+font-weight: bold;
+background: none;
+}
+
+.breadcrumb .current:after,
+.breadcrumb .current:before{
+content: normal;
+}
+/*パンくずスタイル終わり*/
+
+/*汎用ボタン*/
+.b-enter,.b-enter a,.b-enter button,.b-enter input,
+.b-cancel,.b-cancel a,.b-cancel button,.b-cancel input,
+.b-normal,.b-normal a,.b-normal button,.b-normal input,
+.y-normal,.y-normal a,.y-normal button,.y-normal input,
+.r-normal,.r-normal a,.r-normal button,.r-normal input,
+.g-normal,.g-normal a,.g-normal button,.g-normal input,
+.p-normal,.p-normal a,.p-normal button,.p-normal input,
+.gr-normal,.gr-normal a,.gr-normal button,.gr-normal input{
+border-radius:5px;
+-moz-border-radius:5px;
+-webkit-border-radius:5px;
+-ms-border-radius:5px;
+-o-border-radius:5px;
+outline:0 ;
+border: 0 ;
+display: inline-block;
+font-size: 14px ;
+padding: 6px 16px ;
+text-align: center ;
+}
+.b-enter,.b-enter a,.b-enter button,.b-enter input{
+background-color: #DB5C16 ;/*オレンジ*/
+color: #FFF ;
+box-shadow:0px 2px 0px #a4603b;
+-webkit-box-shadow:0px 2px 0px #a4603b;
+-moz-box-shadow:0px 2px 0px #a4603b;
+-ms-box-shadow:0px 2px 0px #a4603b;
+}
+.b-cancel,.b-cancel a,.b-cancel button,.b-cancel input{
+background-color: #ffffff ;/*ホワイト*/
+color: #555555 ;
+border: 1px solid #b0b0b0 ;
+box-shadow:0px 2px 0px #818181;
+-webkit-box-shadow:0px 2px 0px #818181;
+-moz-box-shadow:0px 2px 0px #818181;
+-ms-box-shadow:0px 2px 0px #818181;
+}
+
+.b-normal,.b-normal a,.b-normal button,.b-normal input{
+background-color: #0c7dcc ;/*ブルー*/
+color: #FFF ;
+box-shadow:0px 2px 0px #114080;
+-webkit-box-shadow:0px 2px 0px #114080;
+-moz-box-shadow:0px 2px 0px #114080;
+-ms-box-shadow:0px 2px 0px #114080;
+}
+
+.y-normal,.y-normal a,.y-normal button,.y-normal input{
+background-color: #ffea00 ;/*イエロー*/
+color: #FFF ;
+box-shadow:0px 2px 0px #afa100;
+-webkit-box-shadow:0px 2px 0px #afa100;
+-moz-box-shadow:0px 2px 0px #afa100;
+-ms-box-shadow:0px 2px 0px #afa100;
+}
+
+.r-normal,.r-normal a,.r-normal button,.r-normal input{
+background-color: #f5003a ;/*レッド*/
+color: #FFF ;
+box-shadow:0px 2px 0px #bb002c;
+-webkit-box-shadow:0px 2px 0px #bb002c;
+-moz-box-shadow:0px 2px 0px #bb002c;
+-ms-box-shadow:0px 2px 0px #bb002c;
+}
+
+.g-normal,.g-normal a,.g-normal button,.g-normal input{
+background-color: #60cb00 ;/*グリーン*/
+color: #FFF ;
+box-shadow:0px 2px 0px #449000;
+-webkit-box-shadow:0px 2px 0px #449000;
+-moz-box-shadow:0px 2px 0px #449000;
+-ms-box-shadow:0px 2px 0px #449000;
+}
+.p-normal,.p-normal a,.p-normal button,.p-normal input{
+background-color: #ff0084 ;/*ピンク*/
+color: #FFF ;
+box-shadow:0px 2px 0px #449000;
+-webkit-box-shadow:0px 2px 0px #449000;
+-moz-box-shadow:0px 2px 0px #449000;
+-ms-box-shadow:0px 2px 0px #449000;
+}
+
+.gr-normal,.gr-normal a,.gr-normal button,.gr-normal input{
+background-color: #b5b5b5 ;/*グレー*/
+color: #FFF ;
+box-shadow:0px 2px 0px #777777;
+-webkit-box-shadow:0px 2px 0px #777777;
+-moz-box-shadow:0px 2px 0px #777777;
+-ms-box-shadow:0px 2px 0px #777777;
+}
+/*汎用ボタン終わり*/
+
+
+
+
+#gm{
+width:;
+margin:0 auto;
+}
+#gm li{
+float:left;
+}
+#gm li a{
+display:block;
+width:;
+}
+
+/*background→横に移動-0px 縦に移動-0px*/
+#gm1 a{
+width:px;
+background:url(../images/button/) -0px -0px no-repeat;
+}
+#gm1 a:hover{
+background-position:-0px -0px;
+}
+/*該当ページ時の反転用*/
+#gm1-e{
+display:block;
+width:px;
+height:px;
+background:url(../images/button/) -0px -0px no-repeat;
+}
+
+
+
+

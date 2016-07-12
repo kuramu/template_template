@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+
+    ボタン
+    h1やh2などのタイトル表示
+    写真などのサムネイル表示
+    状態や属性を表すためのアイコン
+
+    テンプレートを作ることで、以下のメリットが生まれます。
+
+    コピペによる開発効率アップ
+    デザイン修正が簡単。テンプレートのCSSを直すとサイト全体が修正される
+    デザイン統一が出来る
+    マークアップのテスト（表示崩れが無いかとか）が1画面で大部分のテストが出来て効率的！
+
+<!--
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
+-->
+
+<!--[if lt IE 7 ]> <html class="ie6" lang="ja"> <![endif]-->
+<!--[if IE 7 ]> <html class="ie7" lang="ja"> <![endif]-->
+<!--[if IE 8 ]> <html class="ie8" lang="ja"> <![endif]-->
+<!--[if IE 9 ]> <html class="ie9" lang="ja"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="ja"> <!--<![endif]-->
+<head>
+    <!--
+    <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
+    -->
+<meta charset="UTF-8">
+<!--<meta name="robots" content="noindex,nofollow">-->
+<!--
+<meta http-equiv="Content-Type" content="text/html; charset=shift_jis" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+-->
+<!--[if IE]>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<![endif]-->
+<link rel="prerender" href="">
+<link rel="dns-prefetch" href="http://www.example.com/" />
+<!--
+DNSプリフェッチを利用すると、外部ドメイン名（ホスト名）の名前解決（DNSルックアップ）を事前に強制できます。
+ユーザー（ブラウザ）がそのドメインにアクセスする前にすでに名前解決が完了しているので、読み込み時間の短縮を図ることができるのです。
+
+DNSの名前解決にかかる時間は平均して200ミリ秒とわずかですが、モバイル回線では無視できる長さではないかもしれません。
+またときとして1秒以上かかることもあり、遅延による表示速度の低下の防止に役立てられます。
+
+DNSプリフェッチは、ページの読み込みと同時に実行されまたCPUやネットワークへの負荷が低いため、そのほかの処理を遅らせてしまう心配もほとんどありません。
+
+なお名前解決した情報はOSにキャッシュされるので、DNSプリフェッチはまだアクセスしていない（キャッシュが残っていない）ドメイン名への通信に対して有効です。
+
+DNSプリフェッチは、たとえば次のような状況で特に役立ちそうです。
+
+    外部ドメインへの参照リンクがたくさんある −− まとめ記事なんかが該当しそうです。ソーシャルメディアのボタンをいくつもを設置している時も効果がありそうです。
+    リダイレクトしている −− クリックの計測など何らかの理由でいったん内部のリンクにアクセスさせてから対象の外部ドメインへリダイレクトすることがあります。このとき、リダイレクト先のドメイン名の名前解決をプリフェッチしておくことができます。
+
+そのほかにも使用ケースは考えられるでしょう。
+
+2つ目の例でわかるように、DNSプリフェッチはそのドメイン名のURLがリンク（aタグ）として存在している必要はありません。
+任意のドメイン名の名前解決を強制できます。
+-->
+<!-- Google検索とBing検索には事前レンダリングが実装 事前レンダリングさせたいページ、つまり前もってレンダリングを完了させておきたいページのURLを指定
+    1ページネーションしている場合の次のページ　2ランディングしたユーザーが次に必ず見るように誘導しているページ
+    * コンピュータのリソースを消費する   * ネットワークの帯域を消費する
+ユーザーが気付かないバックグラウンドとはいえ、別タブで表示しているのと同じことです。
+非力なPCではマシン自体のスピードが遅くなるかもしれません。
+通信が発生するので3G回線で繋いでいたら、今見ているページの表示の読み込みが逆に遅くなるかもしれません。
+-->
+<!--
+拡大・縮小は可能にしたい場合
+拡大可能な下限 minimum-scale と、上限 maximum-scale、さらにピンチイン/ピンチアウトの指定 user-scalable をオフにすると拡大・縮小が可能になります。
+-->
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
+<!-- ①レスポンシブにする場合必要、ページ表示時に1倍の大きさにするため user-scalable=noがあるとiphoneではページを横に引っ張れなくなるが、拡大縮小もできなくなってしまう。
+position: ﬁxed; を使う場合 ー• iOSなら5以上、Androidなら2.2以上• Androidでは、viewportに user-scalable=no の指定が必須 （Android4.0は除く） • 常に安定して動作する訳ではない-->
+
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<script type="text/javascript">document.createElement('main');</script>
+<![endif]-->
+
+<title></title>
+<link rel="canonical" href="">
+<link rel="alternate" media="handheld" type="application/xhtml+xml" href="">
+<meta name="Description" content="">
+<meta name="Keywords" content="">
+<meta name="author" content="文章の作者名" />
+<meta name="copyright" content="© 2008 Korehahidoi Corp." />
+<link href="css/import.css" rel="stylesheet" type="text/css" media="all">
+<link href="http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
+
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="jquery-1.10.1.min.js"><\/script>')
+</script>
+<script src="js/jquery.easing.1.3.js"></script>
+<!--[if lt IE 9]>
+<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/selectivizr/1.0.2/selectivizr-min.js"></script>
+
+<![endif]-->
+
+<!-- 下記uiテキストカラーをアニメーション時に必要 -->
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
+<!--[if (gte IE 6)&(lte IE 8)]>
+<script type="text/javascript" src="/js/respond.min.js"></script>
+<![endif]-->
+<script src="js/jquery.velocity.min.js"></script>
+<script src="js/validation.js"></script>
+<script src="js/common.js"></script>
+<script src="http://ajaxzip3.googlecode.com/svn/trunk/ajaxzip3/ajaxzip3.js" charset="UTF-8"></script>
+
+<!--velocity.min.jsの書き方http://julian.com/research/velocity/ -->
+<script type="text/javascript">
+$( function() {
+$('.published').velocity({ left: 500 }, "swing").velocity({ width: 500 }, "swing")
+
+});
+</script>
+
+
+<meta property='og:locale' content='ja_JP'>
+<meta property='fb:admins' content='【上で取得したfb:adminsの15桁ID】'>
+<meta property='article:publisher' content='【FacebookページがあればそのURL】' />
+
+<!--Twtter Cards-->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="【サイトのツイッターアカウント。@から】">
+<meta name="twitter:creator" content="【製作者のツイッターアカウント。@から】">
+<meta name="twitter:domain" content="【ドメイン wispyon.comなど】" />
+
+
+<!--
+<meta property="og:title" content="ページタイトル" />
+<meta property="og:type" content="websiteまたはarticle" />
+<meta property="og:url" content="ページのURL（http://から指定）" />
+<meta property="og:site_name" content="サイト名" />
+<meta property="og:description" content="ページの説明" />
+<meta property="og:image" content="画像のURL（http://から指定）" />※画像の幅が200px以上推奨
+<meta property="og:locale" content="ja_JP" />
+<meta property="fb:app_id" content="XXXXXXXXXXXXXXXX" />
+<meta property="fb:page_id" content="XXXXXXXXXXXXXXXX" />
+<meta property="fb:admins" content="XXXXXXXXXXXXXXXX" />※DEVELOPERSに登録必要
+html下記に変更
+<html lang="ja" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://www.facebook.com/2008/fbml">
+-->
+
+<!--microdata-->
+<meta itemprop="name" content="薬剤師ネット～薬剤師・薬学生のためのポータルサイト" />
+<meta itemprop="description" content="薬剤師ネットは薬剤師・薬学生のためのポータルサイト。「リクナビ薬剤師」プロデュースの好条件求人情報や、薬剤師さんの悩みが集まる匿名掲示板や、薬剤師ブログが集まるブログランキングなどなど・・・様々なコンテンツが集まっています。薬剤師さん必見！！" />
+<meta itemprop="image" content="http://r-yakuzaishi.net/images/ogp.jpg" />
+<!--microdata-->
+
+<script type="text/javascript">
+$(function(){
+
+})
+
+
+</script>
+<!--
+■電話番号の自動検出をOFFにする
+電話番号ではないはずの小数点やIPアドレス、郵便番号までもがリンク化されてしまうのを回避します。
+で、本当に電話番号だというところには以下のようにしてやるのがよいです。
+<address>連絡先：<a href="tel:073xxxxxxx">073-xxx-xxxx</a></address>
+<meta name="format-detection" content="telephone=no" />
+-->
+<link rel="shortcut icon" href="img/favicon.ico">
+
+<!-- -->
+</head>
+<body>
+
+<!-- フラッシュ表示する場合 -->
+<!-- ここに Flash が表示される -->
+<div id="idhoge"></div>
+
+<!-- ここからFlashの表示用のコード -->
+<script src="js/swfobject.js"></script>
+<script>
+  swfobject.embedSWF("swfのFlashファイル場所", "表示id", "幅", "高さ", "9.0.0などFlashバージョン");
+</script>
+
+<div id="wrapper-out">
+
+    <div class="wrapper">
+
+        <header id="h-t" role="banner" class="cf">
+
+            <div id="h-l" itemscope="" itemtype="http://schema.org/Organization"><!--企業、組織の場合 -->
+
+                <h1><a itemprop="url" href=""><img itemprop="logo" src="images/" alt="" /></a></h1>
+
+            </div><!-- h-l -->
+
+
+            <div id="h-r">
+                <p></p>
+            </div><!-- h-r -->
+
+        </header><!-- ht -->
+
+        <nav id="gm">
+            <ul role="navigation" class="cf">
+                <li id="gm1"><a href="" title="のページへ"><span class="nonespan"></span></a></li>
+                <li id="gm2"><a href="" title="のページへ"><span class="nonespan"></span></a></li>
+                <li id="gm3"><a href="" title="のページへ"><span class="nonespan"></span></a></li>
+                <li id="gm4"><a href="" title="のページへ"><span class="nonespan"></span></a></li>
+            </ul>
+        </nav><!-- gm -->
+
+        <!-- パンくずハはolタグで順番風に -->
+    <ol class="breadcrumbs">
+        <li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+        <a title="☆☆" href="☆☆" itemprop="url"><span itemprop="title">☆☆</span></a> &gt;</li>
+        <li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+        <a title="☆☆" href="☆☆" itemprop="url"><span itemprop="title">☆☆</span></a> &gt;</li>
+        <li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+        <a title="☆☆" href="☆☆" itemprop="url"><span itemprop="title">☆☆</span></a> &gt;</li>
+        <li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb"><span itemprop="title">☆☆</span></li>
+    </ol>
+
+
+    <div id="content-wrap" class="cf">
+
+        <main id="main-content" role="main">
+            <h1></h1>
+            <time datetime="2009-11-04" class="published updated">November 4th, 2009</time>
+            <article>
+
+            </article>
+            <!-- articleは記事のことで、そして再利用可能なコンテンツを囲むために使用します -->
+                <form class="form" name="" action="" method="post">
+<input id="checkbox-1-1" class="regular-checkbox" type="checkbox">
+<label for="checkbox-1-1"></label>第一類医薬品
+<input id="checkbox-1-1" class="regular-checkbox" type="checkbox">
+<label for="checkbox-1-1"></label>第一類医薬品
+                    <dl>
+                        <dt class="module-triangle-right">種別</dt>
+                        <dd>
+                            <select class="sec-c" name="shubetu">
+                                <option value="">選択してください</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                            </select>
+                        </dd>
+                    </dl>
+                    ----------------
+                    <dl>
+                        <dt>半角カタカナはNG</dt>
+                        <dd><input class="validate hankakukata-ng" type="text" name="" placeholder="文言"></dd>
+                    </dl>
+                    ----------------
+                    <dl>
+                        <dt>半角英数字のみOK</dt>
+                        <dd><input class="validate haneisuji-ok" type="text" name="" placeholder="文言"></dd>
+                    </dl>
+                    ----------------
+                    <dl>
+                        <dt>全角英数字はNG</dt>
+                        <dd><input class="validate zenkakuei-ng" type="text" name="" placeholder="文言"></dd>
+                    </dl>
+                    ----------------
+                    <dl>
+                        <dt>全角カタカナのみOK</dt>
+                        <dd><input class="validate zenkakukana-ok" type="text" name="" placeholder="文言"></dd>
+                    </dl>
+                    ----------------
+                    <dl>
+                        <dt>全角カタカナはNG</dt>
+                        <dd><input class="validate zenkakukana-ng" type="text" name="" placeholder="文言"></dd>
+                    </dl>
+                    ----------------
+                    <dl>
+                        <dt>お名前1つ</dt>
+                        <dd><input class="validate hankakukata-ng" type="text" name="na" placeholder="入力してください" placeholder="文言"></dd>
+                    </dl>
+                    ----------------
+                    <dl>
+                        <dt>お名前2つ</dt>
+                        <dd><input class="validate required-ng2" type="text" name="na1" placeholder="入力してください"><input class="validate required-ng2" type="text" name="na2" placeholder="入力してください"></dd>
+                    </dl>
+                    ----------------
+                    <dl>
+                        <dt>郵便番号</dt>
+                        <dd><input class="validate yuubin" type="text" name="yubin" placeholder="入力してください"></dd>
+                    </dl>
+                    ----------------
+                    <dl>
+                        <dt>電話番号</dt>
+                        <dd><input class="validate tel-ba" type="text" name="denwa" placeholder="入力してください"></dd>
+                    </dl>
+                    ----------------
+                    <dl>
+                        <dt>メールアドレス</dt>
+                        <dd><input name="mail" class="validate mail" type="text" placeholder="入力してください"></dd>
+                    </dl>
+                    ----------------
+                    <dl>
+                        <dt>メールアドレス確認</dt>
+                        <dd><input name="mail_check" class="validate mail_check" type="text" placeholder="入力してください"></dd>
+                    </dl>
+                    ----------------
+                    <dl>
+                        <dt>パスワード</dt>
+                        <dd><input type="text" class="validate pass hankakukata-ng"></dd>
+                    </dl>
+                    ----------------
+                    <dl>
+                        <dt>パスワード確認</dt>
+                        <dd><input type="text" class="validate pass_check hankakukata-ng"></dd>
+                    </dl>
+                    ----------------
+                    <dl>
+                        <dt>URL</dt>
+                        <dd><input type="text" class="validate url_check" placeholder="文言"></dd>
+                    </dl>
+                    ----------------
+                    <dl>
+                        <dt>5文字以上12文字以内の文字数制限</dt>
+                        <dd><input type="text" class="validate text-cuncheck5in12in" placeholder="文言"></dd>
+                    </dl>
+                    ----------------
+                    <dl>
+                        <dt>性別</dt>
+                        <dd>
+                            <input type="radio" name="sex" id="l1" class="validate required"><label for="l1">男</label>
+                            <input type="radio" name="sex" id="l2"><label for="l2">女</label>
+                        </dd>
+                    </dl>
+                    ----------------
+                    <dl>
+                        <dt>どれか選んでください</dt>
+                        <dd class="checkboxRequired">
+                          <ul>
+                            <li><input type="checkbox" name="a" id="c1"><label for="c1">check1</label></li>
+                            <li><input type="checkbox" name="b" id="c2"><label for="c2">check2</label></li>
+                            <li><input type="checkbox" name="c" id="c3"><label for="c3">check3</label></li>
+                          </ul>
+                        </dd>
+                    </dl>
+                    ----------------
+                    <dl>
+                        <dt>内容</dt>
+                        <dd><textarea class="validate hankakukata-ng" name="" placeholder="内容を入力してください"></textarea></dd>
+                    </dl>
+
+
+                    ------------------<br>
+                    <!--
+                    <input type="email" required placeholder="メールアドレスを入力してください">
+                    <input type="tel" required placeholder="電話番号を入力してください">
+                    <input type="url" placeholder="URLを入力してください"><br>
+                    上記3つモダンブラウザIEは10以降、必須もバリテーションも効く
+                    -->
+                    ------------------
+
+                    ----------------
+                    <ul class="privacy-te-bottom">
+                        <li><input name="q1" id="la1" type="radio" class="validate-doi required"><label for="la1">同意する</label></li>
+                        <li><input name="q1" id="la2" type="radio"><label for="la2">同意しない</label></li>
+                    </ul>
+                    ----------------<br>
+                    <button class="b-normal" type="submit">決定</button>
+
+                </form>
+
+        </main>
+
+
+        <aside id="sub-content">
+            <h1></h1>
+
+            <p>カエルの生態に関しては、<a href="#kaeru">こちらの画像</a>でご確認いただけます。</p>具体的には、サムネイル画像や、挿絵、サンプルコードやチュートリアルの画像などを figure タグで囲う
+                図表をあらわす。文書の本文（メインフロー）から参照されるようなビデオ、オーディオ、引用文、イラスト・図・写真・ソースコードなどのことです。
+            <figure id="kaeru">
+                <img src="images/kaeru.gif" alt="葉っぱを傘代わりにするカエル"><!-- IMG要素だけでなく、リスト要素（OL要素、UL要素、DL要素）や表組要素（TABLE要素）などなど、“本文から”“参照され”るコンテンツをFIGURE要素でマークアップ-->
+                <figcaption>カエルの生態</figcaption><!-- これはなくてもかまわない 図表にキャプションや注釈 ※必須ではない-->
+            </figure>
+
+
+            <section>
+            	<h1></h1>
+
+
+            </section>
+
+
+        </aside><!-- sub-content -->
+
+    </div><!-- content-wap -->
+
+
+
+    <div id="footer-out">
+        <footer id="footer" class="wrapper" role="contentinfo">
+
+            <nav id="footer-f">
+                <ul>
+                    <li id=""><a href="#" title="のページへ"></a>　|　</li>
+                    <li id=""><a href="#" title="のページへ"></a>　|　</li>
+                    <li id=""><a href="#" title="のページへ"></a>　|　</li>
+                    <li id=""><a href="#" title="のページへ"></a>　|　</li>
+                    <li id=""><a href="#" title="のページへ"></a>　|　</li>
+                    <li id=""><a href="#" title="のページへ"></a></li>
+                </ul>
+            </nav><!-- footer-f -->
+            <address>
+    著作者の連絡先情報<br>
+    サイトの管理者や親コンテンツの著者を表す<br>
+    サイト管理者の連絡先情報<br>
+    メインコンテンツ著者の連絡先情報<br>
+    直近（address要素が含まれているセクション）の祖先のarticle要素・body要素によるセクションに対する連絡先情報を定義します<br>
+    ページ全体に対するものなのかページ内の特定のコンテンツに対するものか区別して使用します<br>
+    単なる住所などを表したい場合はp要素を使用します<br>
+    You can contact author at <a href="http://www.somedomain.com/contact">www.somedomain.com</a>.<br>
+    If you see any bugs, please <a href="mailto:webmaster@somedomain.com">contact webmaster</a>.<br>
+    You may also want to visit us:<br>
+    Mozilla Foundation<br>
+    1981 Landings Drive<br>
+    Building K<br>
+    Mountain View, CA 94043-0801<br>
+    USA
+    (下記、間違った使い方)<br>
+    お店のレビューサイトでお店の連絡先をaddressでマークアップ<br>
+    会社概要ページで会社の住所や連絡先をaddressでマークアップ（これはメインセクション)
+            </address>
+            <p id="copyright"><small>&#169;2011 ～～～～～. All Rights Reserved.</small></p>
+
+        </footer>
+    </div><!-- footer-out -->
+
+
+
+    </div><!-- wrapper終わり -->
+</div><!-- wrapper-out終わり -->
+
+
+<!-- ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■ -->
+        <dl>
+            <dt></dt>“説明される言葉”を囲むタグ。以前は”定義する用語”を囲むためだけの限定的な役割だったけど、HTML5からはもっとざっくり使えるようになったようです。
+            <dfn></dfn>“定義する用語”を囲むタグ。
+            <dd></dd>
+        </dl>
+
+        <abbr></abbr> “略語や頭文字”を囲むタグ。<dt>や<dfn>と組み合わせて使うことも可能。title属性を追加してそこに正式名称を書いたりして使う。
+
+        使用例
+        <dl>
+            <dt><dfn><abbr title="Photoshop">PS</abbr></dfn></dt>
+            <dd>PSとは<dfn>Photoshop</dfn>の略で、Adobe社の開発したすごいソフトである。
+            <abbr title="フォトショップ">フォトショ</abbr>と呼ばれることもしばしば。</dd>
+        </dl>
+
+
+        <em>ニュアンスを強調するタグ</em>
+        <strong>重要なテキストを囲むタグ</strong>
+        <b>太字にするタグ</b>
+        使用例
+        1.もし<em>高校野球の女子マネージャーが</em>ドラッカーの『マネジメント』を読んだら
+        2.もし高校野球の女子マネージャーが<em>ドラッカーの『マネジメント』を</em>読んだら
+        3.もし高校野球の女子マネージャーがドラッカーの<strong>『マネジメント』</strong>を読んだら
+        4.もし高校野球の女子マネージャーがドラッカーの<b>『マネジメント』</b>を読んだら
+
+        1は「ドラッカーの『マネジメント』を読んだのは、高校野球の女子マネージャーなんだよ！変わった女子高生がいるもんだなあ」的なニュアンスの意味で、
+        2は「高校野球の女子マネージャーが、あのドラッカーの『マネジメント』を読んだんだよ！珍しい本のチョイスだよねえ」的なニュアンスの意味です。
+        3は『マネジメント』という言葉単体を重要視しています。文章のニュアンスうんぬんより、検索キーワードで『マネジメント』をひっかけたいということだけならこの使い方です。
+
+                  <li>
+                    <figure> <a href="http://blog.bizreach.co.jp/archives/558">
+                      <img width="33" height="50" src="http://blog.bizreach.co.jp/wp-content/uploads/2014/03/BizReach_Minami1.jpg" class="attachment-50x50 wp-post-image" alt="BizReach_Minami1" /></a>
+                      <figcaption>
+                        <a href="http://blog.bizreach.co.jp/archives/558">
+                          <dl>
+                            <dt>2014年3月31日<br />
+                              代表の南が世界経済フォーラム「ヤング・グローバル・リーダーズ」に選出されました</dt>
+                            <dd>こんにちは、編集室の田村です。 ダボス会議で知られる世界経済フォーラム（WEF）の 2014年「ヤン</dd>
+                          </dl>
+                        </a>
+                      </figcaption>
+                    </figure>
+                  </li>
+</body>
+</html>
+
+

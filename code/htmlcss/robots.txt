@@ -1,0 +1,38 @@
+■全て禁止
+User-Agent: *
+Disallow: /
+
+■全て許可
+User-agent: *
+Allow: /
+
+User-agent: Slurp
+Disallow: /mamatomo/i/
+Disallow: /mamatomo/pc/
+Disallow: /mamatomo/sb/
+Disallow: /mamatomo/au/
+Disallow: /m/
+Allow: /
+
+User-agent: Googlebot
+Disallow: /mamatomo/i/
+Disallow: /mamatomo/pc/
+Disallow: /mamatomo/sb/
+Disallow: /mamatomo/au/
+Disallow: /m/
+Allow: /
+
+User-agent: Googlebot-Mobile
+Allow: /m/
+Allow: /mamatomo/
+
+User-Agent: Y!J-SRD/1.0
+Allow: /m/
+Allow: /mamatomo/
+
+User-Agent: Y!J-MBS/1.0
+Allow: /m/
+Allow: /mamatomo/
+
+Sitemap: http://mamatoto.jp/mobilesitemap.xml
+Sitemap: http://mamatoto.jp/sitemap.xml

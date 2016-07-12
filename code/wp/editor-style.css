@@ -1,0 +1,513 @@
+/*
+Theme Name: Twenty Twelve
+Description: Used to style the TinyMCE editor.
+*/
+
+html {
+	font-size: 87.5%;
+}
+html .mceContentBody {
+	max-width: 625px;
+    font-family: 'メイリオ', 'ＭＳ Ｐゴシック', sans-serif;
+}
+body {
+	color: #444;
+	font-family: "Open Sans", Helvetica, Arial, sans-serif;
+	font-size: 14px;
+	font-size: 1rem;
+	line-height: 1;
+	text-rendering: optimizeLegibility;
+	vertical-align: baseline;
+}
+
+
+/* =Headings
+-------------------------------------------------------------- */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	clear: both;
+	line-height: 1.846153846;
+	margin: 24px 0;
+	margin: 1.714285714rem 0;
+}
+h1 {
+	font-size: 21px;
+	font-size: 1.5rem;
+	line-height: 1.5;
+}
+h2 {
+	font-size: 18px;
+	font-size: 1.285714286rem;
+	line-height: 1.6;
+}
+h3 {
+	font-size: 16px;
+	font-size: 1.142857143rem;
+}
+h4 {
+	font-size: 14px;
+	font-size: 1rem;
+}
+h5 {
+	font-size: 13px;
+	font-size: 0.928571429rem;
+}
+h6 {
+	font-size: 12px;
+	font-size: 0.857142857rem;
+}
+hr {
+	background-color: #ccc;
+	border: 0;
+	height: 1px;
+	margin: 24px;
+	margin-bottom: 1.714285714rem;
+}
+
+
+/* =Text elements
+-------------------------------------------------------------- */
+
+p {
+	line-height: 1.714285714;
+	margin: 0 0 24px;
+	margin: 0 0 1.714285714rem;
+}
+ul,
+ol {
+	margin: 0 0 24px;
+	margin: 0 0 1.714285714rem;
+	line-height: 1.714285714;
+	padding: 0;
+}
+ul {
+	list-style: disc outside;
+}
+ol {
+	list-style: decimal outside;
+}
+ul ul,
+ol ol,
+ul ol,
+ol ul {
+	margin-bottom: 0;
+}
+li {
+	margin: 0 0 0 24px;
+	margin: 0 0 0 1.714285714rem;
+}
+dl {
+	margin: 0 24px;
+	margin: 0 1.714285714rem;
+}
+dt {
+	font-weight: bold;
+	margin-bottom: 24px;
+	margin-bottom: 1.714285714rem;
+}
+dd {
+	line-height: 1.714285714;
+	margin: 0 0 24px;
+	margin: 0 0 1.714285714rem;
+}
+strong {
+	font-weight: bold;
+}
+cite,
+em,
+i {
+	font-style: italic;
+}
+cite {
+	border: none;
+}
+big {
+	font-size: 128.571429%;
+}
+.mceContentBody blockquote {
+	font-style: italic !important;
+	font-weight: normal;
+	margin: 0;
+	padding: 24px;
+	padding: 1.714285714rem;
+}
+pre {
+	border: 1px solid #ededed;
+	color: #666;
+	font-family: Consolas, Monaco, Lucida Console, monospace;
+	font-size: 12px;
+	font-size: 0.857142857rem;
+	line-height: 1.714285714;
+	margin: 24px 0;
+	margin: 1.714285714rem 0;
+	overflow: auto;
+	padding: 24px;
+	padding: 1.714285714rem;
+}
+code,
+kbd,
+samp,
+var {
+	font-family: Consolas, Monaco, Lucida Console, monospace;
+	font-size: 12px;
+	font-size: 0.857142857rem;
+	line-height: 2;
+}
+abbr,
+acronym,
+dfn {
+	border-bottom: 1px dotted #666;
+	cursor: help;
+}
+address {
+	display: block;
+	line-height: 1.714285714;
+	margin: 0 0 24px;
+	margin: 0 0 1.714285714rem;
+}
+del {
+	color: #333;
+}
+ins {
+	background: #fff9c0;
+	border: none;
+	color: #333;
+	text-decoration: none;
+}
+sup,
+sub {
+	font-size: 75%;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+sup {
+	top: -0.5em;
+}
+sub {
+	bottom: -0.25em;
+}
+input[type="text"] {
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	font-family: inherit;
+	padding: 6px;
+	padding: 0.428571429rem;
+}
+textarea {
+	border: 1px solid #d5d2ca;
+	border-radius: 3px;
+	font-family: inherit;
+	font-size: 12px;
+	font-size: 0.857142857rem;
+	line-height: 1.714285714;
+	padding: 10px;
+	padding: 0.714285714rem;
+	width: 96%;
+}
+
+
+/* =Links
+-------------------------------------------------------------- */
+
+a,
+a em,
+a strong {
+	color: #21759b;
+	outline: none;
+}
+a:focus,
+a:active,
+a:hover {
+	color: #0f3647;
+}
+
+
+/* =Alignment
+-------------------------------------------------------------- */
+
+.alignleft {
+	display: inline;
+	float: left;
+	margin: 12px 24px 12px 0;
+	margin: 0.857142857rem 1.714285714rem 0.857142857rem 0;
+}
+.alignright {
+	display: inline;
+	float: right;
+	margin: 12px 0 12px 24px;
+	margin: 0.857142857rem 0 0.857142857rem 1.714285714rem;
+}
+.aligncenter {
+	clear: both;
+	display: block;
+	margin-top: 12px;
+	margin-top: 0.857142857rem;
+	margin-bottom: 12px;
+	margin-bottom: 0.857142857rem;
+}
+
+
+/* =Tables
+-------------------------------------------------------------- */
+
+table {
+	border-bottom: 1px solid #ededed;
+	border-collapse: collapse;
+	border-spacing: 0;
+	color: #757575;
+	font-size: 12px;
+	font-size: 0.857142857rem;
+	line-height: 2;
+	margin: 0 0 24px;
+	margin: 0 0 1.714285714rem;
+	width: 100%;
+}
+tr th {
+	color: #636363;
+	font-size: 11px;
+	font-size: 0.785714286rem;
+	font-weight: bold;
+	line-height: 2.181818182;
+	text-align: left;
+	text-transform: uppercase;
+}
+td {
+	border-top: 1px solid #ededed !important;
+	color: #757575;
+	font-size: inherit;
+	font-weight: normal;
+	padding: 6px 10px 6px 0;
+	text-align: left;
+}
+
+
+/* =Images
+-------------------------------------------------------------- */
+
+img,
+.editor-attachment {
+	border: 0;
+	border-radius: 3px;
+	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+	max-width: 100%;
+}
+img.size-full {
+	width: auto/9; /* Prevent stretching of full-size images in IE8 */
+}
+img[class*="wp-image-"] {
+	height: auto;
+	max-width: 100%;
+}
+img[class*="align"],
+img[class*="wp-image-"],
+img[class*="attachment-"] {
+	height: auto; /* Make sure images with WordPress-added height and width attributes are scaled correctly */
+}
+img.mce-wp-nextpage {
+	border-radius: 0;
+	box-shadow: none;
+}
+img.wp-smiley {
+	border: 0;
+	border-radius: 0;
+	box-shadow: none;
+	margin-bottom: 0;
+	margin-top: 0;
+	padding: 0;
+}
+.wp-caption {
+	background: transparent;
+	border: none;
+	margin: 0;
+	padding: 4px;
+	text-align: left;
+}
+.wp-caption-dt {
+	margin: 0;
+}
+.wp-caption .wp-caption-text,
+.wp-caption-dd {
+	color: #757575;
+	font-style: italic;
+	font-size: 12px;
+	font-size: 0.857142857rem;
+	line-height: 2;
+	margin: 0 0 24px;
+	margin: 0 0 1.71429rem;
+}
+
+/*
+* WPエディタ用
+*/
+.alignnone {
+margin: 5px 20px 20px 0;
+}
+
+.aligncenter, .aligncenter {
+display:block;
+margin: 5px auto 5px auto;
+}
+
+.alignright {
+float:right;
+margin: 5px 0 20px 20px;
+}
+
+.alignleft {
+float:left;
+margin: 5px 20px 20px 0;
+}
+
+.aligncenter {
+display: block;
+margin: 5px auto 5px auto;
+}
+
+a img.alignright {
+float:right;
+margin: 5px 0 20px 20px;
+}
+
+a img.alignnone {
+margin: 5px 20px 20px 0;
+}
+
+a img.alignleft {
+float:left;
+margin: 5px 20px 20px 0;
+}
+
+a img.aligncenter {
+display: block;
+margin-left: auto;
+margin-right: auto
+}
+
+.wp-caption {
+background: #fff;
+border: 1px solid #f0f0f0;
+max-width: 96%; /* Image does not overflow the content area */
+padding: 5px 3px 10px;
+text-align: center;
+}
+
+.wp-caption.alignnone {
+margin: 5px 20px 20px 0;
+}
+
+.wp-caption.alignleft {
+margin: 5px 20px 20px 0;
+}
+
+.wp-caption.alignright {
+margin: 5px 0 20px 20px;
+}
+
+.wp-caption img {
+border: 0 none;
+height: auto;
+margin:0;
+max-width: 98.5%;
+padding:0;
+width: auto;
+}
+
+.wp-caption p.wp-caption-text {
+font-size:11px;
+line-height:17px;
+margin:0;
+padding:0 4px 5px;
+}
+.clear:before, .clear:after, .attachment .entry-header:before, .attachment .entry-header:after, .site-footer .widget-area:before, .site-footer .widget-area:after, .entry-content:before, .entry-content:after, .page-content:before, .page-content:after, .navigation:before, .navigation:after, .nav-links:before, .nav-links:after, .gallery:before, .gallery:after, .comment-form-author:before, .comment-form-author:after, .comment-form-email:before, .comment-form-email:after, .comment-form-url:before, .comment-form-url:after, .comment-body:before, .comment-body:after
+.contentte:after,.contentte:after:before{
+content: "";
+display: table;
+clear: both;
+-moz-hyphens: auto;
+word-wrap: break-word;
+}
+
+b, strong {
+    font-weight: bold !important;
+}
+strong{
+    font-weight: bold;
+}
+ul,ol{
+    margin: 0 0 20px;
+}
+ul li,ol li{
+    margin: 0 0 5px;
+}
+ul, ol {
+    list-style: outside none disc;
+}
+
+h2::before {
+    background: #000000 none repeat scroll 0 0;
+    content: " ";
+    display: block;
+    height: 10px;
+    left: 0;
+    position: absolute;
+    top: 3px;
+    width: 10px;
+}
+h2 {
+    color: #000;
+    font-size: 18px;
+    font-weight: bold;
+    padding-left: 18px;
+    position: relative;
+}
+
+h3:before {
+    border-bottom: 4px solid #707070;
+    content: "";
+    display: block;
+    left: 0;
+    position: absolute;
+    top: 6px;
+    width: 16px;
+}
+h3 {
+    font-size: 16px !important;
+    margin-bottom: 16px;
+    padding-left: 24px;
+    position: relative;
+    color: #000;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+dl {
+    border: 1px solid #e4e4e4;
+    box-sizing: border-box;
+    font-size: 16px;
+    width: 100%;
+}
+dt {
+    background: #e1e1e1 none repeat scroll 0 0;
+    font-weight: bold;
+}
+dd {
+    margin-bottom: 16px;
+    padding: 16px;
+}
+
+ul li, ol li {
+    color: #333;
+    margin: 0 0 0 24px;
+    padding: 0 0 13px;
+}
+html .mceContentBody {
+    font-size: 100%;
+    max-width: 474px;
+}
+

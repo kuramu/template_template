@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+
+<!--[if lt IE 7 ]> <html id="ie6" lang="ja"> <![endif]-->
+<!--[if IE 7 ]> <html id="ie7" lang="ja"> <![endif]-->
+<!--[if IE 8 ]> <html id="ie8" lang="ja"> <![endif]-->
+<!--[if IE 9 ]> <html id="ie9" lang="ja"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="ja"> <!--<![endif]-->
+<head>
+    <!--
+    <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
+    -->
+<meta charset="UTF-8">
+<!--<meta name="robots" content="noindex,nofollow">-->
+
+<!--[if IE]>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<![endif]-->
+<link rel="prerender" href="">
+<link rel="dns-prefetch" href="http://www.example.com/" />
+<meta name="viewport" content="width=1024">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
+<!-- ①レスポンシブにする場合必要、ページ表示時に1倍の大きさにするため user-scalable=noがあるとiphoneではページを横に引っ張れなくなるが、拡大縮小もできなくなってしまう。
+position: ﬁxed; を使う場合 ー• iOSなら5以上、Androidなら2.2以上• Androidでは、viewportに user-scalable=no の指定が必須 （Android4.0は除く） • 常に安定して動作する訳ではない-->
+
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<script type="text/javascript">document.createElement('main');</script>
+<![endif]-->
+
+<title></title>
+<link rel="canonical" href="">
+<meta name="Description" content="">
+<meta name="Keywords" content="">
+<meta name="author" content="文章の作者名" />
+<meta name="copyright" content="© 2008 Korehahclassoi Corp." />
+<link href="style.css" rel="stylesheet" type="text/css" media="all">
+
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="jquery-1.10.1.min.js"><\/script>')
+</script>
+
+<?php
+echo '<script type="text/javascript">var templatePath = "' . get_template_directory_uri() . '";</script>';
+//js内
+/*
+templatePath + '/images/btn-view-more.gif'
+$(this).find("img").attr("src",templatePath +"/images/top-close.gif");
+$("#loading p").html("<img src='" + templatePath +"/images/gif-load.gif'/>");
+*/
+?>
+
+<!-- 下記uiテキストカラーをアニメーション時に必要 -->
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
+
+<script src="js/common.js"></script>
+<script src="js/validation.js"></script>
+<script src="https://ajaxzip3.github.io/ajaxzip3.js" charset="UTF-8"></script>
+
+<meta property='og:locale' content='ja_JP'>
+<meta property='fb:admins' content='【上で取得したfb:adminsの15桁class】'>
+<meta property='article:publisher' content='【FacebookページがあればそのURL】' />
+
+<!--Twtter Cards-->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="【サイトのツイッターアカウント。@から】">
+<meta name="twitter:creator" content="【製作者のツイッターアカウント。@から】">
+<meta name="twitter:domain" content="【ドメイン wispyon.comなど】" />
+
+
+<!--
+<meta property="og:title" content="ページタイトル" />
+<meta property="og:type" content="websiteまたはarticle" />
+<meta property="og:url" content="ページのURL（http://から指定）" />
+<meta property="og:site_name" content="サイト名" />
+<meta property="og:description" content="ページの説明" />
+<meta property="og:image" content="画像のURL（http://から指定）" />※画像の幅が200px以上推奨
+<meta property="og:locale" content="ja_JP" />
+<meta property="fb:app_class" content="XXXXXXXXXXXXXXXX" />
+<meta property="fb:page_class" content="XXXXXXXXXXXXXXXX" />
+<meta property="fb:admins" content="XXXXXXXXXXXXXXXX" />※DEVELOPERSに登録必要
+html下記に変更
+<html lang="ja" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://www.facebook.com/2008/fbml">
+-->
+
+<!--microdata-->
+<meta itemprop="name" content="薬剤師ネット～薬剤師・薬学生のためのポータルサイト" />
+<meta itemprop="description" content="薬剤師ネットは薬剤師・薬学生のためのポータルサイト。「リクナビ薬剤師」プロデュースの好条件求人情報や、薬剤師さんの悩みが集まる匿名掲示板や、薬剤師ブログが集まるブログランキングなどなど・・・様々なコンテンツが集まっています。薬剤師さん必見！！" />
+<meta itemprop="image" content="http://r-yakuzaishi.net/images/ogp.jpg" />
+<!--microdata-->
+
+<meta name="format-detection" content="telephone=no" />
+<link rel="shortcut icon" href="img/favicon.ico">
+
+<!--
+JSON-LD
+例
+    会社名: 株式会社Go-Next
+    電話番号: 03-5436-4557
+    URL: http://www.go-next.co.jp/
+    創設者: NEXT太郎
+   下記のようにすることにより、founder（設立者）をより詳しく表現することができるのです。
+カンマの記述にも注意です。
+http://ad-library.jp/wp-json-ld/
+コードテスト
+    ・メールマークアップテスター
+    ・Corporate Contacts Markup Tester
+    ・Events Markup Tester
+-->
+<script type="application/ld+json">
+{
+    "@context":"http://schema.org",
+    "@type":"Corporation",
+    "name":"株式会社Go-Next",
+    "telephone":"03-5436-4557",
+    "url":"http://www.go-next.co.jp/",
+    "founder": {
+                    "@type": "Person",
+                    "name": "NEXT太郎",
+                    "url": "http://www.go-next.co.jp/"
+               }
+}
+</script>
+
+
+</head>
+<body>
+
+
+<div class="lyt-wrapperout-01">
+
+    <div class="lyt-wrapper-01">
+
+        <header class="lyt-headtop-01" role="banner" class="cf">
+
+            <div class="box-headl-01" ><!--企業、組織の場合 -->
+
+                <h1 itemscope="" itemtype="http://schema.org/Organization"><a itemprop="url" href=""><img itemprop="logo" src="images/" alt="" /></a></h1>
+
+            </div><!-- box-headl-01 -->
+
+
+            <div class="box-headr-01">
+                <p></p>
+            </div><!-- box-headr-01 -->
+
+        </header><!-- lyt-headtop-01 -->
+
+        <nav class="nav-mainmenu-01">
+            <ul role="navigation" class="cf">
+                <li class="list-gm-01"><a href="" title="のページへ"></a></li>
+                <li class="list-gm-02"><a href="" title="のページへ"></a></li>
+                <li class="list-gm-03"><a href="" title="のページへ"></a></li>
+                <li class="list-gm-04"><a href="" title="のページへ"></a></li>
+            </ul>
+        </nav><!-- gm -->
+
+        <!-- パンくずハはolタグで順番風に -->
+        <ol class="breadcrumbs">
+            <li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+            <a title="☆☆" href="☆☆" itemprop="url"><span itemprop="title">☆☆</span></a> &gt;</li>
+            <li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+            <a title="☆☆" href="☆☆" itemprop="url"><span itemprop="title">☆☆</span></a> &gt;</li>
+            <li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+            <a title="☆☆" href="☆☆" itemprop="url"><span itemprop="title">☆☆</span></a> &gt;</li>
+            <li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb"><span itemprop="title">☆☆</span></li>
+        </ol>
+
+
+    <div class="lyt-contentwrap-01" class="cf">
+
+        <main class="lyt-maincontent-01" role="main">
+            <h1></h1>
+            <time datetime="2009-11-04" class="published updated">November 4th, 2009</time>
+            <article>
+
+            </article>
+            <!-- articleは記事のことで、そして再利用可能なコンテンツを囲むために使用します -->
+
+
+        </main>
+
+
+        <aside class="lyt-subcontent-01">
+            <h1></h1>
+
+            <p>カエルの生態に関しては、<a href="#kaeru">こちらの画像</a>でご確認いただけます。</p>具体的には、サムネイル画像や、挿絵、サンプルコードやチュートリアルの画像などを figure タグで囲う
+                図表をあらわす。文書の本文（メインフロー）から参照されるようなビデオ、オーディオ、引用文、イラスト・図・写真・ソースコードなどのことです。
+            <figure class="kaeru">
+                <img src="images/kaeru.gif" alt="葉っぱを傘代わりにするカエル"><!-- IMG要素だけでなく、リスト要素（OL要素、UL要素、DL要素）や表組要素（TABLE要素）などなど、“本文から”“参照され”るコンテンツをFIGURE要素でマークアップ-->
+                <figcaption>カエルの生態</figcaption><!-- これはなくてもかまわない 図表にキャプションや注釈 ※必須ではない-->
+            </figure>
+
+
+            <section>
+                <h1></h1>
+
+
+            </section>
+
+
+        </aside><!-- lyt-subcontent-01 -->
+
+    </div><!-- lyt-contentwrap-01 -->
+
+
+
+    <div class="lyt-footerout-01">
+        <footer class="lyt-footer-01" class="wrapper" role="contentinfo">
+
+            <nav class="nav-footerf-01">
+                <ul>
+                    <li class=""><a href="#" title="のページへ"></a>　|　</li>
+                    <li class=""><a href="#" title="のページへ"></a>　|　</li>
+                    <li class=""><a href="#" title="のページへ"></a>　|　</li>
+                    <li class=""><a href="#" title="のページへ"></a>　|　</li>
+                    <li class=""><a href="#" title="のページへ"></a>　|　</li>
+                    <li class=""><a href="#" title="のページへ"></a></li>
+                </ul>
+            </nav><!-- lyt-footerf-01 -->
+            <address>
+    著作者の連絡先情報<br>
+    サイトの管理者や親コンテンツの著者を表す<br>
+    サイト管理者の連絡先情報<br>
+    メインコンテンツ著者の連絡先情報<br>
+    直近（address要素が含まれているセクション）の祖先のarticle要素・body要素によるセクションに対する連絡先情報を定義します<br>
+    ページ全体に対するものなのかページ内の特定のコンテンツに対するものか区別して使用します<br>
+    単なる住所などを表したい場合はp要素を使用します<br>
+    You can contact author at <a href="http://www.somedomain.com/contact">www.somedomain.com</a>.<br>
+    If you see any bugs, please <a href="mailto:webmaster@somedomain.com">contact webmaster</a>.<br>
+    You may also want to visit us:<br>
+    Mozilla Foundation<br>
+    1981 Landings Drive<br>
+    Building K<br>
+    Mountain View, CA 94043-0801<br>
+    USA
+    (下記、間違った使い方)<br>
+    お店のレビューサイトでお店の連絡先をaddressでマークアップ<br>
+    会社概要ページで会社の住所や連絡先をaddressでマークアップ（これはメインセクション)
+            </address>
+            <p class="doc-copyright-01"><small>&#169;2011 ～～～～～. All Rights Reserved.</small></p>
+
+        </footer>
+    </div><!-- lyt-footerout-01 -->
+
+
+
+    </div><!-- lyt-wrapper-01 -->
+</div><!-- lyt-wrapperout-01 -->
+
+
+<!-- ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■ -->
+        <dl>
+            <dt></dt>“説明される言葉”を囲むタグ。以前は”定義する用語”を囲むためだけの限定的な役割だったけど、HTML5からはもっとざっくり使えるようになったようです。
+            <dfn></dfn>“定義する用語”を囲むタグ。
+            <dd></dd>
+        </dl>
+
+        <abbr></abbr> “略語や頭文字”を囲むタグ。<dt>や<dfn>と組み合わせて使うことも可能。title属性を追加してそこに正式名称を書いたりして使う。
+
+        使用例
+        <dl>
+            <dt><dfn><abbr title="Photoshop">PS</abbr></dfn></dt>
+            <dd>PSとは<dfn>Photoshop</dfn>の略で、Adobe社の開発したすごいソフトである。
+            <abbr title="フォトショップ">フォトショ</abbr>と呼ばれることもしばしば。</dd>
+        </dl>
+
+
+        <em>ニュアンスを強調するタグ</em>
+        <strong>重要なテキストを囲むタグ</strong>
+        <b>太字にするタグ</b>
+        使用例
+        1.もし<em>高校野球の女子マネージャーが</em>ドラッカーの『マネジメント』を読んだら
+        2.もし高校野球の女子マネージャーが<em>ドラッカーの『マネジメント』を</em>読んだら
+        3.もし高校野球の女子マネージャーがドラッカーの<strong>『マネジメント』</strong>を読んだら
+        4.もし高校野球の女子マネージャーがドラッカーの<b>『マネジメント』</b>を読んだら
+
+        1は「ドラッカーの『マネジメント』を読んだのは、高校野球の女子マネージャーなんだよ！変わった女子高生がいるもんだなあ」的なニュアンスの意味で、
+        2は「高校野球の女子マネージャーが、あのドラッカーの『マネジメント』を読んだんだよ！珍しい本のチョイスだよねえ」的なニュアンスの意味です。
+        3は『マネジメント』という言葉単体を重要視しています。文章のニュアンスうんぬんより、検索キーワードで『マネジメント』をひっかけたいということだけならこの使い方です。
+
+                  <li>
+                    <figure> <a href="http://blog.bizreach.co.jp/archives/558">
+                      <img width="33" height="50" src="" class="attachment-50x50 wp-post-image" alt="BizReach_Minami1" /></a>
+                      <figcaption>
+                        <a href="http://blog.bizreach.co.jp/archives/558">
+                          <dl>
+                            <dt>2014年3月31日<br />
+                              代表の南が世界経済フォーラム「ヤング・グローバル・リーダーズ」に選出されました</dt>
+                            <dd>こんにちは、編集室の田村です。 ダボス会議で知られる世界経済フォーラム（WEF）の 2014年「ヤン</dd>
+                          </dl>
+                        </a>
+                      </figcaption>
+                    </figure>
+                  </li>
+
+
+
+</body>
+</html>
+
+

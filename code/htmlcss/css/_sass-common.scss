@@ -1,0 +1,144 @@
+@charset "utf-8";
+// 定義したミックスインを呼び出し
+/*.relatedArea {
+    @include boxSet;
+}
+*/
+//全体
+$main_color: #000; //メインカラー（ベースカラー）
+$sub_color: #fff; //サブカラー
+$accent_color: #e73562; //アクセントカラー
+
+//テキスト
+$font_color: #000; //ベーステキストカラー
+$font_linkcolor: #0884B2;//ベーステキストリンクカラー
+$font_hovercolor: #0884B2;//ホバーテキストリンクカラー
+
+//ボーダー
+$boader-style1:1px solid #000;
+$boader-bottom1:1px solid #000;
+
+//画像のパス
+$img_path: "../images/";
+//使い方background: url(#{$img_path}bg.png) repeat;
+
+// ミックスインを定義
+//角丸
+@mixin borderradius($borderradius) {
+border-radius:$borderradius;
+-moz-border-radius:$borderradius;
+-webkit-border-radius:$borderradius;
+-ms-border-radius:$borderradius;
+-o-border-radius:$borderradius;
+}//@include borderradius(4px 4px 4px 4px);  で呼び出し
+
+//透明度
+@mixin opacity($opacity) {
+$opacityIE: $opacity * 100;
+filter: alpha(opacity=$opacityIE);
+-moz-opacity:$opacity;
+opacity: $opacity;
+}//@include opacity(0.8);  で呼び出し
+
+@mixin css3($property, $value) {
+     @each $prefix in -webkit-, -moz-, -ms-, -o-, '' {
+          #{$prefix}#{$property}: $value;
+     }
+}//@include css3(transition, 0.5s);
+
+
+@mixin absPosition ($top: auto, $right: auto, $bottom: auto, $left: auto) {
+     position: absolute;
+     top: $top;
+     right: $right;
+     bottom: $bottom;
+     left: $left;
+}// @include absPosition(5px, 20px, 10px, 15px);  左からtop right bottom left
+
+
+
+
+@mixin box-sizing($type)
+ {
+box-sizing: $type;
+-moz-box-sizing: $type;
+-webkit-box-sizing: $type;
+-o-box-sizing: $type;
+-ms-box-sizing: $type;
+ }// @include box-sizing(border-box);
+
+
+
+@mixin background-size($sizetype)
+ {
+background-size:$sizetype;
+-moz-background-size:$sizetype;
+-webkit-background-size:$sizetype;
+-o-background-size:$sizetype;
+-ms-background-size:$sizetype;
+ }// @include background-size(cover);
+
+
+
+ @mixin box-shadow( $h: 10px , $v: 10px , $b: 0px , $s: 0px , $c: #000000 ) {
+     -webkit-box-shadow: $h $v $b $s $c;
+	 -moz-box-shadow: $h $v $b $s $c;
+	 box-shadow: $h $v $b $s $c;
+ }
+//div {
+//@include box-shadow(8px, 8px);
+//}
+
+ @mixin vertical-align {
+     position: relative;
+ top: 50%;
+ -webkit-transform: translateY(-50%);
+ -ms-transform: translateY(-50%);
+ transform: translateY(-50%);
+ }
+//div {
+//@include vertical-align();
+//}
+
+ @mixin gradient($start-color, $end-color, $orientation)
+ {
+ background: $start-color;
+ @if $orientation == vertical
+ {
+ // vertical
+ background: -moz-linear-gradient(top,  $start-color 0%, $end-color 100%);
+ background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$start-color), color-stop(100%,$end-color));
+ background: -webkit-linear-gradient(top,  $start-color 0%,$end-color 100%);
+ background: -o-linear-gradient(top,  $start-color 0%,$end-color 100%);
+ background: -ms-linear-gradient(top,  $start-color 0%,$end-color 100%);
+ background: linear-gradient(to bottom,  $start-color 0%,$end-color 100%);
+ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$start-color', endColorstr='$end-color',GradientType=0 );
+ }
+ @else if $orientation == horizontal
+ {
+ // horizontal
+ background: -moz-linear-gradient(left,  $start-color 0%, $end-color 100%);
+ background: -webkit-gradient(linear, left top, right top, color-stop(0%,$start-color), color-stop(100%,$end-color));
+ background: -webkit-linear-gradient(left,  $start-color 0%,$end-color 100%);
+ background: -o-linear-gradient(left,  $start-color 0%,$end-color 100%);
+ background: -ms-linear-gradient(left,  $start-color 0%,$end-color 100%);
+ background: linear-gradient(to right,  $start-color 0%,$end-color 100%);
+ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$start-color', endColorstr='$end-color',GradientType=1 );
+ }
+ @else
+ {
+ // radial
+ background: -moz-radial-gradient(center, ellipse cover,  $start-color 0%, $end-color 100%);
+ background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,$start-color), color-stop(100%,$end-color));
+ background: -webkit-radial-gradient(center, ellipse cover,  $start-color 0%,$end-color 100%);
+ background: -o-radial-gradient(center, ellipse cover,  $start-color 0%,$end-color 100%);
+ background: -ms-radial-gradient(center, ellipse cover,  $start-color 0%,$end-color 100%);
+ background: radial-gradient(ellipse at center,  $start-color 0%,$end-color 100%);
+ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$start-color', endColorstr='$end-color',GradientType=1 );
+ }
+ }
+
+
+//div {
+// @include gradient(#ff00ff, #ff00cc, vertical);
+// }

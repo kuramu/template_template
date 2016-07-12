@@ -1,0 +1,42 @@
+@charset "utf-8";
+@import "sass-common.scss";
+
+
+//1. @mixin,@contentでkeyframesの関数を用意する
+
+@mixin keyframes($animation-name) {
+  @-webkit-keyframes $animation-name {
+    @content;
+  }
+  @-moz-keyframes $animation-name {
+    @content;
+  }
+  @keyframes $animation-name {
+    @content;
+  }
+}
+
+//2. @mixinでanimationプロパティの関数を用意する
+
+@mixin animation($animation-name) {
+  -webkit-animation: $animation-name;
+  -moz-animation: $animation-name;
+  animation: $animation-name;
+  -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+//3. 1,2で用意した関数を使ってアニメーションを書く
+@include keyframes(animationSample){
+    0% {
+        opacity:0;
+    }
+    100% {
+        opacity:1;
+    }
+}
+
+#hoge{
+    @include animation(animationSample 1.2s ease 0.15s);
+}

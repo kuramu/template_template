@@ -1,0 +1,175 @@
+deny from host
+<<<<<<< HEAD
+ä¸Šè¨˜ä¸€è¡Œã§ã™ã¹ã¦ã®ã‚¢ã‚¯ã‚»ã‚¹ã‚’åˆ¶é™ã—ã¾ã™
+
+.htaccess
+
+æœ€åˆã«è¨˜è¿°ã™ã‚‹
+=======
+ã‹Lˆês‚Å‚·‚×‚Ä‚ÌƒAƒNƒZƒX‚ð§ŒÀ‚µ‚Ü‚·
+
+.htaccess
+
+Å‰‚É‹Lq‚·‚é
+>>>>>>> 9d580559686851905ab0d715cc2816e66fe6166e
+
+<Files ~ "^\.(htaccess|htpasswd)$">
+
+deny from all
+
+</Files>
+
+<<<<<<< HEAD
+ä¸­ã«ä¸‹è¨˜ã®ã‚‚ã®
+
+æœ€ä¸‹éƒ¨ã«
+=======
+’†‚É‰º‹L‚Ì‚à‚Ì
+
+Å‰º•”‚É
+>>>>>>> 9d580559686851905ab0d715cc2816e66fe6166e
+
+order deny,allow
+
+
+
+<<<<<<< HEAD
+ãƒ•ã‚¡ã‚¤ãƒ«ä¸€è¦§ã®æ‹’å¦
+=======
+ƒtƒ@ƒCƒ‹ˆê——‚Ì‹‘”Û
+>>>>>>> 9d580559686851905ab0d715cc2816e66fe6166e
+
+Options -Indexes
+
+
+<<<<<<< HEAD
+301ãƒªãƒ€ã‚¤ãƒ¬ã‚¯ãƒˆã‚’ä½¿ã£ãŸã€ŒWWWã‚ã‚Šã€ã¨ã€ŒWWWãªã—ã€ã®çµ±ä¸€
+
+ã€Œwwwã‚ã‚Šã€ã«çµ±ä¸€ã™ã‚‹å ´åˆ
+=======
+301ƒŠƒ_ƒCƒŒƒNƒg‚ðŽg‚Á‚½uWWW‚ ‚èv‚ÆuWWW‚È‚µv‚Ì“ˆê 
+
+uwww‚ ‚èv‚É“ˆê‚·‚éê‡
+>>>>>>> 9d580559686851905ab0d715cc2816e66fe6166e
+Options +FollowSymLinks
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^sample\.com
+RewriteRule ^(.*)$ http://www.sample.com/$1 [R=301,L]
+
+<<<<<<< HEAD
+ã€Œwwwãªã—ã€ã«çµ±ä¸€ã™ã‚‹å ´åˆ
+=======
+uwww‚È‚µv‚É“ˆê‚·‚éê‡
+>>>>>>> 9d580559686851905ab0d715cc2816e66fe6166e
+Options +FollowSymLinks
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^www.sample\.com
+RewriteRule ^(.*)$ http://sample.com/$1 [R=301,L]
+
+<<<<<<< HEAD
+é–“é•ãˆãªã„ã‚ˆã†ã«ã‚³ãƒ”ãƒšã—ã¦ã€ã€Œsample.comã€ã‚’è‡ªåˆ†ã®ãƒ‰ãƒ¡ã‚¤ãƒ³ã«ç½®ãæ›ãˆã¦ãã ã•ã„ã€‚
+ã€Œï¿¥ï¼ˆå††ãƒžãƒ¼ã‚¯ï¼‰ã€ã¯ã€ç’°å¢ƒã«ã‚ˆã£ã¦ã¯ã€Œ/ï¼ˆã‚¹ãƒ©ãƒƒã‚·ãƒ¥ï¼‰ã€ã‚’ã²ã£ãã‚Šè¿”ã—ãŸãƒãƒƒã‚¯ã‚¹ãƒ©ãƒƒã‚·ãƒ¥ã§è¡¨ç¤ºã•ã‚Œã¾ã™ã€‚
+
+index.htmlã€Œã‚ã‚Šãƒ»ãªã—ã€ã®URLæ­£è¦åŒ–
+
+  ã€Œhttp://www.exmample.com/ã€ã¨ã€Œhttp://www.example.com/index.htmlã€ã‚’æ­£è¦åŒ–ã—ã€ã€Œhttp://www.exmample.com/ã€ã«ãã‚ãˆã‚‹æ™‚ã¯ã€.htaccessã«æ¬¡ã®ã‚ˆã†ã«è¨˜è¿°ã—ã¾ã™ã€‚
+=======
+ŠÔˆá‚¦‚È‚¢‚æ‚¤‚ÉƒRƒsƒy‚µ‚ÄAusample.comv‚ðŽ©•ª‚ÌƒhƒƒCƒ“‚É’u‚«Š·‚¦‚Ä‚­‚¾‚³‚¢B
+ui‰~ƒ}[ƒNjv‚ÍAŠÂ‹«‚É‚æ‚Á‚Ä‚Íu/iƒXƒ‰ƒbƒVƒ…jv‚ð‚Ð‚Á‚­‚è•Ô‚µ‚½ƒoƒbƒNƒXƒ‰ƒbƒVƒ…‚Å•\Ž¦‚³‚ê‚Ü‚·B
+
+index.htmlu‚ ‚èE‚È‚µv‚ÌURL³‹K‰»  
+
+  uhttp://www.exmample.com/v‚Æuhttp://www.example.com/index.htmlv‚ð³‹K‰»‚µAuhttp://www.exmample.com/v‚É‚»‚ë‚¦‚éŽž‚ÍA.htaccess‚ÉŽŸ‚Ì‚æ‚¤‚É‹Lq‚µ‚Ü‚·B
+>>>>>>> 9d580559686851905ab0d715cc2816e66fe6166e
+
+Options +FollowSymLinks
+RewriteEngine on
+RewriteCond %{THE_REQUEST} ^.*/index.html
+RewriteRule ^(.*)index.html$ http://www.example.com/$1 [R=301,L]
+
+<<<<<<< HEAD
+ä¸Šè¨˜å…¨ã¾ã¨ã‚ã¦
+wwwã‚ã‚Š
+=======
+ã‹L‘S‚Ü‚Æ‚ß‚Ä
+www‚ ‚è
+>>>>>>> 9d580559686851905ab0d715cc2816e66fe6166e
+<Files ~ "^\.(htaccess|htpasswd)$">
+deny from all
+</Files>
+Options -Indexes
+Options +FollowSymLinks
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^beacon-lab\.com
+RewriteRule ^(.*)$ http://www.beacon-lab.com/$1 [R=301,L]
+Options +FollowSymLinks
+RewriteEngine on
+RewriteCond %{THE_REQUEST} ^.*/index.html
+RewriteRule ^(.*)index.html$ http://www.beacon-lab.com/$1 [R=301,L]
+order deny,allow
+
+
+<<<<<<< HEAD
+ä¸Šè¨˜å…¨ã¾ã¨ã‚ã¦
+wwwãªã—
+=======
+ã‹L‘S‚Ü‚Æ‚ß‚Ä
+www‚È‚µ
+>>>>>>> 9d580559686851905ab0d715cc2816e66fe6166e
+<Files ~ "^\.(htaccess|htpasswd)$">
+deny from all
+</Files>
+Options -Indexes
+Options +FollowSymLinks
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^www.ghostripper\.co
+RewriteRule ^(.*)$ http://ghostripper.co/$1 [R=301,L]
+Options +FollowSymLinks
+RewriteEngine on
+RewriteCond %{THE_REQUEST} ^.*/index.html
+RewriteRule ^(.*)index.html$ http://ghostripper.co/$1 [R=301,L]
+order deny,allow
+
+<<<<<<< HEAD
+#ãƒ•ã‚©ãƒ³ãƒˆã®content-typeã®è¿½åŠ 
+AddType application/vnd.ms-fontobject .eot
+AddType application/x-font-ttf .ttf
+AddType application/x-font-opentype .otf
+AddType application/x-font-woff .woff
+AddType image/svg+xml .svg
+
+#htaccessã®è¨˜è¿°ã‚³ãƒ³ãƒ†ãƒ³ãƒ„ã®åœ§ç¸®ã‚’æœ‰åŠ¹ãã®ã¾ã¾ä½¿ãˆã‚‹
+#ãƒ–ãƒ©ã‚¦ã‚¶ã‚­ãƒ£ãƒƒã‚·ãƒ¥ã®è¨­å®š
+ExpiresActive On
+ExpiresByType text/css "access plus 1 weeks"
+ExpiresByType image/gif "access plus 1 weeks"
+ExpiresByType image/jpeg "access plus 1 weeks"
+ExpiresByType image/png "access plus 1 weeks"
+ExpiresByType application/javascript "access plus 1 weeks"
+ExpiresByType application/x-javascript "access plus 1 weeks"
+
+#ãƒ•ã‚©ãƒ³ãƒˆ
+ExpiresByType application/vnd.ms-fontobject "access plus 1 year"
+ExpiresByType application/x-font-ttf "access plus 1 year"
+ExpiresByType application/x-font-opentype "access plus 1 year"
+ExpiresByType application/x-font-woff "access plus 1 year"
+ExpiresByType image/svg+xml "access plus 1 year"
+
+#åœ§ç¸®ã®è¨­å®š
+AddOutputFilterByType DEFLATE text/plain
+AddOutputFilterByType DEFLATE text/html
+AddOutputFilterByType DEFLATE text/xml
+AddOutputFilterByType DEFLATE text/css
+AddOutputFilterByType DEFLATE application/xml
+AddOutputFilterByType DEFLATE application/xhtml+xml
+AddOutputFilterByType DEFLATE application/rss+xml
+AddOutputFilterByType DEFLATE application/javascript
+AddOutputFilterByType DEFLATE application/x-javascript
+
+#ãƒ•ã‚©ãƒ³ãƒˆåœ§ç¸®
+AddOutputFilterByType DEFLATE application/x-font-ttf application/x-font-opentype image/svg+xml
+
+æœ€å¾Œã«æ”¹è¡Œã™ã‚‹
+=======
+ÅŒã‚É‰üs‚·‚é
+>>>>>>> 9d580559686851905ab0d715cc2816e66fe6166e

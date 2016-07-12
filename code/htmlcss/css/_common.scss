@@ -1,0 +1,819 @@
+@charset "utf-8";
+@import "sass-common.scss";
+
+.u-cf:after{
+content:".";
+display:block;
+height:0;
+clear:both;
+visibility:hidden;
+}
+.u-cf{
+display:inline-table;
+min-height:1%;
+}
+
+* html .u-cf{ height:1%;}
+.u-cf{ display:block;}
+
+.u-nonespan{
+display:block;
+width:0;
+height:0;
+overflow:hidden;
+}
+
+a:link,a:visited {
+color:$font_linkcolor;
+}
+
+a:hover,a:active{
+color:$font_hovercolor;
+text-decoration:none;
+}
+a,a:hover {
+-webkit-transition: 0.7s;
+-moz-transition: 0.7s;
+-o-transition: 0.7s;
+transition: 0.7s;
+}
+
+
+
+
+a:hover img,a:hover{
+filter: alpha(opacity=80);
+-ms-filter: "alpha(opacity=80)";
+-moz-opacity:0.8;
+opacity:0.8;
+}
+
+
+body{
+font-size:12px;
+font-family:"ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","メイリオ",Meiryo,Osaka,"ＭＳ Ｐゴシック","MS PGothic",sans-serif;
+/*font-family: Verdana, "游ゴシック", YuGothic, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;*/
+overflow:visible;
+color:$font_color;
+background:url(../images/) top left repeat-x #ffffff;
+line-height:1.6;
+letter-spacing: 0.4px;
+word-wrap:break-word;/*連続した半角英数字を折り返しさせる*/
+/* min-width:1200px ;スマホでＰＣ表示した場合背景が見切れないように→コンテンツの最大幅を入力 */
+text-rendering:optimizeLegibility;/*カーニングと合字 (リガチャ) をうまい具合に調整 Firefox、Chrome、Safariのみフォントがカーニングや合字のデータを持っていなければ指定しても何も起こりません。和文フォントでは、メイリオと MS 系ゴシック・明朝は効果がないですが、ヒラギノ角ゴ・明朝は軽くカーニングが調整されます*/
+}
+
+/* Complete Set for Legacy Browsers（旧ブラウザ対応フルセット） */
+
+.u-gothic {
+font-family: Verdana, "游ゴシック", YuGothic, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
+} /* ゴシック体 */
+
+.u-mincho {
+font-family: "Times New Roman", "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "メイリオ", Meiryo, serif;
+} /* 明朝体 */
+
+.u-mono {
+font-family: "Osaka－等幅", Osaka-mono, "ＭＳ ゴシック", "MS Gothic", monospace;
+} /* 等幅書体 */
+
+.u-hiraginoMaruGothic {
+font-family: "ヒラギノ丸ゴ ProN W4", "Hiragino Maru Gothic ProN", "メイリオ", Meiryo, fantasy;
+} /* OS X限定 丸ゴシック体 */
+
+
+/* Sans Serif Set for Legacy Browsers and Android（Andoroid対応付きゴシック体セット） */
+
+.u-gothic-old {
+font-family: Verdana, Roboto, "Droid Sans", "游ゴシック", YuGothic, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
+}
+.u-min-old{
+font-family:"ＭＳ Ｐ明朝", "MS PMincho", "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", serif;
+}
+
+
+
+.u-remove-bottom{margin-bottom:0 !important;}
+.u-remove-bottom-padding{padding-bottom:0 !important;}
+.u-remove-padding{padding:0 !important;}
+.u-remove-margin{margin:0 !important;}
+
+
+.u-nowrap{white-space: nowrap;}/* 単語を途中で折り返さない */
+
+.u-w-auto{width: auto !important;}
+
+.u-floatleft{float:left !important;;}
+.u-floatright{float:right !important;;}
+.u-floatnone{float:none !important;}
+.u-clear_both { clear: both !important; }
+
+.u-align-center{text-align:center !important;}
+.u-align-left{text-align:left !important;}
+.u-align-right{text-align:right !important;}
+
+.u-relative{position: relative !important;}
+.u-inline-block{display: inline-block !important;}
+
+.u-image-left{float:left;margin:0 1em 1em 0;}
+.u-image-right{float:right;margin:0 0 1em 1em;}
+
+.u-bold{font-weight:bold;}
+.u-normal{font-weight: normal !important;}
+.u-red,.u-required-e,.u-error{color: #F00;}
+.u-black{color:#000000;}
+.u-white{color:#ffffff;}
+.u-bg-black{background-color:#000000;}
+.u-bg-white{background-color:#ffffff;}
+
+
+
+.u-verla-m{vertical-align: middle !important;}
+.u-verla-t{vertical-align: top !important;}
+.u-verla-b{vertical-align: bottom !important;}
+
+.u-text-under{text-decoration:underline !important;}
+.u-m-auto{margin-left:auto !important;margin-right:auto !important;}
+
+
+.u-unda-lin{border-bottom: 1px solid #463419;}
+.u-border0{border:0 !important;}
+
+
+.u-w25p{width: 25px !important;}
+.u-w50p{width: 50px !important;}
+.u-w75p{width: 75px !important;}
+.u-w100p{width: 100px !important;}
+.u-w125p{width: 125px !important;}
+.u-w150p{width: 150px !important;}
+.u-w175p{width: 175px !important;}
+.u-w200p{width: 200px !important;}
+.u-w225p{width: 225px !important;}
+.u-w250p{width: 250px !important;}
+
+.u-box-sizing-wp{
+box-sizing: border-box;
+-moz-box-sizing: border-box;
+-webkit-box-sizing: border-box;
+-o-box-sizing: border-box;
+-ms-box-sizing: border-box;
+}
+
+
+.u-font9{font-size:9px !important;}.u-font10{font-size:10px !important;}.u-font11{font-size:11px !important;}.u-font12{font-size:12px !important;}.u-font13{font-size:13px !important;}.u-font14{font-size:14px !important;}.u-font15{font-size:15px !important;}.u-font16{font-size:16px !important;}.u-font17{font-size:17px !important;}.u-font18{font-size:18px !important;}.u-font19{font-size:19px !important;}.u-font20{font-size:20px !important;}.u-font21{font-size:21px !important;}.u-font22{font-size:22px !important;}.u-font23{font-size:23px !important;}.u-font24{font-size:24px !important;}.u-font25{font-size:25px !important;}.u-font26{font-size:26px !important;}.u-font27{font-size:27px !important;}.u-font28{font-size:28px !important;}.u-font29{font-size:29px !important;}.u-font30{font-size:30px !important;}.u-font31{font-size:31px !important;}.u-font32{font-size:32px !important;}.u-font33{font-size:33px !important;}
+
+
+.u-line0{ line-height:0 !important;}.u-line10{ line-height:1 !important;}.u-line11{ line-height:1.1 !important;}.u-line12{ line-height:1.2 !important;}.u-line13{ line-height:1.3 !important;}.u-line14{ line-height:1.4 !important;}.u-line15{ line-height:1.5 !important;}.u-line16{ line-height:1.6 !important;}.u-line17{ line-height:1.7 !important;}.u-line18{ line-height:1.8 !important;}.u-line19{ line-height:1.9 !important;}.u-line20{ line-height:2 !important;}
+/* 5px刻み */
+// 繰り返すものをリストとして登録しておく
+$space:0, 5, 10, 15, 20, 25, 30,35 , 40 ,45,50,55,60,65,70,75,75,80,85,90,95,100;
+
+// 上記のリスト分だけ繰り返す！！
+@each $prefix in $space{
+    .u-mt#{$prefix} {
+        margin-top: #{$prefix}px !important;
+    }
+}
+@each $prefix in $space{
+    .u-mr#{$prefix} {
+        margin-right: #{$prefix}px !important;
+    }
+}
+@each $prefix in $space{
+    .u-mb#{$prefix} {
+        margin-bottom: #{$prefix}px !important;
+    }
+}
+@each $prefix in $space{
+    .u-ml#{$prefix} {
+        margin-left: #{$prefix}px !important;
+    }
+}
+@each $prefix in $space{
+    .u-pt#{$prefix} {
+        padding-top: #{$prefix}px !important;
+    }
+}
+@each $prefix in $space{
+    .u-pr#{$prefix} {
+        padding-right: #{$prefix}px !important;
+    }
+}
+@each $prefix in $space{
+    .u-pb#{$prefix} {
+        padding-bottom: #{$prefix}px !important;
+    }
+}
+@each $prefix in $space{
+    .u-pl#{$prefix} {
+        padding-left: #{$prefix}px !important;
+    }
+}
+/* 4px刻み */
+// 繰り返すものをリストとして登録しておく
+$space4:0, 4, 8, 12, 16, 20, 24,28,32,36,40,44,48,52,56,60,64,68,72,76,80,84,88,92,96,100,104,108,112,116,120;
+
+// 上記のリスト分だけ繰り返す！！
+@each $prefix in $space4{
+    .u-mt#{$prefix} {
+        margin-top: #{$prefix}px !important;
+    }
+}
+@each $prefix in $space4{
+    .u-mr#{$prefix} {
+        margin-right: #{$prefix}px !important;
+    }
+}
+@each $prefix in $space4{
+    .u-mb#{$prefix} {
+        margin-bottom: #{$prefix}px !important;
+    }
+}
+@each $prefix in $space4{
+    .u-ml#{$prefix} {
+        margin-left: #{$prefix}px !important;
+    }
+}
+@each $prefix in $space4{
+    .u-pt#{$prefix} {
+        padding-top: #{$prefix}px !important;
+    }
+}
+@each $prefix in $space4{
+    .u-pr#{$prefix} {
+        padding-right: #{$prefix}px !important;
+    }
+}
+@each $prefix in $space4{
+    .u-pb#{$prefix} {
+        padding-bottom: #{$prefix}px !important;
+    }
+}
+@each $prefix in $space4{
+    .u-pl#{$prefix} {
+        padding-left: #{$prefix}px !important;
+    }
+}
+
+
+/* YouTubeなどのiframeで埋め込む動画をレスポンシブに対応 */
+.rwd_embed {
+position: relative;
+margin: 20px 0;
+padding-bottom: 56.25%;
+padding-top: 30px;
+overflow: hidden;
+max-width: 100%;
+height: auto;
+}
+
+.rwd_embed iframe, .rwd_embed object, .rwd_embed embed {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+}
+/*スマホでhoverを表現する*/
+.sp-touchbtn:hover, .sp-touchbtn {
+}
+
+/*矢印系CSSスタート*/
+
+[class^="module-triangle-"] {
+position: relative;
+}
+[class^="module-triangle-"]:before {
+content: "";
+border: solid transparent;
+display: inline-block;
+position: absolute;
+}
+.module-triangle-top:before {
+border-width: 8px;
+border-bottom-color: #000;
+margin-left: -8px;
+left: 50%;
+top: -16px;
+}
+.module-triangle-right:before {
+border-width: 8px;
+border-left-color: #000;
+margin-top: -8px;
+right: -16px;
+/*right: -16px; としているのは、 border プロパティで指定したサイズが 8px なので、左右の border 分ということで、×2 して 16px に。これで div 要素のボックスに対して右側の Border Edge 上に三角形が配置されます。*/
+top: 50%;
+/*縦方向に関しては、top: 50%;、margin-top: -8px; を同時に指定することで、div 要素のたてサイズに対して上下中央に配置します。この辺は単なる計算の問題*/
+}
+.module-triangle-bottom:before {
+border-width: 8px;
+border-top-color: #000;
+margin-left: -8px;
+left: 50%;
+bottom: -16px;
+}
+.module-triangle-left:before {
+border-width: 8px;
+border-right-color: #000;
+margin-top: -8px;
+left: -16px;
+top: 50%;
+}
+/*矢印系CSSスタート*/
+
+
+/*input系CSSスタート*/
+textarea,
+select,
+input[type="email"],
+input[type="text"],
+input[type="password"]{
+border: 1px solid #999999;
+border-radius:2px;
+-moz-border-radius:2px;
+-webkit-border-radius:2px;
+-ms-border-radius:2px;
+-o-border-radius:2px;
+box-shadow:0px 0px 2px #dbdbdb inset;
+-webkit-box-shadow:0px 0px 2px #dbdbdb inset;
+-moz-box-shadow:0px 0px 2px #dbdbdb inset;
+-ms-box-shadow:0px 0px 2px #dbdbdb inset;
+      background: #fff;
+box-sizing: border-box;
+-moz-box-sizing: border-box;
+-webkit-box-sizing: border-box;
+-o-box-sizing: border-box;
+-ms-box-sizing: border-box;
+  color: #333;
+	}
+input[type="text"]{
+
+	}
+input[type="checkbox"]{
+   vertical-align: middle;
+   margin:0 3px 0 0;
+border: 1px solid #999999;
+	}
+
+input[type="radio"] {
+    vertical-align: middle;
+   margin:0 3px 0 0;
+}
+select{
+/*ブラウザデフォルトスタイルOFF+装飾*/
+color: #333;
+font-size: 100%;
+border: 1px solid #B3B3B3;
+border-radius: 5px;
+/* Chromeで矢印が消えてしまう
+-webkit-appearance: none;
+-moz-appearance: none;
+appearance: none;
+*/
+/*text-indent: .01px;*/
+text-overflow: "";
+background: #FFF url(select_arrow.jpg) no-repeat right;
+/*ENDブラウザデフォルトスタイルOFF+装飾*/
+}
+
+textarea{
+width: 100%;
+min-height: 200px;
+	}
+button{
+-webkit-appearance: none;
+-moz-appearance: none;
+appearance: none;
+}
+
+input, textarea {
+      background: #ffffff;
+    -webkit-transition: background 1s ease;
+    -moz-transition: background 1s ease;
+    -o-transition: background 1s ease;
+    -ms-transition: background 1s ease;
+    transition: background 1s ease;
+}
+
+input:focus, textarea:focus {
+      background: #f1f0f0;
+}
+
+/*typeファイルのリセット化
+<div class="file">
+  ファイルを選択
+  <input type="file"/>
+</div>
+*/
+.file {
+  display: inline-block;
+  overflow: hidden;
+  position: relative;
+  padding: .5em;
+  border: 1px solid #999;
+  background-color: #eee;
+}
+
+.file input[type="file"] {
+  opacity: 0;
+  filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0);
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin: 0;
+  font-size: 100px;
+  cursor: pointer;
+}
+/*input系CSS終わり*/
+
+
+
+
+/* FormHack v1.0.0 (formhack.io) */
+
+// Config -----------------------------
+
+// Font
+$fh-font-family: 'Raleway', sans-serif;
+$fh-font-size: 16px;
+$fh-font-color: rgb(40, 40, 40);
+
+// Borders
+$fh-border-radius: 5px;
+$fh-border-width: 1px;
+$fh-border-style: solid;
+$fh-border-color: rgb(200, 200, 200);
+
+// Inputs, Textareas, Select, Option
+$fh-input-height: 40px;
+$fh-input-width: 100%;
+$fh-input-max-width: 400px;
+$fh-input-bg-color: #fff;
+$fh-focus-bg-color: rgb(220, 220, 220);
+$fh-focus-border-color: $fh-border-color;
+$fh-focus-font-color: $fh-font-color;
+
+// Select Vendor Styling
+$fh-allow-vendor-styling: true;
+
+// Fieldset & Legend Styling
+$fh-fieldset-bare: false;
+
+// Buttons & Input Submits
+$fh-button-height: 40px;
+$fh-button-width: 100%;
+$fh-button-max-width: 200px;
+$fh-button-font-color: $fh-font-color;
+$fh-button-bg-color: $fh-focus-bg-color;
+$fh-button-hover-bg-color: $fh-border-color;
+$fh-button-hover-font-color: $fh-font-color;
+
+// Layout
+$fh-centered: false;
+$fh-display: block;
+
+
+// Center/Left-Aligned Layout
+@mixin center-layout {
+  @if $fh-centered == true {
+    margin: 10px auto;
+    text-align: center;
+  }
+  @else {
+    margin: 10px 0;
+  }
+}
+
+
+/* Global Reset Styles ------------------ */
+
+input,
+textarea,
+select,
+option,
+optgroup,
+button,
+legend,
+fieldset {
+  box-sizing: border-box;
+  outline: none;
+
+  font-family: $fh-font-family;
+  font-size: $fh-font-size;
+  color: $fh-font-color;
+  vertical-align: top;
+
+  display: $fh-display;
+  @include center-layout;
+}
+
+
+datalist {
+  font-family: $fh-font-family;
+  font-size: $fh-font-size;
+}
+
+label {
+  display: $fh-display;
+  @include center-layout;
+}
+
+
+
+/* Input & Textarea ------------------ */
+
+/* Fields with standard height */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="search"],
+input[type="color"],
+input[type="date"],
+input[type="datetime-local"],
+input[type="month"],
+input[type="number"],
+input[type="tel"],
+input[type="time"],
+input[type="url"],
+input[type="week"],
+input[list] {
+  -webkit-appearance: none;
+}
+
+/* Other */
+
+textarea {
+  -webkit-appearance: none;
+  overflow: auto;
+}
+
+input[type="search"] {
+  -webkit-appearance: none;
+}
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  display: inline-block;
+  vertical-align: middle;
+}
+// For checkbox and radio to be centered, need to wrap the input and label in a span -
+// .checkbox-container {
+//  display: block;
+//  text-align: center;
+// }
+
+
+/* Select ------------------ */
+
+select {
+  height: $fh-input-height;
+
+  @if $fh-allow-vendor-styling == false {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+  }
+}
+
+select[multiple] {
+  height: auto;
+  min-height: $fh-input-height;
+  padding: 0;
+
+  option {
+    margin: 0;
+    padding: $fh-input-height / 5;
+  }
+}
+
+/* Fieldset ------------------ */
+
+fieldset {
+  @if $fh-fieldset-bare == true {
+    padding: 0;
+    border: 0;
+  }
+  @else {
+    padding: 10px 25px;
+    -webkit-border-radius: $fh-border-radius;
+    -moz-border-radius: $fh-border-radius;
+    border-radius: $fh-border-radius;
+    border: $fh-border-width $fh-border-style $fh-border-color;
+  }
+}
+
+legend {
+  @if $fh-fieldset-bare == true {
+    padding: 0;
+    font-weight: inherit;
+  }
+  @else {
+    padding: 0 5px;
+    font-weight: 700;
+  }
+}
+
+/* Buttons, Input Type Submit/Reset ------------------ */
+
+button,
+input[type="button"],
+input[type="submit"],
+input[type="reset"],
+input[type="image"] {
+  height: $fh-button-height;
+  background-color: $fh-button-bg-color;
+  padding: $fh-input-height / 5;
+  cursor: pointer;
+
+
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+}
+
+input[type="image"] {
+  text-align: center;
+  padding: $fh-input-height / 5;
+}
+
+/* States ------------------ */
+
+input[disabled],
+textarea[disabled],
+select[disabled],
+option[disabled],
+button[disabled] {
+  cursor: not-allowed;
+}
+
+input[type="checkbox"]:focus,
+input[type="radio"]:focus {
+  outline: $fh-focus-border-color solid 2px;
+}
+
+button:hover,
+input[type="button"]:hover,
+input[type="submit"]:hover,
+input[type="reset"]:hover,
+button:focus,
+input[type="button"]:focus,
+input[type="submit"]:focus,
+input[type="reset"]:focus {
+  background-color: $fh-button-hover-bg-color;
+  color: $fh-button-hover-font-color;
+}
+
+
+
+
+/*チェックボックス系CSS
+<input id="checkbox-1-1" class="regular-checkbox" type="checkbox">
+<label for="checkbox-1-1"></label>第一類医薬品
+*/
+.regular-checkbox {
+    display: none;
+}
+
+.regular-checkbox + label {
+    background-color: #ffffff;
+    border: 1px solid #CACECE;
+    border-radius: 3px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), 0 -15px 10px -12px rgba(0, 0, 0, 0.05);
+    display: inline-block;
+    padding: 9px;
+    position: relative;
+      vertical-align: bottom;
+        margin: 0 7px 0 0;
+}
+
+.regular-checkbox:checked + label:after {
+    color: #99A1A7;
+    content: "✔";
+    font-size: 14px;
+    left: 3px;
+    position: absolute;
+    top: -3px;
+}
+/*チェックボックス系CSS終わり*/
+
+
+/*プレースホルダーのカラー*/
+/*Webkit*/
+::-webkit-input-placeholder    {color: #999}
+
+/*Firefox 19以降*/
+::-moz-placeholder    {color: #999}
+
+/*Firefox 18以前*/
+:-moz-placeholder    {color: #999}
+
+/*Windows IE*/
+:-ms-input-placeholder    {color: #999}
+
+
+
+
+
+.text-hi100{
+width:100px;
+overflow: hidden;
+white-space:nowrap;
+text-overflow: ellipsis;
+-webkit-text-overflow: ellipsis;
+-o-text-overflow: ellipsis;
+}/* 文字数制限を行って、 省略符号「…」をつける */
+
+
+
+.vertical div{
+display:table-cell;
+vertical-align: middle;
+*display: inline;
+*zoom: 1;
+}
+.vertical2{
+height: 100px;
+}/*上下中央揃えにする
+<div class="vertical">
+<div>上下真ん中に表示されます</div>
+<div class="vertical2"></div>
+</div>
+*/
+
+
+.box-hauto{
+overflow: hidden;
+}
+.box-hauto-l{
+float:left;
+padding-bottom: 10000px;
+margin-bottom: -10000px;
+}
+.box-hauto-r{
+float:left;
+padding-bottom: 10000px;
+margin-bottom: -10000px;
+}/*高さの違うボックスをきれいにそろえる
+<div class="box-hauto">
+<div class="box-hauto-l">内容</div>
+<div class="box-hauto-r">内容</div>
+</div>
+*/
+
+
+
+
+
+/*チェックボックスの不具合を解消*/
+.ie8 .regular-checkbox + label{
+      border: none !important;
+    border-radius:0 !important;
+    box-shadow: none !important;
+    display: inline !important;
+    margin: 0 7px 0 0 !important;
+    padding:0 !important;
+    position: relative !important;
+    vertical-align: bottom !important;
+    outline: none;
+}
+
+
+.ie8 .regular-checkbox {
+    display: inline !important;
+}
+
+
+.ie8 input[type="checkbox"] {
+    border: none;
+}
+
+.ie7 .regular-checkbox + label{
+      border: none !important;
+    border-radius:0 !important;
+    box-shadow: none !important;
+    display: inline !important;
+    margin: 0 7px 0 0 !important;
+    padding:0 !important;
+    position: relative !important;
+    vertical-align: bottom !important;
+    outline: none;
+}
+
+
+.ie7 .regular-checkbox {
+    display: inline !important;
+}
+
+
+.ie7 input[type="checkbox"] {
+    border: none;
+}
+/*チェックボックスの不具合を解消終わり*/
+
+
+
