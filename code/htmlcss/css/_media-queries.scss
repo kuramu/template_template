@@ -10,6 +10,17 @@ object {
     height: auto;
 
 }
+
+
+
+.pc-display-block{
+	display: block !important;
+}
+.pc-display-none{
+	display: none !important;
+}
+
+
 @media screen and (-webkit-min-device-pixel-ratio:2),
                   (min-resolution: 2dppx){
 /* Retina ディスプレイ用の記述 */
@@ -33,6 +44,13 @@ and (max-width : 1024px){
 
 /* large smartphones iPad を代表とするタブレット端末----------- */
 @media  (max-width: 767px){
+
+	.sp-display-block{
+		display: block !important;
+	}
+	.sp-display-none{
+		display: none !important;
+	}
 
 }
 
