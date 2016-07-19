@@ -1,13 +1,25 @@
 <?php
 
 
-$naiyou = $_POST["naiyou"];
-$cnpname = $_POST["cnpname"];
-$namey = $_POST["namey"];
-$ad = $_POST["ad"];
-$tell = $_POST["tell"];
-$otoiawase = $_POST["otoiawase"];
-$otoiawase = ereg_replace ("<br />","\n",$otoiawase);
+$onamae = $_POST["onamae"];
+$hurigana = $_POST["hurigana"];
+$shikaku = $_POST["shikaku"];
+$seinen1 = $_POST["seinen1"];
+$seinen2 = $_POST["seinen2"];
+$seinen3 = $_POST["seinen3"];
+$sex = $_POST["sex"];
+$yubin1 = $_POST["yubin1"];
+$yubin2 = $_POST["yubin2"];
+$todou = $_POST["todou"];
+$juusho = $_POST["juusho"];
+$email = $_POST["email"];
+$tel1 = $_POST["tel1"];
+$tel2 = $_POST["tel2"];
+$tel3 = $_POST["tel3"];
+$keitai1 = $_POST["keitai1"];
+$keitai2 = $_POST["keitai2"];
+$keitai3 = $_POST["keitai3"];
+$contactus = $_POST["contactus"];
 
 		//メール送信
 		mb_language("Ja") ;
