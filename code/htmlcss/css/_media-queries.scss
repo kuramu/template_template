@@ -45,12 +45,21 @@ and (max-width : 1024px){
 /* large smartphones iPad を代表とするタブレット端末----------- */
 @media  (max-width: 767px){
 
-	.sp-display-block{
-		display: block !important;
-	}
-	.sp-display-none{
-		display: none !important;
-	}
+.u-br-c br{
+	display: none;
+}
+.sp-display-block{
+	display: block !important;
+}
+.sp-display-none{
+	display: none !important;
+}
+
+
+
+
+
+
 
 }
 
