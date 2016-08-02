@@ -1,10 +1,5 @@
 <!DOCTYPE html>
-
-<!--[if lt IE 7 ]> <html id="ie6" lang="ja"> <![endif]-->
-<!--[if IE 7 ]> <html id="ie7" lang="ja"> <![endif]-->
-<!--[if IE 8 ]> <html id="ie8" lang="ja"> <![endif]-->
-<!--[if IE 9 ]> <html id="ie9" lang="ja"> <![endif]-->
-<!--[if (gt IE 9)|!(IE)]><!--> <html lang="ja"> <!--<![endif]-->
+<html lang="ja">
 <head>
     <!--
     <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
@@ -19,7 +14,6 @@
 <link rel="dns-prefetch" href="http://www.example.com/" />
 <meta name="viewport" content="width=1024">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-
 <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
 <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
 <!-- ①レスポンシブにする場合必要、ページ表示時に1倍の大きさにするため user-scalable=noがあるとiphoneではページを横に引っ張れなくなるが、拡大縮小もできなくなってしまう。
@@ -40,9 +34,6 @@ position: ﬁxed; を使う場合 ー• iOSなら5以上、Androidなら2.2以�
 
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
-<script>
-window.jQuery || document.write('<script src="jquery-1.10.1.min.js"><\/script>')
-</script>
 
 <?php
 echo '<script type="text/javascript">var templatePath = "' . get_template_directory_uri() . '";</script>';
@@ -162,12 +153,12 @@ http://ad-library.jp/wp-json-ld/
         <!-- パンくずハはolタグで順番風に -->
         <ol class="list-breadcrumbs-01">
             <li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-            <a title="☆☆" href="☆☆" itemprop="url"><span itemprop="title">☆☆</span></a> &gt;</li>
+            <a title="" href="" itemprop="url"><span itemprop="title"></span></a> &gt;</li>
             <li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-            <a title="☆☆" href="☆☆" itemprop="url"><span itemprop="title">☆☆</span></a> &gt;</li>
+            <a title="" href="" itemprop="url"><span itemprop="title"></span></a> &gt;</li>
             <li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-            <a title="☆☆" href="☆☆" itemprop="url"><span itemprop="title">☆☆</span></a> &gt;</li>
-            <li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb"><span itemprop="title">☆☆</span></li>
+            <a title="" href="" itemprop="url"><span itemprop="title"></span></a> &gt;</li>
+            <li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb"><span itemprop="title"></span></li>
         </ol>
 
 
@@ -210,7 +201,7 @@ http://ad-library.jp/wp-json-ld/
 
 
     <div class="lyt-footerout-01">
-        <footer class="lyt-footer-01" class="wrapper" role="contentinfo">
+        <footer class="lyt-footer-01 wrapper" role="contentinfo">
 
             <nav class="nav-footerf-01">
                 <ul>
@@ -227,20 +218,7 @@ http://ad-library.jp/wp-json-ld/
     サイトの管理者や親コンテンツの著者を表す<br>
     サイト管理者の連絡先情報<br>
     メインコンテンツ著者の連絡先情報<br>
-    直近（address要素が含まれているセクション）の祖先のarticle要素・body要素によるセクションに対する連絡先情報を定義します<br>
-    ページ全体に対するものなのかページ内の特定のコンテンツに対するものか区別して使用します<br>
-    単なる住所などを表したい場合はp要素を使用します<br>
-    You can contact author at <a href="http://www.somedomain.com/contact">www.somedomain.com</a>.<br>
-    If you see any bugs, please <a href="mailto:webmaster@somedomain.com">contact webmaster</a>.<br>
-    You may also want to visit us:<br>
-    Mozilla Foundation<br>
-    1981 Landings Drive<br>
-    Building K<br>
-    Mountain View, CA 94043-0801<br>
-    USA
-    (下記、間違った使い方)<br>
-    お店のレビューサイトでお店の連絡先をaddressでマークアップ<br>
-    会社概要ページで会社の住所や連絡先をaddressでマークアップ（これはメインセクション)
+    直近（address要素が含まれているセクション）の祖先のarticle要素・body要素によるセクションに対する連絡先情報を定義します
             </address>
             <p class="doc-copyright-01"><small>&#169;2011 ～～～～～. All Rights Reserved.</small></p>
 

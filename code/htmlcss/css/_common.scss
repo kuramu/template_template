@@ -85,7 +85,7 @@ font-family: "ヒラギノ丸ゴ ProN W4", "Hiragino Maru Gothic ProN", "メイ�
 /* Sans Serif Set for Legacy Browsers and Android（Andoroid対応付きゴシック体セット） */
 
 .u-gothic-old {
-font-family: Verdana, Roboto, "Droid Sans", "游ゴシック", YuGothic, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
+font-family:"ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
 }
 .u-min-old{
 font-family:"ＭＳ Ｐ明朝", "MS PMincho", "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", serif;
@@ -114,6 +114,7 @@ font-family:"ＭＳ Ｐ明朝", "MS PMincho", "ヒラギノ明朝 Pro W3", "Hira
 
 .u-relative{position: relative !important;}
 .u-inline-block{display: inline-block !important;}
+.u-block{display:block !important;}
 
 .u-image-left{float:left;margin:0 1em 1em 0;}
 .u-image-right{float:right;margin:0 0 1em 1em;}
@@ -256,70 +257,10 @@ $space4:0, 4, 8, 12, 16, 20, 24,28,32,36,40,44,48,52,56,60,64,68,72,76,80,84,88,
 }
 
 
-/* YouTubeなどのiframeで埋め込む動画をレスポンシブに対応 */
-.rwd_embed {
-position: relative;
-margin: 20px 0;
-padding-bottom: 56.25%;
-padding-top: 30px;
-overflow: hidden;
-max-width: 100%;
-height: auto;
-}
-
-.rwd_embed iframe, .rwd_embed object, .rwd_embed embed {
-position: absolute;
-top: 0;
-left: 0;
-width: 100%;
-height: 100%;
-}
 /*スマホでhoverを表現する*/
 .sp-touchbtn:hover, .sp-touchbtn {
 }
 
-/*矢印系CSSスタート*/
-
-[class^="module-triangle-"] {
-position: relative;
-}
-[class^="module-triangle-"]:before {
-content: "";
-border: solid transparent;
-display: inline-block;
-position: absolute;
-}
-.module-triangle-top:before {
-border-width: 8px;
-border-bottom-color: #000;
-margin-left: -8px;
-left: 50%;
-top: -16px;
-}
-.module-triangle-right:before {
-border-width: 8px;
-border-left-color: #000;
-margin-top: -8px;
-right: -16px;
-/*right: -16px; としているのは、 border プロパティで指定したサイズが 8px なので、左右の border 分ということで、×2 して 16px に。これで div 要素のボックスに対して右側の Border Edge 上に三角形が配置されます。*/
-top: 50%;
-/*縦方向に関しては、top: 50%;、margin-top: -8px; を同時に指定することで、div 要素のたてサイズに対して上下中央に配置します。この辺は単なる計算の問題*/
-}
-.module-triangle-bottom:before {
-border-width: 8px;
-border-top-color: #000;
-margin-left: -8px;
-left: 50%;
-bottom: -16px;
-}
-.module-triangle-left:before {
-border-width: 8px;
-border-right-color: #000;
-margin-top: -8px;
-left: -16px;
-top: 50%;
-}
-/*矢印系CSSスタート*/
 
 
 /*input系CSSスタート*/
