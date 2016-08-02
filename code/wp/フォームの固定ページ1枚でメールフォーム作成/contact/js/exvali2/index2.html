@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="Content-Style-Type" content="text/css" />
+	<meta http-equiv="Content-Script-Type" content="text/javascript" />
+	<title>exValidationサンプル</title>
+	<link type="text/css" rel="stylesheet" href="css/style.css" />
+	<link type="text/css" rel="stylesheet" href="css/exvalidation.css" />
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/exvalidation.js"></script>
+<script type="text/javascript" src="js/exchecker-ja.js"></script>
+<script type="text/javascript">
+$(function(){
+	var validation = $("#inquiry-form").exValidation();
+});
+</script>
+</head>
+
+<body>
+
+<p class="note"><a href="http://5509.me/log/exvalidation">Archive</a> | <a href="http://5509.me/">5509</a></p>
+
+<h1>exValidation</h1>
+
+<form id="inquiry-form" method="get">
+	<fieldset>
+		<p class="attention">*は必須項目です</p>
+		<table>
+			<tbody>
+				<tr>
+					<th>お名前<span>*</span></th>
+					<td><input type="text" id="name" name="name" value="" class="chkrequired" /></td>
+				</tr>
+				<tr>
+					<th>ふりがな<span>*</span></th>
+					<td><input type="text" id="kana" name="kana" value="" class="chkrequired chkkatakana" /></td>
+				</tr>
+				<tr>
+					<th>メールアドレス<span>*</span></th>
+					<td><span id="email" class="chkrequired chkemail chkhankaku chkgroup"><input type="text" id="email1" name="email" value="" />
+					@
+					<input type="text" name="email2" value="" /></span></td>
+				</tr>
+				<tr>
+					<th>生年月日<span>*</span></th>
+					<td><span id="birthday" class="chkrequired chkgroup"><input type="text" name="birthdayY" value="" />
+					年
+					<input type="text" name="birthdayM" value="" />
+					月
+					<input type="text" name="birthdayD" value="" />
+					日</span>
+					</td>
+				</tr>
+
+			</tbody>
+		</table>
+	</fieldset>
+	<p class="submit"><input type="submit" value="送信するんです" class="button" /></p>
+</form>
+<p class="copy">Copyright &copy <a href="http://5509.me/">5509</a> Some Rights Reserved.<br />サンプルについては　<a href="http://gti.jp/">gti.jp</a> フリーフードファイター さとう に著作権があります。</p>
+
+</body>
+</html>

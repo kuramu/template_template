@@ -1545,6 +1545,7 @@ function insert_json_ld (){
 }
 
 //画像に指定されているscrset属性を削除
+//http://www.nxworld.net/wordpress/wp-disable-responsive-images.html
 add_filter( 'wp_calculate_image_srcset', '__return_false' );
 
 /*

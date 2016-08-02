@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="Content-Style-Type" content="text/css" />
+	<meta http-equiv="Content-Script-Type" content="text/javascript" />
+	<title>exValidationサンプル</title>
+	<link type="text/css" rel="stylesheet" href="css/style.css" />
+	<link type="text/css" rel="stylesheet" href="css/exvalidation.css" />
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/exvalidation.js"></script>
+<script type="text/javascript" src="js/exchecker-ja.js"></script>
+<script type="text/javascript">
+// ページ情報読み込めてからチェック項目について設定する
+/**
+    // 初期設定
+	errInsertPos       : "body", // "body" or after(before)
+	err                : null,
+	ok                 : null,
+	errFocus           : false,
+	errHoverHide       : false,
+	stepValidation     : false,
+	scrollToErr        : true,
+	scrollDuration     : 500,
+	scrollAdjust       : -10,
+	customScrollAdjust : false,
+	errPosition        : "absolute", // fixed
+	errOpacity         : undefined,
+	errTipPos          : "right", // left
+	errTipCloseBtn     : true,
+	errTipCloseLabel   : "×",
+	errZIndex          : 500,
+	errMsgPrefix       : "\* ",
+	customAddError     : null, // function(){}
+	customClearError   : null, // function(){}
+	customSubmit       : null, // function(){}
+	customListener     : "blur keyup change focus",
+	customBind         : null,
+*/
+$(function(){
+	var validation = $("#inquiry-form")
+		.exValidation({
+		    // それぞれの項目に「class="chkrequired chkkatakana"」のように記述しているのと同じことをしています。
+			rules: {
+				name: "chkrequired",
+				name_: "laterCall",
+				kana: "chkrequired chkkatakana",
+				kana_: "laterCall",
+				email: "chkrequired chkemail chkhankaku chkgroup",
+				email_: "laterCall",
+				birthday: "chkrequired chkgroup",
+				birthday_: "laterCall"
+			},
+			customListener: "blur", // onBlur時のみにしてみる
+			stepValidation: true,
+			errTipCloseBtn: false,
+			errTipPos: "left",  // 吹き出しが表示される位置（左右）
+			errHoverHide: true, // マウスオーバーで消える
+			scrollToErr: true   // 
+		});
+    // チェックボタンで確認する場合
+	$('input.laterCall').click(function() {
+		validation.laterCall('#' + this.id.replace('_',''));
+	});
+});
+// エラー削除
+function clearErrors() {
+	// 表示されているエラーをフェイドアウト
+	$("div[id*=err_]").fadeOut();
+}
+</script>
+</head>
+
+<body>
+
+<p class="note"><a href="http://5509.me/log/exvalidation">Archive</a> | <a href="http://5509.me/">5509</a></p>
+
+<h1>exValidation</h1>
+
+<form id="inquiry-form" method="get">
+	<fieldset>
+		<p class="attention">*は必須項目です</p>
+		<table>
+			<tbody>
+				<tr>
+					<th>お名前<span>*</span></th>
+					<td><input type="text" id="name" name="name" value="" />
+					<input type="button" id="name_" value="チェック" /></td>
+				</tr>
+				<tr>
+					<th>ふりがな<span>*</span></th>
+					<td><input type="text" id="kana" name="kana" value="" />
+					<input type="button" id="kana_" value="チェック" /></td>
+				</tr>
+				<tr>
+					<th>メールアドレス<span>*</span></th>
+					<td><span id="email"><input type="text" id="email1" name="email" value="" />
+					@
+					<input type="text" name="email2" value="" /></span>
+					<input type="button" id="email_" value="チェック" /></td>
+				</tr>
+				<tr>
+					<th>生年月日<span>*</span></th>
+					<td><span id="birthday"><input type="text" name="birthdayY" value="" />
+					年
+					<input type="text" name="birthdayM" value="" />
+					月
+					<input type="text" name="birthdayD" value="" />
+					日</span><input type="button" id="birthday_" value="チェック" />
+					</td>
+				</tr>
+
+			</tbody>
+		</table>
+	</fieldset>
+	<p class="submit"><input type="submit" value="送信するんです" class="button" /></p>
+</form>
+<p class="copy">Copyright &copy <a href="http://5509.me/">5509</a> Some Rights Reserved.<br />サンプルについては　<a href="http://gti.jp/">gti.jp</a> フリーフードファイター さとう に著作権があります。</p>
+
+</body>
+</html>
