@@ -1,13 +1,6 @@
 <!DOCTYPE html>
-<!--[if IE 7]>
-<html class="ie ie7" <?php language_attributes(); ?>>
-<![endif]-->
-<!--[if IE 8]>
-<html class="ie ie8" <?php language_attributes(); ?>>
-<![endif]-->
-<!--[if !(IE 7) | !(IE 8)  ]><!-->
 <html <?php language_attributes(); ?>>
-<!--<![endif]-->
+
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
 <!--[if IE]>
@@ -16,6 +9,11 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+
+
 <!--　ALL IN ONESEOではカスタム投稿のアーカイブページのtitleがでてこないため -->
 <?php if ( is_post_type_archive() ) : ?>
 <title><?php post_type_archive_title(); ?> ｜ <?php bloginfo('name'); ?></title>
@@ -23,49 +21,8 @@
 <title><?php wp_title( '|', true, 'right' ); ?></title>
 <?php endif;?>
 
-<meta name="description" content="" />
-<?php
-/* サイトキーワードと概要 */
-
-add_filter( 'the_generator', 'generator2description' );
-
-function generator2description( $content ) {
-global $post;
-$result = '';
-if ( is_front_page() || is_home() ) {
-$result .= $content . "\n";
-$result .= '<meta name="keywords" content="WordPress,Theme,Raindrops,ワードプレス,テーマ,レインドロップス,日本語対応,公式テーマ,Responsive" />' . "\n";
-$result .= '<meta name="description" content="このサイトは、ワードプレス（WordPress)日本語対応公式レスポンシブテーマ　「レインドロップス（Raindrops）」の公式サイトです。最新のレインドロップスの情報を提供しています。" />' . "\n";
-return $result;
-} else {
-if ( !is_sticky() && is_singular() ) {
-
-$keywords = get_post_meta( $post->ID, 'keyword', true );
-
-if ( !empty( $keyword ) ) {
-$result .= '<meta name="keywords" content="' . esc_attr( $keywords ) . '" />' . "\n";
-}
-
-$description = get_post_meta( $post->ID, 'description', true );
-
-if ( !empty( $description ) ) {
-$result .= '<meta name="description" content="' . esc_attr( $description ) . '" />' . "\n";
-}
-
-return $content . $result;
-}
-return $content;
-}
-}
-?>
-
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 <link href="<?php echo get_template_directory_uri(); ?>/style.css" rel="stylesheet" type="text/css" media="all">
-
-<!--[if lt IE 9]>
-<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-<![endif]-->
-
 
 
 <?php
@@ -110,20 +67,7 @@ $("#loading p").html("<img src='" + templatePath +"/images/gif-load.gif'/>");
 <?php endif; ?>
 
 </head>
-<?php
-if ( is_front_page() ) {
-	$my_body_class = 'home';
-} else if ( is_single() ) {
-	$my_body_class = 'single '.$post->post_name.'';
-} else if ( is_page() ) {
-	$my_body_class = 'page '.$post->post_name.'';
-} else if ( is_category() ) {
-	$category = get_the_category();
-	$my_body_class = 'category category_'.$category[0]->category_nicename.'';
-}
-?>
-<body<?php echo ( $my_body_class ) ? ' class="'.$my_body_class.'"' : ''; ?>>
-<!--<body <?php //body_class(); ?>>-->
+<body <?php //body_class(); ?>>
 
 
 
