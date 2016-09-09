@@ -1552,4 +1552,14 @@ add_filter( 'wp_calculate_image_srcset', '__return_false' );
 //リダイレクトループが頻繁に起こるとき
 remove_filter('template_redirect', 'redirect_canonical');
 */
+
+//URIの末尾にスラッシュ”/”を追加する方法
+//
+function add_slash_uri_end($uri, $type) {
+  if ($type != 'single') {
+    $uri = trailingslashit($uri);
+  }
+  return $uri;
+}
+add_filter('user_trailingslashit', 'add_slash_uri_end', 10, 2);
 ?>
