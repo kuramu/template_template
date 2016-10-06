@@ -51,7 +51,7 @@ opacity:0.8;
 
 body{
 font-size:12px;
-font-family:"ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","メイリオ",Meiryo,Osaka,"ＭＳ Ｐゴシック","MS PGothic",sans-serif;
+font-family: "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック体", YuGothic,  "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
 /*font-family: Verdana, "游ゴシック", YuGothic, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;*/
 overflow:visible;
 color:$font_color;
@@ -70,7 +70,8 @@ font-family: Verdana, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシ�
 } /* ゴシック体 */
 
 .u-mincho {
-font-family: "Times New Roman", "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "メイリオ", Meiryo, serif;
+font-family: "游明朝 Medium", YuMincho, "Hiragino Mincho ProN", "Hiragino Mincho Pro", "ＭＳ 明朝", serif;
+
 } /* 明朝体 */
 
 .u-mono {
@@ -78,7 +79,7 @@ font-family: "Osaka－等幅", Osaka-mono, "ＭＳ ゴシック", "MS Gothic", m
 } /* 等幅書体 */
 
 .u-hiraginoMaruGothic {
-font-family: "ヒラギノ丸ゴ ProN W4", "Hiragino Maru Gothic ProN", "メイリオ", Meiryo, fantasy;
+font-family: "ヒラギノ丸ゴ ProN W4", "Hiragino Maru Gothic ProN", "ＭＳ 明朝", serif;
 } /* OS X限定 丸ゴシック体 */
 
 
