@@ -142,7 +142,17 @@ foreach ( $postslist as $post) : setup_postdata(post); /* 繰り返し処理開�
 
 
 <?php endforeach; /*繰り返し処理終了*/ ?>
-
+<!--プラグインのwp_pagenaviの出力を変更
+<div class="pagination">
+  <ul>
+    <li><span class="current">1</span></li>
+    <li><a class="page larger" href="http://www.programming-school.com/yoshikawa/wordpress/member-blog/page/2/">2</a></li>
+    <li><a class="nextpostslink" rel="next" href="">
+    <img alt="次のページ" src="http://www.programming-school.com/yoshikawa/wordpress/wp-content/themes/lb201610/images/right_arrow_black.gif"></a></li>
+  </ul>
+</div>
+となる
+-->
 <?php if(function_exists('wp_pagenavi')) { wp_pagenavi(); } ?>
 <!-- Wp-pagenavi -->
 <?php get_sidebar(); ?>

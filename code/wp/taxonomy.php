@@ -39,6 +39,18 @@ get_header(); ?>
     else :
         /* Nothing Found */
     endif;?>
+
+<!--プラグインのwp_pagenaviの出力を変更
+<div class="pagination">
+  <ul>
+    <li><span class="current">1</span></li>
+    <li><a class="page larger" href="http://www.programming-school.com/yoshikawa/wordpress/member-blog/page/2/">2</a></li>
+    <li><a class="nextpostslink" rel="next" href="">
+    <img alt="次のページ" src="http://www.programming-school.com/yoshikawa/wordpress/wp-content/themes/lb201610/images/right_arrow_black.gif"></a></li>
+  </ul>
+</div>
+となる
+-->
     <?php wp_pagenavi(); ?>
 <?php
 /*

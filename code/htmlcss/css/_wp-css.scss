@@ -1124,53 +1124,11 @@ word-wrap: break-word;
     text-align: right;
 }
 
-/*wpページネーションスタート*/
 
-/*ページネーション*/
-div.pagination {
-    clear:both;
-    padding:20px 0;
-    position:relative;
-    font-size:11px;
-    line-height:13px ;
-    background:none;
-    margin:10px 0 20px;
-    vertical-align: middle;
-}
-
-div.pagination span, .pagination a {
-    display:block;
-    float:left ;
-    margin: 2px 2px 2px 0 ;
-    padding:6px 9px 5px 9px ;
-    text-decoration:none;
-    width:auto ;
-    color:#fff ;
-    background: #666 ;
-}
-
-div.pagination a:hover{
-    color:#fff ;
-    background: #fdcd1a;
-}
-
-div.pagination .current{
-    padding:6px 9px 5px 9px ;
-    background: #fdcd1a;
-    color:#fff ;
-}
-/*wpページネーション終わり*/
-
-.size-auto,
-.size-full,
-.size-large,
-.size-medium,
-.size-thumbnail {
-  max-width: 100%;
-  height: auto;
-}
-
-/*wp-pagenavi終わり*/
+/**
+ *
+ * ----------------------------------------------------------------------------
+ */
 .kekka-top p {
     color: #3f3f3f;
     float: left;
@@ -1182,7 +1140,7 @@ div.pagination .current{
     font-weight: bold;
 }
 
-.kekka-top .wp-pagenavi {
+.kekka-top .box-pagination-01 {
     display: inline-block;
     float: right;
     padding: 17px 0 0;
@@ -1190,8 +1148,30 @@ div.pagination .current{
     width: 283px;
   clear: none;
 }
+.size-auto,
+.size-full,
+.size-large,
+.size-medium,
+.size-thumbnail {
+  max-width: 100%;
+  height: auto;
+}
 
-.wp-pagenavi span.current {
+/*wpページネーションスタート*/
+
+.box-pagination-01 {
+    clear:both;
+    padding:20px 0;
+    position:relative;
+    font-size:11px;
+    line-height:13px ;
+    background:none;
+    margin:10px 0 20px;
+    vertical-align: middle;
+}
+
+
+.box-pagination-01 span.current {
     background: none repeat scroll 0 0 transparent;
     border: 0 none;
     box-shadow: none;
@@ -1200,7 +1180,7 @@ div.pagination .current{
     padding: 6px 7px;
 }
 
-.wp-pagenavi a, .wp-pagenavi span {
+.box-pagination-01 a, .box-pagination-01 span {
     background-color: #ffffff;
     border: 1px solid #aaaaaa;
     border-radius: 5px;
@@ -1210,58 +1190,64 @@ div.pagination .current{
     text-align: center;
 
 }
-.wp-pagenavi a:link, .wp-pagenavi a:visited {
+.box-pagination-01 a:link, .box-pagination-01 a:visited {
     color: #474747;
 }
-.kekka-top .wp-pagenavi a, .kekka-top .wp-pagenavi span{
+.kekka-top .box-pagination-01 a, .kekka-top .box-pagination-01 span{
     margin: 4px;
 }
-.wp-pagenavi .nextpostslink {
+.box-pagination-01 .nextpostslink {
     background-color: #ffe776;
 }
 
-.kekka-top .wp-pagenavi .nextpostslink:link, .kekka-top .wp-pagenavi .nextpostslink:visited {
+.kekka-top .box-pagination-01 .nextpostslink:link, .kekka-top .box-pagination-01 .nextpostslink:visited {
     color:#634807;
 }
 
-.wp-pagenavi a:link, .wp-pagenavi a:visited {
-    color: #474747;
-}
-.wp-pagenavi .nextpostslink:link, .wp-pagenavi .nextpostslink:visited {
+.box-pagination-01 .nextpostslink:link, .box-pagination-01 .nextpostslink:visited {
     color: #fff;
 }
-.wp-pagenavi {
+.box-pagination-01 ul {
     
 }
-.wp-pagenavi .pages {
+.box-pagination-01 ul span {
     
 }
-.wp-pagenavi .current {
+.box-pagination-01 ul li{
     
 }
-.wp-pagenavi .first {
+.box-pagination-01 span, .box-pagination-01 a{
     
 }
-.wp-pagenavi .last {
+.box-pagination-01 ul .pages {
     
 }
-.wp-pagenavi .page {
+.box-pagination-01 ul .current {
     
 }
-.wp-pagenavi .larger {
+.box-pagination-01 ul .first {
     
 }
-.wp-pagenavi .smaller {
+.box-pagination-01 ul .last {
     
 }
-.wp-pagenavi .extend {
+.box-pagination-01 ul .page {
     
 }
-.wp-pagenavi .nextpostslink {
+.box-pagination-01 ul .larger {
     
 }
-.wp-pagenavi .previouspostslink {
+.box-pagination-01 ul .smaller {
     
 }
-/*wp-pagenavi終わり*/
+.box-pagination-01 ul .extend {
+    
+}
+.box-pagination-01 ul .nextpostslink {
+    
+}
+.box-pagination-01 ul .previouspostslink {
+    
+}
+/*wpページネーション終わり*/
 

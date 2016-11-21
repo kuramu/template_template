@@ -1562,4 +1562,32 @@ function add_slash_uri_end($uri, $type) {
   return $uri;
 }
 add_filter('user_trailingslashit', 'add_slash_uri_end', 10, 2);
+
+//プラグインのwp_pagenaviの出力を変更
+/*
+<div class="pagination">
+  <ul>
+    <li><span class="current">1</span></li>
+    <li><a class="page larger" href="http://www.programming-school.com/yoshikawa/wordpress/member-blog/page/2/">2</a></li>
+    <li><a class="nextpostslink" rel="next" href="">
+    <img alt="次のページ" src="http://www.programming-school.com/yoshikawa/wordpress/wp-content/themes/lb201610/images/right_arrow_black.gif"></a></li>
+  </ul>
+</div>
+となる
+*/
+
+
+add_filter( 'wp_pagenavi', 'custom_wp_pagenavi' );
+function custom_wp_pagenavi($html) {
+  $out = '';
+  $out = str_replace("<div", "", $html);
+  $out = str_replace("class='wp-pagenavi'>", "", $out);
+  $out = str_replace("<a", "<li><a", $out);
+  $out = str_replace("</a>", "</a></li>", $out);
+  $out = str_replace("<span", "<li><span", $out);
+  $out = str_replace("</span>", "</span></li>", $out);
+  $out = str_replace("</div>", "", $out);
+
+  return '<nav class="box-pagination-01"><ul>'.$out.'</ul></nav>';
+}
 ?>
