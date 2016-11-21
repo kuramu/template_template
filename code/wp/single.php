@@ -143,14 +143,24 @@ foreach ( $postslist as $post) : setup_postdata(post); /* 繰り返し処理開�
 
 <?php endforeach; /*繰り返し処理終了*/ ?>
 <!--プラグインのwp_pagenaviの出力を変更
-<div class="pagination">
+<nav class="box-pagination-01">
   <ul>
-    <li><span class="current">1</span></li>
-    <li><a class="page larger" href="http://www.programming-school.com/yoshikawa/wordpress/member-blog/page/2/">2</a></li>
-    <li><a class="nextpostslink" rel="next" href="">
-    <img alt="次のページ" src="http://www.programming-school.com/yoshikawa/wordpress/wp-content/themes/lb201610/images/right_arrow_black.gif"></a></li>
+		<li><span class='pages'>5 / 10</span></li>
+		<li><a class="first" href="#">« 先頭</a></li>
+		<li><a class="previouspostslink" rel="prev" href="#">«</a></li>
+		<li><span class='extend'>...</span></li>
+		<li><a class="page smaller" href="#">3</a></li>
+		<li><a class="page smaller" href="#">4</a></li>
+		<li><span class='current'>5</span></li>
+		<li><a class="page larger" href="#">6</a></li>
+		<li><a class="page larger" href="#">7</a></li>
+		<li><span class='extend'>...</span></li>
+		<li><a class="larger page" href="#">10</a></li>
+		<li><span class='extend'>...</span></li>
+		<li><a class="nextpostslink" rel="next" href="#">»</a></li>
+		<li><a class="last" href="#">最後 »</a></li>
   </ul>
-</div>
+</nav>
 となる
 -->
 <?php if(function_exists('wp_pagenavi')) { wp_pagenavi(); } ?>
