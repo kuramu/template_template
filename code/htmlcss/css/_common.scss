@@ -60,7 +60,6 @@ line-height:1.6;
 letter-spacing: 0.4px;
 word-wrap:break-word;/*連続した半角英数字を折り返しさせる*/
 /* min-width:1200px ;スマホでＰＣ表示した場合背景が見切れないように→コンテンツの最大幅を入力 */
-text-rendering:optimizeLegibility;/*カーニングと合字 (リガチャ) をうまい具合に調整 Firefox、Chrome、Safariのみフォントがカーニングや合字のデータを持っていなければ指定しても何も起こりません。和文フォントでは、メイリオと MS 系ゴシック・明朝は効果がないですが、ヒラギノ角ゴ・明朝は軽くカーニングが調整されます*/
 }
 
 /* Complete Set for Legacy Browsers（旧ブラウザ対応フルセット） */
@@ -127,6 +126,8 @@ font-family:"ＭＳ Ｐ明朝", "MS PMincho", "ヒラギノ明朝 Pro W3", "Hira
 .u-white{color:#ffffff;}
 .u-bg-black{background-color:#000000;}
 .u-bg-white{background-color:#ffffff;}
+
+.u-font-feature-settings{font-feature-settings : "palt";}
 
 
 
