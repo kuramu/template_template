@@ -121,7 +121,6 @@ http://ad-library.jp/wp-json-ld/
 </head>
 <body>
 
-
 <div class="lyt-wrapperout-01">
 
     <div class="lyt-wrapper-01">
@@ -150,7 +149,20 @@ http://ad-library.jp/wp-json-ld/
             </ul>
         </nav><!-- gm -->
 
-        <!-- パンくずハはolタグで順番風に -->
+
+        <!-- パンくずはolタグで順番風に -->
+        <!-- wpが動的に出力されるタグ -->
+        <nav id="breadcrumb" class="breadcrumb-section">
+            <ol class="breadcrumb-lists" itemprop="breadcrumb">
+                <li class="breadcrumb-home" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="http://www.kuramu.net" itemprop="url"><span itemprop="title">ホーム</span></a></li>
+                <li>&nbsp;&gt;&nbsp;</li>
+                <li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="http://www.kuramu.net/blog/" itemprop="url"><span itemprop="title">BLOG</span></a></li>
+                <li>&nbsp;&gt;&nbsp;</li>
+                <li class="current-crumb" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="http://www.kuramu.net/blog/tool/sublime-Text-theme.html" itemprop="url"><span itemprop="title"><strong>Sublime Text　2　のテーマがきかなかったり、くずれた場合の対処法</strong></span></a></li>
+            </ol>
+        </nav>
+        <!-- パンくずはolタグで順番風に -->
+        <!-- staticなサイト用のパンくず -->
         <ol class="list-breadcrumbs-01">
             <li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
             <a title="" href="" itemprop="url"><span itemprop="title"></span></a> &gt;</li>

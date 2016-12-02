@@ -70,6 +70,9 @@ $("#loading p").html("<img src='" + templatePath +"/images/gif-load.gif'/>");
 <body <?php //body_class(); ?>>
 
 
+<!--ぱんくず（詳細設定はfunction.phpのコードを編集） -->
+<?php breadcrumb(); ?>
+
 
 
 <form role="search" method="get" id="searchform" action="<?php echo home_url( '/' ); ?>">

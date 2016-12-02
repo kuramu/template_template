@@ -1252,3 +1252,40 @@ display: inline-block;
 }
 /*wpページネーション終わり*/
 
+/*wpぱんくずはじまり*/
+#breadcrumb {
+    .breadcrumb-lists{
+    }
+    li{
+        a{
+            &:link, &:visited {
+            color:#000000;
+            }
+            span{
+                
+            }
+        }
+    }
+    .breadcrumb-home{
+        a{
+            &:link, &:visited {
+            color:#000000;
+            }
+            span{
+                
+            }
+        }
+    }
+    .current-crumb{
+        a{
+            &:link, &:visited {
+            color:#000000;
+            }
+            span{
+                
+            }
+        }
+    }
+}
+/*wpぱんくず終わり*/
+
