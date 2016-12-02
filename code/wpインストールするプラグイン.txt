@@ -1,0 +1,51 @@
+■
+Crazy　Bone 
+ログイン履歴＆違うIPだと知らせていくれる
+■
+TinyMCE Clear   
+投稿の回り込み解除プラグイン
+■
+SiteGuard WP Plugin  
+セキュリティプラグin
+■
+WordPress SEO by Yoast  　
+SEOプラグイン（ALLINONESEOはアーカイブ、タクソノミーのタイトル設定が難しいためこちらを使う）
+　sitemap.xmlの設定とノーカテゴリの設定はこちらでする
+■
+WP Social Bookmarking Light
+Show Current Template   
+※現在表示しているページがどのテンプレートファイルを使用しているか』
+■
+Custom Permalinks   
+パーマリンクを自由な形にできる
+/%post_id%.html
+■
+TinyMCE Advanced  
+ビジュアルエディタ拡張　投稿画面のビジュアルとテキストを交互に切り替えてもタグが消えなくなる
+■
+WP-PageNavi   
+ページネーション　<?php wp_pagenavi(); ?>　で出力
+■
+PS Disable Auto Formatting
+要項画面で余分なタグを出力させない
+■
+Breadcrumb NavXT　
+パンくず
+■
+Redirection
+リダイレクト
+■
+PubSubHubbub 
+リアルタイムでインデックス化が可能になる スクレイピング対策にも効果
+
+---カスタム投稿、フィールド、タクソノミーを使用する場合
+■
+Toolset Types
+カスタム投稿タイプ、タクソノミー作成に使う
+■
+Custom Field Suite
+カスタムフィールドで使用する
+■
+Custom Post Type Permalinks
+カスタム投稿に任意のパーマリンクの設定ができる
+/%post_id%.htmlで設定　

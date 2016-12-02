@@ -1,4 +1,5 @@
 @charset "utf-8";
+@import "font";
 @import "sass-common.scss";
 
 .u-cf:after{
@@ -48,14 +49,14 @@ filter: alpha(opacity=80);
 opacity:0.8;
 }
 
-
 body{
 font-size:12px;
-font-family: "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック体", YuGothic,  "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
-/*font-family: Verdana, "游ゴシック", YuGothic, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;*/
+@include font-family(sans-serif);
+// @include font-family(serif);
+// @include font-family(monospace);
 overflow:visible;
 color:$font_color;
-background:url(../images/) top left repeat-x #ffffff;
+background:#ffffff;
 line-height:1.6;
 letter-spacing: 0.4px;
 word-wrap:break-word;/*連続した半角英数字を折り返しさせる*/
@@ -65,7 +66,7 @@ word-wrap:break-word;/*連続した半角英数字を折り返しさせる*/
 /* Complete Set for Legacy Browsers（旧ブラウザ対応フルセット） */
 
 .u-gothic {
-font-family: Verdana, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック体", YuGothic,  "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
+font-family:"游ゴシック体", YuGothic, "游ゴシック Medium", "YuGothic M","ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, sans-serif;
 } /* ゴシック体 */
 
 .u-mincho {

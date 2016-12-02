@@ -69,8 +69,8 @@ color: #767676;
 
 .wp-caption-text {
 -webkit-box-sizing: border-box;
--moz-box-sizing:    border-box;
-box-sizing:         border-box;
+-moz-box-sizing:border-box;
+box-sizing:border-box;
 font-size: 12px;
 font-style: italic;
 line-height: 1.5;
@@ -1186,7 +1186,7 @@ word-wrap: break-word;
     border-radius: 5px;
     display: inline-block;
     font-weight: bold;
-    padding: 4px 6px;
+    padding:10px 19px;
     text-align: center;
 
 }
@@ -1208,46 +1208,47 @@ word-wrap: break-word;
     color: #fff;
 }
 .box-pagination-01 ul {
-    
+    text-align: center;
+
 }
 .box-pagination-01 ul span {
-    
+
 }
 .box-pagination-01 ul li{
-    
+display: inline-block;
 }
 .box-pagination-01 span, .box-pagination-01 a{
-    
+
 }
 .box-pagination-01 ul .pages {
-    
+
 }
 .box-pagination-01 ul .current {
-    
+
 }
 .box-pagination-01 ul .first {
-    
+
 }
 .box-pagination-01 ul .last {
-    
+
 }
 .box-pagination-01 ul .page {
-    
+
 }
 .box-pagination-01 ul .larger {
-    
+
 }
 .box-pagination-01 ul .smaller {
-    
+
 }
 .box-pagination-01 ul .extend {
-    
+
 }
 .box-pagination-01 ul .nextpostslink {
-    
+
 }
 .box-pagination-01 ul .previouspostslink {
-    
+
 }
 /*wpページネーション終わり*/
 
