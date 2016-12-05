@@ -32,7 +32,7 @@ a:hover,a:active{
 color:$font_hovercolor;
 text-decoration:none;
 }
-a,a:hover {
+a,a:hover,a:hover img {
 -webkit-transition: 0.7s;
 -moz-transition: 0.7s;
 -o-transition: 0.7s;
@@ -42,7 +42,7 @@ transition: 0.7s;
 
 
 
-a:hover img,a:hover{
+a:hover img{
 filter: alpha(opacity=80);
 -ms-filter: "alpha(opacity=80)";
 -moz-opacity:0.8;
