@@ -112,4 +112,27 @@ theme_locaution	''	テーマ内のロケーションIDを指定。
 -->
 
 
+<!-- シェアボタン（数はでない）-->
+<div class="share">
+	<ul>
+		<li class="share-twitter"><!-- Twitter -->
+		<a href="http://twitter.com/home?status=<?php echo urlencode(the_title_attribute('echo=0')); ?>%20<?php the_permalink(); ?>%20by%20" target="_blank">Twitter</a>
+		</li>
+		<li class="share-facebook"><!-- Facebook -->
+		<a href="https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>" target="_blank">Facebook</a>
+		</li>
+		<li class="share-google"><!-- Google+ -->
+		<a href="https://plus.google.com/share?url=<?php the_permalink(); ?>" target="_blank">Google+</a>
+		</li>
+		<li class="share-hatena"><!-- はてなブックマーク -->
+		<a href="http://b.hatena.ne.jp/add?mode=confirm&url=<?php the_permalink(); ?>&title=<?php the_title();?>" target="_blank">はてブ</a>
+		</li>
+		<li class="share-pocket"><!-- Pocket -->
+		<a href="http://getpocket.com/edit?url=<?php the_permalink(); ?>" target="_blank">Pocket</a>
+		</li>
+		<li class="share-line"><!-- LINE -->
+		<a href="http://line.me/R/msg/text/?<?php the_title(); ?>%0D%0A<?php the_permalink(); ?>">LINE</a>
+		</li>
+	</ul>
+</div>
 

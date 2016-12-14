@@ -1918,3 +1918,19 @@ function breadcrumb( $args = array() ) {
     }
   }
 }
+
+/*
+cssのスタイル出力の形式をシンプルにする
+<link rel="stylesheet" href="http://example.com/wp/wp-content/themes/theme-name/style.css">
+http://www.nxworld.net/wordpress/wp-change-link-tag-output-by-wp-enqueue-style.html
+*/
+
+add_filter( 'style_loader_tag', 'replace_link_stylesheet_tag' );
+function replace_link_stylesheet_tag($tag) {
+  return preg_replace( array( "/'/", '/(id|type|media)=".+?" */', '/ \/>/' ), array( '"', '', '>' ), $tag );
+}
+//jsの場合
+add_filter( 'script_loader_tag', 'replace_script_tag' );
+function replace_script_tag($tag) {
+  return preg_replace( array( "/'/", '/ type=\"text\/javascript\"/' ), array( '"', '' ), $tag );
+}
