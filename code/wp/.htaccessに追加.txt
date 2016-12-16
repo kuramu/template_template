@@ -1,0 +1,16 @@
+wp-config.php, wp-comments-post.phpへのアクセス禁止
+
+攻撃を受けやすいファイルへのアクセスを禁止します。
+ルートに設置されているwp-config.php及び
+wp-comments-post.phpへのアクセスを禁止します。
+.htaccessに以下を記述。
+
+<files wp-config.php>
+order allow,deny
+deny from all
+</files>
+
+<files wp-comments-post.php>
+order allow,deny
+deny from all
+</files>
