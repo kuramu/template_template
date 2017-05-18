@@ -148,19 +148,6 @@ $query->set( 'post_type','post' );
 
 
 
-//////////////////////////
-  //ライトボックスプラグインなどもjquery読み込めるためFunction化
-  function modify_jquery() {
-      if (!is_admin()) {
-          // comment out the next two lines to load the local copy of jQuery
-          wp_deregister_script('jquery');//Wordpress内で参照しているjQueryは使用しない
-          wp_register_script('jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js', false, '1.10.1');
-          wp_enqueue_script('jquery');
-      }
-  }
-  add_action('init', 'modify_jquery');
-
-
 /*
  * 親テーマのディレクトリまでのパスを取得するショートコードを追加
 ショートコードを使わない場合
@@ -368,19 +355,19 @@ remove_action( 'load-update-core.php', 'wp_update_plugins' );
 add_filter( 'pre_site_transient_update_plugins', create_function( '$a', "return null;" ) );
 */
     // コアファイルの自動更新をすべて無効化
-//add_filter( 'auto_update_core', '__return_false' );
+add_filter( 'auto_update_core', '__return_false' );
 
     // メジャーアップグレードの更新を有効化
 //add_filter( 'allow_major_auto_core_updates', '__return_true' );
 
     // マイナーアップグレードの更新を無効化
-//add_filter( 'allow_minor_auto_core_updates', '__return_false' );
+add_filter( 'allow_minor_auto_core_updates', '__return_false' );
 
     // 開発版の更新を有効化
 //define( 'WP_AUTO_UPDATE_CORE', true );
 
     // すべての自動更新を無効化する
-//add_filter( 'automatic_updater_disabled', '__return_true' );
+add_filter( 'automatic_updater_disabled', '__return_true' );
 
 
 
@@ -392,7 +379,7 @@ function nekomimi_auto_update() {
     // add_filter( 'allow_dev_auto_core_updates', '__return_true' );
 
     // マイナーアップグレードの自動更新を無効化
-     //add_filter( 'allow_minor_auto_core_updates', '__return_false' );
+     add_filter( 'allow_minor_auto_core_updates', '__return_false' );
 
     // メジャーアップグレードの自動更新を有効化
     // add_filter( 'allow_major_auto_core_updates', '__return_true' );
@@ -1934,3 +1921,5 @@ add_filter( 'script_loader_tag', 'replace_script_tag' );
 function replace_script_tag($tag) {
   return preg_replace( array( "/'/", '/ type=\"text\/javascript\"/' ), array( '"', '' ), $tag );
 }
+//ファイル編集の無効化（セキュリティのため）
+define('DISALLOW_FILE_EDIT', true);

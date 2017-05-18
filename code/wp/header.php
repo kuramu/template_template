@@ -29,10 +29,9 @@
 wp_deregister_script('jquery-ui-core');
  ?>
 <?php wp_head(); ?>
+    
+    
 
-<!--[if (gte IE 6)&(lte IE 8)]>
-<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/selectivizr/1.0.2/selectivizr-min.js"></script>
-<![endif]-->
 <script src="<?php echo get_template_directory_uri(); ?>/js/jquery.easing.1.3.js"></script>
 <!--[if (gte IE 6)&(lte IE 8)]>
 <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/selectivizr-min.js"></script>
