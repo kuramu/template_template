@@ -4,6 +4,7 @@
     @include boxSet;
 }
 */
+
 //全体
 $main_color: #000; //メインカラー（ベースカラー）
 $sub_color: #fff; //サブカラー
@@ -23,29 +24,11 @@ $img_path: "../images/";
 //使い方background: url(#{$img_path}bg.png) repeat;
 
 // ミックスインを定義
-//角丸
-@mixin borderradius($borderradius) {
-border-radius:$borderradius;
--moz-border-radius:$borderradius;
--webkit-border-radius:$borderradius;
--ms-border-radius:$borderradius;
--o-border-radius:$borderradius;
-}//@include borderradius(4px 4px 4px 4px);  で呼び出し
-
-//透明度
-@mixin opacity($opacity) {
-$opacityIE: $opacity * 100;
-filter: alpha(opacity=$opacityIE);
--moz-opacity:$opacity;
-opacity: $opacity;
-}//@include opacity(0.8);  で呼び出し
-
 @mixin css3($property, $value) {
      @each $prefix in -webkit-, -moz-, -ms-, -o-, '' {
           #{$prefix}#{$property}: $value;
      }
 }//@include css3(transition, 0.5s);
-
 
 @mixin absPosition ($top: auto, $right: auto, $bottom: auto, $left: auto) {
      position: absolute;
@@ -55,47 +38,13 @@ opacity: $opacity;
      left: $left;
 }// @include absPosition(5px, 20px, 10px, 15px);  左からtop right bottom left
 
-
-
-
-@mixin box-sizing($type)
- {
-box-sizing: $type;
--moz-box-sizing: $type;
--webkit-box-sizing: $type;
--o-box-sizing: $type;
--ms-box-sizing: $type;
- }// @include box-sizing(border-box);
-
-
-
-@mixin background-size($sizetype)
- {
-background-size:$sizetype;
--moz-background-size:$sizetype;
--webkit-background-size:$sizetype;
--o-background-size:$sizetype;
--ms-background-size:$sizetype;
- }// @include background-size(cover);
-
-
-
- @mixin box-shadow( $h: 10px , $v: 10px , $b: 0px , $s: 0px , $c: #000000 ) {
-     -webkit-box-shadow: $h $v $b $s $c;
-	 -moz-box-shadow: $h $v $b $s $c;
-	 box-shadow: $h $v $b $s $c;
- }
-//div {
-//@include box-shadow(8px, 8px);
-//}
-
- @mixin vertical-align {
-     position: relative;
- top: 50%;
- -webkit-transform: translateY(-50%);
- -ms-transform: translateY(-50%);
- transform: translateY(-50%);
- }
+@mixin vertical-align {
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
 //div {
 //@include vertical-align();
 //}
@@ -142,3 +91,131 @@ background-size:$sizetype;
 //div {
 // @include gradient(#ff00ff, #ff00cc, vertical);
 // }
+
+//ベンダープレフィックス
+/// Mixin to prefix several properties at once
+/// @author Hugo Giraudel
+/// @param {Map} $declarations - Declarations to prefix
+/// @param {List} $prefixes (()) - List of prefixes to print
+@mixin prefix($declarations, $prefixes: ()) {
+  @each $property, $value in $declarations {
+    @each $prefix in $prefixes {
+      #{'-' + $prefix + '-' + $property}: $value;
+    }
+
+    // Output standard non-prefixed declaration
+    #{$property}: $value;
+  }
+}
+//.selector {
+//  @include prefix((
+//    column-count: 3,
+//    column-gap: 1.5em
+//  ), webkit moz);
+//}
+
+//flexbox
+@mixin flexbox
+{
+    display:-webkit-box; // old
+    display:-moz-box; // old
+    display:-ms-flexbox; // ie
+    display:-webkit-flex; // new
+    display:flex; // new
+}
+@mixin flex-flow($direction: row , $wrap: nowrap)
+{
+    -webkit-flex-flow: $direction $wrap;
+    flex-flow: $direction $wrap;
+}
+@mixin justify-content($justify-content-type)
+{
+    -webkit-justify-content: $justify-content-type;
+    justify-content: $justify-content-type;
+}
+@mixin align-items($align-items-type)
+{
+    -webkit-align-items: $align-items-type;
+    align-items: $align-items-type;
+}
+@mixin align-self($align-self-type)
+{
+    -webkit-align-self: $align-self-type;
+    align-self: $align-self-type;
+}
+@mixin align-content($align-content-type)
+{
+    -webkit-align-content: $align-content-type;
+    align-content: $align-content-type;
+}
+@mixin flex-grow($grow){
+    -webkit-flex-grow: $grow;
+    flex-grow: $grow;
+}
+@mixin flex-shrink($shrink){
+    -webkit-flex-shrink: $shrink;
+    flex-shrink: $shrink;
+}
+@mixin flex-basis($basis){
+    -webkit-flex-basis: $basis;
+    flex-basis: $basis;
+}
+@mixin order($order){
+    -webkit-order: $order;
+    order: $order;
+}
+
+//rem を使ったフォントサイズ指定
+@mixin fontsize($size: 24, $base: 16) {
+    font-size: $size + px;
+    font-size: ($size / $base) * 1rem;
+}
+
+//コンテンツのセンタリング　親にposition: relative;指定する
+@mixin centerer
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+//サムネイル
+.u-thumb-square{
+    position: relative;
+    overflow: hidden;
+    background: #cccccc;
+    & > *{
+        padding-top: 100%;
+        display: block;
+        img{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -webkit-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            max-width: 200%;
+            max-height: 200%;
+        }
+    }
+}
+.u-thumb-rect{
+    position: relative;
+    overflow: hidden;
+    background: #cccccc;
+    & > *{
+        padding-top: 75%;
+        display: block;
+        img{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -webkit-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            max-width: 200%;
+            max-height: 200%;
+        }
+    }
+}
